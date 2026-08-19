@@ -38,6 +38,15 @@ Read `references/platform-facts.md` for the audio and monetization constraints t
 Every package includes a phrase someone would type. "Best phone for filming concerts in low
 light" earns search traffic; "worth it?" earns none.
 
+**Where the phrase earns is platform-specific** — see `references/ranking-signals.md`:
+
+- **TikTok** weights content-query match most heavily in search, so spoken words and on-screen
+  text are the highest-leverage placement. This is where searchable phrasing pays best.
+- **Instagram** does **not** name caption text as a search signal; username, profile name, and
+  hashtags are what it names. Do not promise a caption keyword will earn Instagram search traffic.
+- **YouTube** weights title and description. Tags are documented as "not important" — never draft
+  them as an SEO play.
+
 ✅ **Done when** each platform has native copy, every sensory blank is marked rather than filled,
 and one searchable phrase appears in spoken or on-screen text.
 
@@ -47,7 +56,8 @@ and one searchable phrase appears in spoken or on-screen text.
 `FF="${CLAUDE_PLUGIN_ROOT:-$(dirname "$(dirname "$(readlink "$HOME/.claude/skills/ff-init")")")}"; eval "$("$FF/scripts/ff-paths.sh")"`
 then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
 
-- Reads: `data/voice.md`, `data/ideas.md`, `references/hooks.md`, `references/platform-facts.md`
+- Reads: `data/voice.md`, `data/ideas.md`, `references/hooks.md`, `references/platform-facts.md`,
+  `references/ranking-signals.md`
 - Writes: appends the hook architecture used to `data/hooks-used.md`
 
 **Cold start:** with no `data/voice.md`, produce structure only and say the copy is unvoiced

@@ -38,7 +38,7 @@ is a bonus.
 then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
 
 - Reads: `data/performance.md`, `data/positioning.md`, `data/gate-log.md`,
-  `references/platform-facts.md`
+  `references/platform-facts.md`, `references/ranking-signals.md`
 - Writes: `data/performance.md`
 
 **Cold start:** with fewer than roughly ten logged posts, treat every pattern as provisional and
