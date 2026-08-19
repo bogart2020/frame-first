@@ -82,6 +82,9 @@ Raise it if one seems wrong; do not silently overturn it.
 
 ```bash
 cd /Users/jerickmadrileno/Desktop/plugins/frame-first
+claude plugin validate ./skills --strict      # the ONLY call that checks the skills
+claude plugin validate ./commands --strict
+claude plugin validate .                      # NOTE: checks marketplace.json ONLY, not skills
 grep -rl "STATUS: STUB" skills references     # must return nothing
 ./scripts/slop-check.sh evals/fixtures/slop.md ; echo $?   # expect 2
 ./scripts/slop-check.sh evals/fixtures/good.md ; echo $?   # expect 0

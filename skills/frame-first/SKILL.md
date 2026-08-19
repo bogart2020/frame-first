@@ -13,12 +13,17 @@ Every frame-first path (`data/…`, `references/…`, `scripts/…`) is relative
 root**, not to whatever project folder happens to be open. Resolve it once per session:
 
 ```bash
-eval "$("$(dirname "$(dirname "$(readlink -f ~/.claude/skills/ff-init)")")/scripts/ff-paths.sh")"
+FF="${CLAUDE_PLUGIN_ROOT:-$(dirname "$(dirname "$(readlink "$HOME/.claude/skills/ff-init")")")}"; eval "$("$FF/scripts/ff-paths.sh")"
 ```
 
 That sets `$FF_HOME`, `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`. Use them for every read and write —
 `"$FF_DATA/voice.md"`, not `data/voice.md`. This is what lets the skills work from any project in
 Claude Desktop or Claude Code, not only when frame-first itself is the open folder.
+
+`${CLAUDE_PLUGIN_ROOT}` is the documented mechanism and is substituted when this runs as an
+installed plugin. The `readlink` fallback covers the symlink install that `sync.sh` creates for
+Codex and Cline, where no such variable exists. Plain `readlink` is used rather than `readlink -f`
+because `-f` is a GNU extension that fails silently on BSD.
 
 `$FF_DATA` honors the `FRAME_FIRST_DATA` environment variable when set, so the creator's profile
 can live outside the repo. Everything below writes `data/…` as shorthand for `$FF_DATA/…`.

@@ -1,6 +1,7 @@
 ---
 name: ff-critique
 description: Blocking quality gate for draft captions, hooks, and scripts. Use before posting, when a caption reads generic or AI-written, or when deciding whether an idea is worth making at all.
+allowed-tools: Bash(${CLAUDE_PLUGIN_ROOT}/scripts/slop-check.sh:*)
 ---
 
 # ff-critique
@@ -20,7 +21,7 @@ have to change.
 ## Stage 1 — deterministic
 
 ```bash
-eval "$("$(dirname "$(dirname "$(readlink -f ~/.claude/skills/ff-init)")")/scripts/ff-paths.sh")"
+FF="${CLAUDE_PLUGIN_ROOT:-$(dirname "$(dirname "$(readlink "$HOME/.claude/skills/ff-init")")")}"; eval "$("$FF/scripts/ff-paths.sh")"
 "$FF_SCRIPTS/slop-check.sh" <draft-file>
 ```
 
@@ -79,7 +80,7 @@ there, so anything it invents is fiction wearing the creator's name.
 ## Reads / Writes
 
 **Paths:** everything below is relative to the plugin root, not the open project. Resolve first:
-`eval "$("$(dirname "$(dirname "$(readlink -f ~/.claude/skills/ff-init)")")/scripts/ff-paths.sh")"`
+`FF="${CLAUDE_PLUGIN_ROOT:-$(dirname "$(dirname "$(readlink "$HOME/.claude/skills/ff-init")")")}"; eval "$("$FF/scripts/ff-paths.sh")"`
 then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
 
 - Reads: `data/voice.md`, `data/positioning.md`, `data/hooks-used.md`,

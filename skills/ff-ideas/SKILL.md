@@ -34,7 +34,7 @@ Five specific premises beat twenty generic ones. Generate fewer and interrogate 
 ## Reads / Writes
 
 **Paths:** everything below is relative to the plugin root, not the open project. Resolve first:
-`eval "$("$(dirname "$(dirname "$(readlink -f ~/.claude/skills/ff-init)")")/scripts/ff-paths.sh")"`
+`FF="${CLAUDE_PLUGIN_ROOT:-$(dirname "$(dirname "$(readlink "$HOME/.claude/skills/ff-init")")")}"; eval "$("$FF/scripts/ff-paths.sh")"`
 then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
 
 - Reads: `data/voice.md`, `data/positioning.md`, `data/hooks-used.md`, `data/performance.md`,
