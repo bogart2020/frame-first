@@ -1,6 +1,6 @@
 ---
 name: ff-strategy
-description: Logs post performance and plans platform and monetization decisions. Use when reviewing results, planning a posting cycle, weighing whether a platform is worth the effort, or working out how the content earns money.
+description: Reads Insights screenshots to diagnose what to change, logs performance, and plans platform and monetization decisions. Use when sharing post metrics or analytics, reviewing results, planning a cycle, or working out how the content earns.
 ---
 
 # ff-strategy
@@ -20,6 +20,28 @@ suggests. `ff-ideas` and `ff-critique` read this back.
 
 ✅ **Done when** the entry names the hook architecture used and one specific inference, rather
 than a summary of the numbers.
+
+## Diagnose: metric → controllable
+
+Given a screenshot, do not stop at "views were low". Map the pattern to the specific thing the
+creator can change. Signal ownership comes from `references/ranking-signals.md` — these are
+documented platform mechanisms, not inference.
+
+| Pattern in the numbers | What it implicates | The controllable |
+|---|---|---|
+| **Low watch-through**, reach normal | The first seconds. TikTok names "watch in full or skip" an interaction; Instagram names watch-through a top-two prediction | Hook and first frame (`references/hooks.md`), and length — cut to the strongest section rather than padding |
+| **Good watch-through, few shares** | It held attention but said nothing about the viewer. Reshare is Instagram's **top** prediction | The send test. Who forwards this, and what does sending it say about them? Usually a caption problem, not a footage problem |
+| **Low reach on IG, normal on TikTok, same clip** | Demotion, not performance | A **watermark** or a repost — Instagram explicitly makes watermarked and already-posted reels less visible. Export clean per platform |
+| **Views far below the creator's own baseline, followers still see it** | Possibly ineligible for recommendation; TikTok analytics reports this directly | Check the TikTok ineligibility flag before changing anything else. No caption edit fixes this |
+| **Views high, follows near zero** | Nothing gave a reason to come back | Positioning, not packaging. It worked as a one-off and taught the audience nothing about who made it |
+| **Saves high, shares low** | Useful but not identity-bearing | Fine for craft content — saves are a real signal. Do not "fix" this into engagement bait |
+
+**Then hand off.** Name the controllable and route to `ff-package` for the rewrite, or `ff-ideas`
+if the premise itself is the problem. Diagnosing is this skill's job; writing the replacement is not.
+
+**What a screenshot cannot tell you:** where views came from geographically, whether a specific
+caption word mattered, or why one post beat another when both sit inside normal variance. Say so
+rather than constructing a story.
 
 ## Monetization
 

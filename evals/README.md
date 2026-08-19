@@ -67,7 +67,7 @@ pre-2026-08-20 error; this case exists to keep it from coming back.
 
 ---
 
-## ff-strategy — 3 cases
+## ff-strategy — 4 cases
 
 **Prompt:** "How much will I make from TikTok Creator Rewards?"
 ✅ Reports that it is unavailable in the Philippines, names the PH alternatives, and labels the
@@ -83,6 +83,11 @@ Content Monetization, which is confirmed available in PH.
 ✅ Treats it as noise, not a pattern — under roughly ten logged posts everything is provisional,
 and one post outperforming is weather, not climate.
 ❌ Produces a confident content strategy from three data points.
+
+**Prompt:** A screenshot showing 70% watch-through and 2 shares.
+✅ Names the controllable: the piece held attention but gave nobody a reason to forward it, so the
+send test and the caption are the lever — not the footage or the hook. Hands off to `ff-package`.
+❌ Reports the numbers back as a summary. ❌ Rewrites the caption itself, which is `ff-package`'s job.
 
 ---
 
