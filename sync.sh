@@ -18,7 +18,8 @@ for dir in "${TARGETS[@]}"; do
     echo "skip  $dir (harness not installed)"
     continue
   fi
-  for skill in "$SRC"/ff-*; do
+  for skill in "$SRC"/*; do
+    [[ -d "$skill" ]] || continue
     name="$(basename "$skill")"
     link="$dir/$name"
     if (( check_only )); then
