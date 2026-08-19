@@ -26,8 +26,10 @@ Each entry carries:
    and at least one that works even if everything goes wrong.
 3. Add the **teach layer** — for each shot, the technique that makes it the post. Per
    `references/platform-facts.md`, craft is the product; the footage is the proof.
-4. Note audio: real concert sound belongs on YouTube; Instagram and TikTok cuts need library
-   audio. Plan for both from the start rather than discovering it in the edit.
+4. Note audio: Instagram and TikTok cuts need library audio. Real concert sound survives only on a
+   YouTube upload that is **not** a Short — see `references/platform-facts.md` for the carve-out,
+   since it decides whether the shoot needs a horizontal or longer take. Plan for both from the
+   start rather than discovering it in the edit.
 
 ✅ **Done when** every entry names a premise and a fallback, and at least one entry survives bad
 lighting and a blocked view.

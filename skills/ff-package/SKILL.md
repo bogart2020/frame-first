@@ -26,8 +26,11 @@ Read `references/platform-facts.md` for the audio and monetization constraints t
 
 - **Instagram / TikTok** — visual-led, library audio. Hook lands in the first frame. Searchable
   phrasing goes in spoken words and on-screen text, where it is actually indexed.
-- **YouTube** — the one platform where real concert audio survives. Title carries search intent.
-  Length is whatever delivers the value; there is no universal optimum.
+- **YouTube** — the only platform where real concert audio can survive, but **the format decides
+  whether it does**: a vertical clip up to three minutes is a Short, and a Short over one minute
+  carrying a Content ID claim is blocked. Read `references/platform-facts.md` before promising real
+  audio anywhere. Title carries search intent. Length is whatever delivers the value; there is no
+  universal optimum.
 - **Facebook** — community and shareability framing.
 
 ## SEO
