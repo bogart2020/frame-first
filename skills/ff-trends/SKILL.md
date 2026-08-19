@@ -104,6 +104,8 @@ or TikTok trending audio.
   date; a source that cannot be reached is reported as unreachable. A creator who acts on a
   fabricated trend loses a shoot, not just a post.
 - **Trend data goes stale in about a week.** Date-stamp everything and flag old entries.
-- **Chasing every trend reads as pandering.** A third of consumers find trend-chasing
-  embarrassing. Relevance to the niche is the filter.
+- **Chasing every trend reads as pandering.** Relevance to the niche is the filter. What *is*
+  documented: Meta demotes "limited originality content that is principally repurposed from other
+  sources" (`references/ranking-signals.md`) — so a trend copied without an original angle is
+  penalized by the platform, not merely ignored by viewers.
 - **The API quota is small** — roughly 100 searches a day. Spend it on deliberate queries.

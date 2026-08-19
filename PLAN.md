@@ -52,6 +52,11 @@ restated across seven files, which guaranteed drift.
 
 Rewrite as instructions the agent acts on, not prose that persuades a reader.
 
+> **Every percentage in this section is unverified** unless `references/` carries it with a
+> primary source. See Evidence quality below. These figures were directional input for writing the
+> references; they are not facts, and no skill restates them — `references/ranking-signals.md`
+> holds the first-party version of these claims. Do not promote one back into a skill.
+
 **Idea over production.** Platforms personalize by predicted viewer satisfaction. The question is
 not "does this look professional" but "why would this person care right now". Meta: 75% of US
 Instagram recommendations came from original posts in Q4 2025.
@@ -77,8 +82,10 @@ sameness is the actual problem, not AI involvement.
 **Originality is distribution.** Meta deprioritizes duplicative content; captions, speed changes,
 and borders on someone else's video are not transformative.
 
-**Trends are templates.** Format + your specific observation. 33% of consumers find brands
-chasing viral trends embarrassing.
+**Trends are templates.** Format + your specific observation. (An oft-quoted "33% of consumers
+find brands chasing viral trends embarrassing" was **not verified** — see Evidence quality below,
+and do not restate it as fact. The verified version of this point is Meta's own demotion of
+content "principally repurposed from other sources", in `references/ranking-signals.md`.)
 
 **Search-first.** Social behaves like search. Put natural topic phrases in titles, spoken words,
 and on-screen text — "best optical zoom phone for video in 2026", not "worth it?".
