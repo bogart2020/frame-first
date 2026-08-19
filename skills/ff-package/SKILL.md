@@ -40,6 +40,10 @@ and one searchable phrase appears in spoken or on-screen text.
 
 ## Reads / Writes
 
+**Paths:** everything below is relative to the plugin root, not the open project. Resolve first:
+`eval "$("$(dirname "$(dirname "$(readlink -f ~/.claude/skills/ff-init)")")/scripts/ff-paths.sh")"`
+then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
+
 - Reads: `data/voice.md`, `data/ideas.md`, `references/hooks.md`, `references/platform-facts.md`
 - Writes: appends the hook architecture used to `data/hooks-used.md`
 

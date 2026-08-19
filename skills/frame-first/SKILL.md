@@ -7,9 +7,25 @@ description: Routes content-creation work to the right frame-first skill and loa
 
 Entry point. Load the creator profile, pick the branch, hand off.
 
+## Step 0 — locate the plugin files
+
+Every frame-first path (`data/…`, `references/…`, `scripts/…`) is relative to the **plugin
+root**, not to whatever project folder happens to be open. Resolve it once per session:
+
+```bash
+eval "$("$(dirname "$(dirname "$(readlink -f ~/.claude/skills/ff-init)")")/scripts/ff-paths.sh")"
+```
+
+That sets `$FF_HOME`, `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`. Use them for every read and write —
+`"$FF_DATA/voice.md"`, not `data/voice.md`. This is what lets the skills work from any project in
+Claude Desktop or Claude Code, not only when frame-first itself is the open folder.
+
+`$FF_DATA` honors the `FRAME_FIRST_DATA` environment variable when set, so the creator's profile
+can live outside the repo. Everything below writes `data/…` as shorthand for `$FF_DATA/…`.
+
 ## Step 1 — load the profile
 
-Read `data/voice.md` and `data/positioning.md`. Every downstream skill depends on them.
+Read `$FF_DATA/voice.md` and `$FF_DATA/positioning.md`. Every downstream skill depends on them.
 
 **When either file is missing or empty:** say so and run `ff-init` first. Everything produced
 without a profile is generic — that is the failure this plugin exists to prevent.

@@ -34,6 +34,10 @@ lighting and a blocked view.
 
 ## Reads / Writes
 
+**Paths:** everything below is relative to the plugin root, not the open project. Resolve first:
+`eval "$("$(dirname "$(dirname "$(readlink -f ~/.claude/skills/ff-init)")")/scripts/ff-paths.sh")"`
+then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
+
 - Reads: `data/positioning.md`, `data/ideas.md` (unshot ideas that need footage),
   `references/platform-facts.md`
 - Writes: `data/shotlists/<date>-<venue>.md`

@@ -20,7 +20,7 @@ if [[ -z "$DRAFT" || ! -f "$DRAFT" ]]; then
   echo "usage: slop-check.sh <draft-file>" >&2; exit 64
 fi
 
-VOICE="$REPO/data/voice.md"
+VOICE="${FRAME_FIRST_DATA:-$REPO/data}/voice.md"
 TELLS="$REPO/references/ai-tells.txt"
 hard=0; soft=0
 

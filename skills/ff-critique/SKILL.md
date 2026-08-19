@@ -20,8 +20,11 @@ have to change.
 ## Stage 1 — deterministic
 
 ```bash
-./scripts/slop-check.sh <draft-file>
+eval "$("$(dirname "$(dirname "$(readlink -f ~/.claude/skills/ff-init)")")/scripts/ff-paths.sh")"
+"$FF_SCRIPTS/slop-check.sh" <draft-file>
 ```
+
+The resolver line makes this work from any open project — see **Paths** under Reads / Writes.
 
 Exit 0 = surface clean · 1 = hard hit on the creator's own deny-list · 2 = two or more soft hits.
 
@@ -74,6 +77,10 @@ Supplying the detail yourself is the failure this plugin exists to prevent — t
 there, so anything it invents is fiction wearing the creator's name.
 
 ## Reads / Writes
+
+**Paths:** everything below is relative to the plugin root, not the open project. Resolve first:
+`eval "$("$(dirname "$(dirname "$(readlink -f ~/.claude/skills/ff-init)")")/scripts/ff-paths.sh")"`
+then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
 
 - Reads: `data/voice.md`, `data/positioning.md`, `data/hooks-used.md`,
   `references/slop-patterns.md`, `references/arrrsr.md`

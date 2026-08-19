@@ -38,6 +38,10 @@ here than trending audio, which is a minor input.
 
 ## Reads / Writes
 
+**Paths:** everything below is relative to the plugin root, not the open project. Resolve first:
+`eval "$("$(dirname "$(dirname "$(readlink -f ~/.claude/skills/ff-init)")")/scripts/ff-paths.sh")"`
+then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
+
 - Reads: `data/positioning.md`, `references/platform-facts.md`
 - Writes: dated entries in `data/trends.md`; promising angles to `data/ideas.md`
 
