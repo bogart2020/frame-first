@@ -3,8 +3,6 @@ name: ff-critique
 description: Blocking quality gate for draft captions, hooks, and scripts. Use before posting, when a caption reads generic or AI-written, or when deciding whether an idea is worth making at all.
 ---
 
-> **STATUS: STUB.** Architecture and gotchas are settled; prose to be written.
-
 # ff-critique
 
 The gate. Returns one of three verdicts and withholds approval until the work earns it.

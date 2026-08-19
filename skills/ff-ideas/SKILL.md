@@ -3,8 +3,6 @@ name: ff-ideas
 description: Turns footage or a blank slate into specific, shootable content premises. Use when the creator has footage and no angle, needs post ideas, is stuck on what to make next, or wants angles on a planned shoot.
 ---
 
-> **STATUS: STUB.** Structure and gotchas are settled; prose to be written.
-
 # ff-ideas
 
 ## Two entry modes

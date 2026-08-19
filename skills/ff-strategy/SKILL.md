@@ -3,8 +3,6 @@ name: ff-strategy
 description: Logs post performance and plans platform and monetization decisions. Use when reviewing results, planning a posting cycle, weighing whether a platform is worth the effort, or working out how the content earns money.
 ---
 
-> **STATUS: STUB.** Structure and gotchas are settled; prose to be written.
-
 # ff-strategy
 
 The loop that makes every other skill improve: record what happened, read it back, decide next.

@@ -3,8 +3,6 @@ name: ff-package
 description: Writes hooks, captions, on-screen text, titles, hashtags, and SEO phrasing tailored per platform. Use when footage is ready and the post needs words, or when adapting one piece of content across Instagram, TikTok, YouTube, and Facebook.
 ---
 
-> **STATUS: STUB.** Structure and gotchas are settled; prose to be written.
-
 # ff-package
 
 Everything that wraps the footage, written natively per platform.

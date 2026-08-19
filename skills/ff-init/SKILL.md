@@ -3,8 +3,6 @@ name: ff-init
 description: Interviews the creator to build their voice profile and creative positioning. Use when setting up frame-first, when data/voice.md is missing or empty, or when the creator says their content sounds generic or no longer sounds like them.
 ---
 
-> **STATUS: STUB.** Structure and gotchas are settled; prose to be written.
-
 # ff-init
 
 A one-time interview, roughly 15–20 minutes. Every other skill reads what it writes, so a thin

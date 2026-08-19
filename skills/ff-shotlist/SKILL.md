@@ -3,8 +3,6 @@ name: ff-shotlist
 description: Plans what to shoot before a concert or scene so the footage carries a premise. Use when preparing for a shoot, heading to a show, packing gear, or working out what a planned post needs on camera.
 ---
 
-> **STATUS: STUB.** Structure and gotchas are settled; prose to be written.
-
 # ff-shotlist
 
 The only skill that runs **before** the footage exists. A concert cannot be reshot.

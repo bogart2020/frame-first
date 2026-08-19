@@ -3,8 +3,6 @@ name: ff-trends
 description: Researches what formats and topics are working now in short-form video, then angles them to phone cinematography. Use when the creator asks what is trending, whether a format is worth trying, or what to post this week.
 ---
 
-> **STATUS: STUB.** Structure and gotchas are settled; prose to be written.
-
 # ff-trends
 
 Find what is moving, then do the part that matters: discard what does not fit phone
