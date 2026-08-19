@@ -1,40 +1,63 @@
 ---
 name: ff-package
-description: Turn an approved idea into platform-ready packaging - hooks, captions, on-screen text, titles, hashtags, and SEO phrasing - tailored per platform for Instagram, TikTok, YouTube, and Facebook. Use when footage is ready and the creator needs the words that go around it.
+description: Writes hooks, captions, on-screen text, titles, hashtags, and SEO phrasing tailored per platform. Use when footage is ready and the post needs words, or when adapting one piece of content across Instagram, TikTok, YouTube, and Facebook.
 ---
 
-> **STATUS: STUB.** Body to be written. Spec below.
+> **STATUS: STUB.** Structure and gotchas are settled; prose to be written.
 
-## Purpose
+# ff-package
 
-Everything that wraps the footage. Platform-native, never one caption copy-pasted four times.
+Everything that wraps the footage, written natively per platform.
 
-## Output contract — this is the core design decision
+## Output contract
 
-**Captions and scripts: brief with gaps.** Draft the structure, hook options, and beats — then leave the sensory specifics as explicit blanks only the creator can fill:
+**Captions and scripts — brief with gaps.** Draft the structure, the hook options, and the beats.
+Leave the sensory specifics as explicit blanks:
+
 > "The moment the lights dropped, [the specific thing you noticed in the third song]."
 
-Do **not** fill those blanks. The specificity is the product, and the agent was not at the show. Filling it manufactures exactly the sameness the creator is avoiding.
+Those blanks stay blank. Witness detail is what makes the post work, and the agent was not there;
+anything invented to fill the gap is fiction under the creator's name. Marking the gap clearly is
+the deliverable.
 
-**Titles, hooks, on-screen text, hashtags: drafted fully**, then handed straight to `ff-critique`.
+**Titles, hooks, on-screen text, hashtags — drafted fully**, then handed to `ff-critique`.
 
-## Per-platform
+## Per platform
 
-Read `references/platform-playbooks.md`. Key divergences:
-- **Instagram / TikTok** — visual-led, library audio (concert audio gets muted or demoted, see playbooks). Hook in frame one. Searchable phrasing in on-screen text and spoken words, not just hashtags.
-- **YouTube** — the only platform where real concert audio survives (Content ID claims it, video stays up). Title carries search intent. No universal ideal length; length is whatever delivers the value without filler.
-- **Facebook** — shareability and community framing; PH-monetizable.
+Read `references/platform-facts.md` for the audio and monetization constraints that drive these.
+
+- **Instagram / TikTok** — visual-led, library audio. Hook lands in the first frame. Searchable
+  phrasing goes in spoken words and on-screen text, where it is actually indexed.
+- **YouTube** — the one platform where real concert audio survives. Title carries search intent.
+  Length is whatever delivers the value; there is no universal optimum.
+- **Facebook** — community and shareability framing.
 
 ## SEO
 
-Every package includes a searchable phrase someone might actually type — in the spoken words and on-screen text, not only in metadata. "Best optical zoom phone for video in 2026" beats "Worth it?"
+Every package includes a phrase someone would type. "Best phone for filming concerts in low
+light" earns search traffic; "worth it?" earns none.
+
+✅ **Done when** each platform has native copy, every sensory blank is marked rather than filled,
+and one searchable phrase appears in spoken or on-screen text.
 
 ## Reads / Writes
 
-- Reads: `data/voice.md`, `data/ideas.md`, `references/hooks.md`, `references/platform-playbooks.md`
-- Writes: appends hook shapes used to `data/hooks-used.md`
+- Reads: `data/voice.md`, `data/ideas.md`, `references/hooks.md`, `references/platform-facts.md`
+- Writes: appends the hook architecture used to `data/hooks-used.md`
 
-## Rules
+**Cold start:** with no `data/voice.md`, produce structure only and say the copy is unvoiced
+until `ff-init` runs.
 
-- Hand every package to `ff-critique` before it ships. Do not self-certify.
-- Hashtags are not a growth mechanism. Use few, and only genuinely descriptive ones.
+## Boundaries
+
+Writes the words around finished footage. Does not approve its own output — every package goes to
+`ff-critique`. Does not generate premises (`ff-ideas`) or plan shots (`ff-shotlist`).
+
+## Gotchas
+
+- **One caption pasted to four platforms wastes three of them.** Each has a different reading
+  posture. Write natively or admit the cross-post is a compromise.
+- **Filling a sensory blank is the failure mode this skill is designed around.** The temptation is
+  strongest when the draft reads incomplete — that incompleteness is the point.
+- **Hashtags are not a growth mechanism.** Use few, and only genuinely descriptive ones.
+- **Hook variety matters more than hook quality in aggregate.** Check `data/hooks-used.md`.

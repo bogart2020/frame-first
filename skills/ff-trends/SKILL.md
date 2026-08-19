@@ -1,47 +1,59 @@
 ---
 name: ff-trends
-description: Research what is currently working in short-form video for phone cinematography, concerts, and craft content, then angle it against the creator's niche. Use when the creator asks what is trending, wants to know if a format is worth trying, or is planning what to post this week. Honest about what cannot be fetched automatically.
+description: Researches what formats and topics are working now in short-form video, then angles them to phone cinematography. Use when the creator asks what is trending, whether a format is worth trying, or what to post this week.
 ---
 
-> **STATUS: STUB.** Body to be written. Spec below.
+> **STATUS: STUB.** Structure and gotchas are settled; prose to be written.
 
-## Purpose
+# ff-trends
 
-Find what is moving right now, then do the part that matters: kill the 90% irrelevant to phone-cinematography and angle the rest.
+Find what is moving, then do the part that matters: discard what does not fit phone
+cinematography and angle what does.
 
-## Hard constraint — read before writing this skill
+## What is reachable
 
-**Live Instagram and TikTok trending-audio data cannot be fetched.** Verified 2026-08-19:
-- Instagram's trending sounds live behind login in the Professional Dashboard; no API exports it. The Graph API reads owned accounts only. Meta Content Library requires academic affiliation.
-- TikTok Creative Center is publicly viewable but its ToS forbids automated fetching (CAPTCHAs, rate limiting). The Research API is academic-only and bars commercial use.
-- Facebook has no public Reels trend surface. YouTube has no Shorts-audio endpoint.
+`references/platform-facts.md` holds the current picture of which trend sources can be retrieved
+and which cannot. Read it before making any claim about trending data.
 
-**This skill must never claim to have fetched data it cannot fetch.** Fabricating a trending-audio list is the single worst failure mode available to it.
+The short version: YouTube Data API and curated weekly roundups are fetchable. Instagram and
+TikTok trending audio are not reachable by any agent, by design of those platforms.
 
-## What it fetches automatically
+## Method
 
-- **YouTube Data API v3** — `videos.list?chart=mostPopular` and `search.list`. Optional: works without a key, uses `YOUTUBE_API_KEY` env var if present. ~100 searches/day on free quota, so spend them deliberately. Use `regionCode=US`/`GB` as well as `PH` — the audience is global English.
-- **Curated weekly roundups** — HeyOrca (Fridays), Buffer, Later, Hootsuite blogs. Editorial, not algorithmic. Flag anything older than 7 days as stale.
+1. **Fetch what is fetchable.** YouTube Data API v3 if `YOUTUBE_API_KEY` is set — use
+   `regionCode=US` and `GB` alongside `PH`, since the audience is global English. Read the
+   curated weekly roundups.
+2. **Ask for what is not.** Give a 60-second in-app checklist naming exact screens in order:
+   Instagram Professional Dashboard → trending audio; TikTok Creative Center → Trending Sounds
+   and Hashtags; TikTok search → the creator's core keywords.
+3. **Angle it.** Discard what does not fit. For what remains, state the specific interpretation
+   only this creator could produce — a format plus nothing original performs worse than no trend.
 
-## What it asks the creator to paste
-
-A **60-second in-app checklist** — name the exact screens, in order:
-1. Instagram → Reels → trending audio in the Professional Dashboard
-2. TikTok → Creative Center → Trending Sounds / Hashtags
-3. TikTok search → the creator's core keywords → what ranks
-
-Then do the real work on what comes back.
+✅ **Done when** every finding carries a source and a date, and anything unreachable is reported
+as unreachable.
 
 ## Weighting
 
-Per the settled strategy: **format trends over audio trends.** Nobody finds a concert-cinematography video because of its sound. Prioritize hook architectures, micro-drama structures, searchable topic phrases, and what is winning specifically in phone-videography. Treat audio as a minor input.
+**Format trends over audio trends.** Nobody discovers a concert-cinematography video through its
+sound. Hook architectures, micro-story structures, and searchable topic phrases carry more weight
+here than trending audio, which is a minor input.
 
 ## Reads / Writes
 
-- Reads: `data/positioning.md`
-- Writes: appends dated findings to `data/trends.md`; promising angles go to `data/ideas.md`
+- Reads: `data/positioning.md`, `references/platform-facts.md`
+- Writes: dated entries in `data/trends.md`; promising angles to `data/ideas.md`
 
-## Rules
+## Boundaries
 
-- Label every finding with its source and date.
-- State plainly when something could not be checked. "I could not verify this" is a valid and required output.
+Reports and angles what is findable. Does not write posts, and does not have access to Instagram
+or TikTok trending audio.
+
+## Gotchas
+
+- **Inventing a trending list is the worst available failure.** Every claim states its source and
+  date; a source that cannot be reached is reported as unreachable. A creator who acts on a
+  fabricated trend loses a shoot, not just a post.
+- **Trend data goes stale in about a week.** Date-stamp everything and flag old entries.
+- **Chasing every trend reads as pandering.** A third of consumers find trend-chasing
+  embarrassing. Relevance to the niche is the filter.
+- **The API quota is small** — roughly 100 searches a day. Spend it on deliberate queries.

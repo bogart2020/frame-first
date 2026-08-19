@@ -1,0 +1,55 @@
+# Universal AI-writing tells. One fixed string per line, matched case-insensitively.
+# These are SOFT signals: presence is a prompt to look, not proof of slop.
+# The creator's own deny-list in data/voice.md is what hard-blocks.
+# Keep entries distinctive. A word common in ordinary speech causes false positives,
+# and a gate with false positives stops being trusted.
+delve
+tapestry
+testament to
+a beacon
+cornerstone
+in the realm of
+navigate the landscape
+ever-evolving
+fast-paced world
+game changer
+game-changer
+elevate your
+unlock the
+harness the power
+seamless
+robust
+multifaceted
+holistic
+transformative
+groundbreaking
+cutting-edge
+dive deep
+let's dive
+buckle up
+in conclusion
+ultimately, the
+at the end of the day
+it's not just
+not only that
+that being said
+hope this helps
+let me know below
+what are your thoughts
+drop a comment
+stay tuned
+level up your
+the secret to
+here's the thing
+truly remarkable
+absolutely stunning
+breathtaking
+mesmerizing
+captivating
+unforgettable experience
+leaves you speechless
+words cannot describe
+pure magic
+chef's kiss
+hits different
+rent free

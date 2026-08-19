@@ -17,7 +17,9 @@ ToS-clean, and monetizable from the Philippines where TikTok Creator Rewards is 
 
 | Skill | Does |
 |---|---|
+| `frame-first` | Router — loads your profile, picks the branch |
 | `ff-init` | One-time interview → your voice profile and positioning |
+| `ff-shotlist` | Plans what to shoot **before** the show |
 | `ff-ideas` | Premises from footage you shot, or from nothing |
 | `ff-trends` | What is working now, angled to your niche — honest about what it cannot fetch |
 | `ff-critique` | Blocking quality gate. Can tell you not to post |
@@ -34,6 +36,10 @@ cd frame-first
 ```
 
 Then run `ff-init` first. Every other skill depends on the files it writes.
+
+The quality gate runs in two stages: `scripts/slop-check.sh` catches surface patterns in
+milliseconds, then `ff-critique` judges the rest against your own past captions. Regressions
+live in `evals/`.
 
 > Once installed as a proper Claude Code plugin, remove the `~/.claude/skills/ff-*` symlinks
 > so the skills are not registered twice.

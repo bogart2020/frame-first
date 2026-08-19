@@ -43,40 +43,10 @@ Established by inspection on 2026-08-19, not assumed:
 
 ## Research findings that constrain the build
 
-### Trend data — what cannot be fetched (verified 2026-08-19)
-
-Live Instagram and TikTok trending audio **cannot be retrieved by any agent**:
-Instagram's list is login-gated in the Professional Dashboard with no API export; the Graph API
-reads owned accounts only; Meta Content Library needs academic affiliation. TikTok Creative
-Center forbids automated fetching in its ToS (CAPTCHAs, rate limiting) and its Research API is
-academic-only, barring commercial use. Facebook has no public Reels trend surface. YouTube has
-no Shorts-audio endpoint.
-
-Works: YouTube Data API v3 (`chart=mostPopular`, `regionCode`, ~100 searches/day free),
-Google Trends (fragile — pytrends archived April 2025, 429s common), curated weekly roundups
-(HeyOrca Fridays, Buffer, Later, Hootsuite — editorial, stale within a week).
-
-**`ff-trends` must never fabricate a trending list.**
-
-### Monetization — Philippines constraints (verified 2026-08-19, secondary sources)
-
-- **TikTok Creator Rewards: not available in the Philippines.** PH paths are LIVE gifts and TikTok Shop affiliate
-- **Instagram Gifts/Subscriptions: PH availability unverified**, PH absent from the named eligible list
-- **Facebook Content Monetization: available in PH**, ~PHP 0.008–0.018/view
-- **YouTube: available**; RPM follows viewer location, so the global-English audience is the single biggest lever
-
-Flagged **unverified** by the research: Instagram PH status, TikTok PH launch timeline, exact
-YouTube PH RPM, stock-footage revenue shares. Confirm against the real dashboard before acting.
-
-### Concert footage + copyrighted music
-
-TikTok mutes (near-certain; LIVE risks instant cut). Instagram demotes to followers or mutes.
-YouTube places a Content ID **claim** — video stays up and monetized, revenue to the rights
-holder, **no strike**. Facebook likely claim + shared revenue, policy undocumented. Fair use does
-not cover concert footage.
-
-**This is why decision 11 exists.** The two primary platforms are the two most hostile to the
-primary subject. Library audio on IG/TikTok; real concert audio reserved for YouTube.
+**Moved.** All dated platform claims — concert-audio handling, what trend data is and is not
+retrievable, and Philippines monetization status — now live in `references/platform-facts.md`.
+That is the single place they age, and the single place to re-verify. They were previously
+restated across seven files, which guaranteed drift.
 
 ## Doctrine source — condensed for writing `references/`
 
@@ -128,3 +98,61 @@ reach; follower count is decoupled from distribution (only 17% of consumers chec
 4. `ff-ideas`, `ff-package` ✅ verify: output carries all six required elements
 5. `ff-trends` ✅ verify: refuses to invent trending audio when asked to
 6. `ff-strategy` ✅ verify: states "unverified" on the flagged monetization figures
+
+---
+
+# Hardening round — 2026-08-19
+
+Driven by three research passes (GitHub skills survey, Anthropic skill-authoring guidance,
+anti-slop prior art) plus a writing-for-agents audit of the scaffold.
+
+## Defects found and fixed
+
+| Defect | Evidence | Fix |
+|---|---|---|
+| No router, despite decision 1 | `skills/` held 6 flat skills | Built `frame-first` router |
+| Descriptions truncated in UI | All 6 were 268–329 chars against a ~250 display limit | All 8 now under 250, "what + when + triggers" formula |
+| One meaning in many places | Concert-audio fact in 7 files, monetization in 4 | `references/platform-facts.md` is now the only source |
+| Dated facts inside skill bodies | 3 skills carried hard dates, against Anthropic guidance | Moved to the dated reference file |
+| Steering by prohibition | 18 "never/do not" across 6 skills | Down to 7, kept only as hard guardrails |
+| No Gotchas | 0 of 6 — Anthropic calls this the highest-signal skill content | 8 of 8 |
+| Prose-only quality gate | No deterministic layer | `scripts/slop-check.sh` |
+| No evals | none | `evals/` with per-skill regressions |
+| No cold-start handling | every skill assumed `data/` populated | Explicit fallback in each |
+| No boundaries | no skill said what it refuses | Boundaries section in each |
+
+## Hardening decisions
+
+| # | Decision | Chosen |
+|---|---|---|
+| 17 | Gate architecture | Two-stage: `slop-check.sh` then judgment. Pairwise against the creator's real captions, not an abstract standard. Hard-block on deny-list, FIX on 2+ soft failures, never hair-trigger. Persona pass reserved for posts that matter |
+| 18 | Scripts | **Bash only.** `grep` is present everywhere and needs no install. Python stylometrics were declined — they produce exactly the false positives that make a gate untrusted |
+| 19 | Roster | Added `ff-shotlist`. Competitor analysis declined: it pulls toward imitation, against the whole strategy |
+| 20 | Naming | Kept `ff-*` nouns. **Deliberate departure** from Anthropic's gerund convention — the descriptions carry intent, and ergonomics wins for daily use |
+| 21 | Evals | Written test cases, run by hand, across Haiku/Sonnet/Opus |
+
+## Leading words introduced
+
+- **Witness detail** — a detail only someone present could supply. Replaces the weak abstraction
+  "specificity", which a model believes it already satisfies.
+- **The send test**, **proof not product**, **SHIP/FIX/KILL** — defined once in the router.
+
+## Contradiction resolved
+
+writing-for-agents says negation is a failure mode: prohibitions make the forbidden behavior
+*more* available. The voice research says banned-phrase lists are the most effective voice
+control available.
+
+Both hold, because they describe different mechanisms. A behavioral steer in prose suffers the
+elephant problem; a phrase deny-list is a **lookup**. So the deny-list moved into
+`scripts/slop-check.sh` where `grep` enforces it mechanically, and the prose switched to positive
+targets. Neither technique is compromised.
+
+## Evidence quality
+
+- **Anthropic authoring guidance** — official, acted on directly.
+- **Ternary-over-numeric, pairwise-over-absolute** — matches independent expectation, acted on.
+- **The GitHub repo survey** — patterns corroborated across three agents and by Anthropic's docs,
+  but individual repos were **not verified to exist**. Patterns adopted; specific repo claims not.
+- **Percentages** ("68% of skills fail on descriptions", "85% human agreement") — single community
+  posts and unverified arXiv IDs. Directional only; no threshold was set from them.

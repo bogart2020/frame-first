@@ -2,92 +2,99 @@
 
 **For:** Sonnet 5, fresh session
 **Repo:** `/Users/jerickmadrileno/Desktop/plugins/frame-first`
-**Read first:** `PLAN.md` — the full decision record, verified environment facts, research
-findings, and the condensed doctrine you will be writing from. Do not re-derive any of it.
+**Read first:** `PLAN.md` — decision record, verified environment facts, the hardening round, and
+the condensed doctrine you write the references from. Do not re-derive any of it.
 
 ## State
 
-Scaffold is complete and committed. What exists:
+Scaffolded and hardened. Committed.
 
 ```
-.claude-plugin/plugin.json    done
-sync.sh                       done (symlinks + --check for dead links)
-.gitignore                    done (data/ ignored, *.example.md committed)
-README.md                     done
-PLAN.md                       done — the source of truth for every decision
-commands/ff-*.md          x6  done (Claude-only slash commands)
-data/*.example.md         x6  done (templates; real files are gitignored)
-skills/ff-*/SKILL.md      x6  STUB — frontmatter written, body is a spec
-references/*.md           x4  STUB — headings and "to write here" lists only
+skills/frame-first/       router — WRITTEN, complete
+skills/ff-*/          x7  frontmatter, structure, boundaries, gotchas WRITTEN; prose is STUB
+references/platform-facts.md   WRITTEN — the only source of dated platform claims
+references/ai-tells.txt        WRITTEN — deny-list patterns for the script
+references/{arrrsr,hooks,slop-patterns}.md   STUB
+scripts/slop-check.sh          WRITTEN and tested
+evals/                         WRITTEN — per-skill regressions + fixtures
+data/*.example.md         x7   WRITTEN (real files gitignored)
+commands/                 x8   WRITTEN
 ```
 
-**Your job: replace the 10 stubs with real content.** Frontmatter on the six skills is
-already written and load-bearing (it decides when each skill fires) — do not rewrite it
-without reason.
+**Your job: the 3 reference stubs and the 7 skill prose bodies.** Everything structural is done.
+
+Frontmatter is load-bearing and already tuned — all 8 descriptions sit under the ~250-char UI
+truncation point using the documented "what + when + 3 triggers" formula. Changing them without
+re-checking length regresses discoverability.
 
 ## Order, with completion criteria
 
-Follow `PLAN.md` "Build order". Each step is done when its criterion passes — verify by
-running it, not by reading it back.
+Verify by running, not by re-reading.
 
-1. **`references/` (4 files)** — write from PLAN.md's "Doctrine source". Rewrite as
-   instructions, not prose. `slop-patterns.md` is the highest-value file: fill it with
-   concrete **paired** examples (generic beside specific), not abstract rules.
-   ✅ *Done when:* no `STATUS: STUB` marker remains in `references/`, and every "to write
-   here" bullet has become real content.
+1. **`references/` — 3 stubs.** Write from PLAN.md "Doctrine source" as instructions, not prose.
+   `slop-patterns.md` is highest-value: concrete **paired** examples (generic beside specific).
+   ✅ *Done when:* `grep -rl "STATUS: STUB" references/` returns nothing.
 
-2. **`ff-init`** — the interview. One question at a time.
-   ✅ *Done when:* a dry run produces both `data/voice.md` and `data/positioning.md`, and
-   the skill visibly pushes back on a deliberately generic answer instead of accepting it.
+2. **`ff-init`** — the interview.
+   ✅ *Done when:* answering the identity question with "I love capturing moments" gets named as
+   generic and re-asked, rather than written to disk.
 
-3. **`ff-critique`** — the blocking gate. SHIP / FIX / KILL, never a score.
-   ✅ *Done when:* fed the caption *"The concert was unforgettable. What a night ✨"* it
-   returns FIX or KILL with a **specific named** failure — and does not rewrite the line
-   itself, since the missing ingredient is lived experience.
+3. **`ff-critique`** — two-stage gate.
+   ✅ *Done when:* the caption *"The concert was unforgettable. What a night ✨"* returns FIX or
+   KILL with a named failure and no invented replacement line — **and** a caption with real
+   witness detail plus one soft tell returns SHIP, not FIX. Both directions matter: an
+   over-blocking gate gets ignored.
 
-4. **`ff-ideas` and `ff-package`**
-   ✅ *Done when:* every `ff-ideas` output carries all six required elements (premise,
-   tension, teachable core, emotional payload, send test, searchability), and `ff-package`
-   leaves sensory specifics as explicit blanks rather than inventing them.
+4. **`ff-ideas`, `ff-shotlist`, `ff-package`**
+   ✅ *Done when:* every `ff-ideas` premise carries all six elements; every `ff-shotlist` entry
+   names a premise and a fallback; `ff-package` marks sensory blanks rather than filling them,
+   and holds that line when told "just fill it in yourself".
 
 5. **`ff-trends`**
-   ✅ *Done when:* asked *"what audio is trending on Instagram right now?"* it states plainly
-   that it cannot fetch that and offers the in-app paste checklist — **no fabricated list.**
-   This is the skill's most important behavior; test it explicitly.
+   ✅ *Done when:* "what audio is trending on Instagram?" produces a plain statement that it
+   cannot be retrieved, plus the paste checklist. **No fabricated list.** Highest-severity
+   failure in the plugin — test it explicitly.
 
 6. **`ff-strategy`**
-   ✅ *Done when:* asked about TikTok monetization it reports that Creator Rewards is not
-   available in the Philippines, and labels the flagged figures "unverified" rather than
-   asserting them.
+   ✅ *Done when:* it reports TikTok Creator Rewards as unavailable in the Philippines and labels
+   the monetization figures unverified.
+
+Then run the whole of `evals/README.md`, **including on Haiku** — skills degrade silently on
+weaker models and this one is symlinked into three harnesses.
 
 ## Constraints that are not yours to change
 
-These were decided deliberately. If one seems wrong, raise it — do not silently overturn it.
+Raise it if one seems wrong; do not silently overturn it.
 
-- **`ff-critique` blocks.** It withholds a ship verdict and may tell the creator not to post
-  at all. A gate that always passes is not a gate.
-- **`ff-package` does not fill sensory blanks.** The agent was not at the show. Filling those
-  gaps manufactures exactly the AI sameness this plugin exists to prevent.
-- **`ff-trends` never invents trend data.** See PLAN.md for what is provably unfetchable.
-- **Concert footage is proof, not product.** The craft is the product. Every skill reflects this.
-- **Dir name == frontmatter `name:` == symlink name.** Verified convention; breaking it breaks
-  Codex/Cline.
-- **Nothing personal gets committed.** Only `*.example.md` templates.
+- **`ff-critique` blocks, and may KILL.** Ternary verdicts only — no numeric scores. Numeric
+  scales collapse into a 5–7 middle band.
+- **`ff-package` leaves sensory blanks blank.** The agent was not there.
+- **`ff-trends` never invents trend data.** `references/platform-facts.md` says what is reachable.
+- **Concert footage is proof, not product.**
+- **Dated claims live only in `references/platform-facts.md`.** Restating them elsewhere recreates
+  the seven-file drift this round removed.
+- **Positive framing.** Prohibitions dropped from 18 to 7 and the remainder are hard guardrails.
+  Prefer stating the target behavior.
+- **Dir name == frontmatter `name:` == symlink name.**
+- **Bash only in `scripts/`.** No Python dependency.
 
 ## Verify before claiming done
 
 ```bash
 cd /Users/jerickmadrileno/Desktop/plugins/frame-first
-grep -rl "STATUS: STUB" skills references          # must return nothing
-./sync.sh && ./sync.sh --check                     # all links healthy
-git status --porcelain                             # no data/*.md except examples
+grep -rl "STATUS: STUB" skills references     # must return nothing
+./scripts/slop-check.sh evals/fixtures/slop.md ; echo $?   # expect 2
+./scripts/slop-check.sh evals/fixtures/good.md ; echo $?   # expect 0
+./sync.sh && ./sync.sh --check                # all links healthy
+git status --porcelain                        # no data/*.md except examples
+for f in skills/*/SKILL.md; do d=$(sed -n 's/^description: //p' "$f"); echo "${#d} $f"; done
+                                              # every count under 250
 ```
 
-Then run the six completion criteria above as live prompts. Report which passed with actual
-output — not a summary.
+Report which eval cases passed with actual output, not a summary.
 
 ## Left for the human
 
 - `gh repo create frame-first --public --source=. --remote=origin --push`
-- Run `ff-init` — every other skill is generic until `data/voice.md` exists
-- Optionally set `YOUTUBE_API_KEY` for automatic trend fetching
+- Run `ff-init` — every skill is generic until `data/voice.md` exists
+- Optionally set `YOUTUBE_API_KEY`
