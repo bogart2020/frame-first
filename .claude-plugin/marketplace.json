@@ -1,0 +1,15 @@
+{
+  "name": "frame-first",
+  "description": "Content-creation skills for a phone-cinematography creator posting concerts and cinematic scenes.",
+  "owner": {
+    "name": "Jerick Madrileno",
+    "email": "madrilenojerick@gmail.com"
+  },
+  "plugins": [
+    {
+      "name": "frame-first",
+      "source": "./",
+      "description": "Content-creation skills for a phone-cinematography creator: idea generation, trend research, anti-slop critique, platform packaging, and monetization strategy."
+    }
+  ]
+}
