@@ -85,6 +85,12 @@ there, so anything it invents is fiction wearing the creator's name.
 **Cold start:** with no `data/voice.md`, run stage 1 and the witness-detail test only, and say
 plainly that voice checks are unavailable until `ff-init` runs.
 
+## Boundaries
+
+Judges drafts and premises. Writes nothing on the creator's behalf — when a line lacks witness
+detail it names the gap and hands it back. Does not research trends, package posts, or log
+performance.
+
 ## Gotchas
 
 - **The gate rubber-stamps under fatigue.** Approving becomes the default, especially late.
