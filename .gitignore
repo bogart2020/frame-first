@@ -1,0 +1,7 @@
+# Personal creator state stays local. Templates are committed; real data is not.
+data/*
+!data/*.example.md
+!data/.gitkeep
+
+.DS_Store
+.env
