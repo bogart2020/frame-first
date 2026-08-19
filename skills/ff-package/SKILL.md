@@ -38,6 +38,28 @@ Read `references/platform-facts.md` for the audio and monetization constraints t
 Every package includes a phrase someone would type. "Best phone for filming concerts in low
 light" earns search traffic; "worth it?" earns none.
 
+## Hashtags
+
+Draft them for **targeting and search**, never for volume. Per `references/ranking-signals.md`,
+Instagram caps at five and states that fewer targeted tags outperform many generic ones; TikTok
+names hashtags as content information; YouTube calls tags "not important".
+
+**Fill every slot you get, and make each one earn its place.** Instagram's five is a budget to
+spend well, not a limit to avoid. Build the set in this order, stopping at the platform's cap:
+
+1. **The specific subject** — the artist, song, tour, or venue. Highest intent; someone searching
+   this wants exactly this. `#kodaline`, `#lovewillsetyoufree`, `#farewelltour`
+2. **The niche** — what kind of creator work this is. `#concertcinematography`, `#iphonefilmmaking`
+3. **The discovery term** — what a stranger who doesn't know the artist would search.
+   `#lowlightvideo`, `#concertfootage`
+4. **Region, only when targeting one.** `#concertph` narrows to the Philippines — omit it when the
+   goal is reach outside PH, since it signals a local audience for a global-English post.
+
+**Rules:** no tag that could sit under any video (`#viral`, `#fyp`, `#instagood`) — those are the
+"many generic ones" Instagram names as worse. No tag describing a thing not in the video. On
+TikTok, where there is no hard cap, still stop when the tags stop being specific — a generic tag
+adds a category, not an audience.
+
 **Where the phrase earns is platform-specific** — see `references/ranking-signals.md`:
 
 - **TikTok** weights content-query match most heavily in search, so spoken words and on-screen
@@ -76,5 +98,6 @@ Writes the words around finished footage. Does not approve its own output — ev
   posture. Write natively or admit the cross-post is a compromise.
 - **Filling a sensory blank is the failure mode this skill is designed around.** The temptation is
   strongest when the draft reads incomplete — that incompleteness is the point.
-- **Hashtags are not a growth mechanism.** Use few, and only genuinely descriptive ones.
+- **Hashtags are a targeting and search mechanism, not a reach mechanism.** Instagram caps them at
+  five and says fewer targeted ones beat many generic ones. Spend the slots — see Hashtags below.
 - **Hook variety matters more than hook quality in aggregate.** Check `data/hooks-used.md`.

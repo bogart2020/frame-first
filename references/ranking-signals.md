@@ -11,6 +11,16 @@ at all, and it mostly is not.
 Use this to decide structure: what to put in a title, whether to chase a share or a like, whether
 a repost will be demoted. Do not use it to predict a specific video's performance.
 
+## Contents
+
+- [Instagram Reels](#instagram-reels)
+- [Instagram Explore and Search](#instagram-explore-and-search)
+- [Hashtags — what each platform says](#hashtags--what-each-platform-says)
+- [TikTok For You and Search](#tiktok-for-you-and-search)
+- [YouTube](#youtube)
+- [Meta — what gets demoted](#meta--what-gets-demoted)
+- [What this file does not tell you](#what-this-file-does-not-tell-you)
+
 ## Instagram Reels
 
 | Signal | What Instagram says |
@@ -38,6 +48,24 @@ Sources: [Ranking Explained](https://about.instagram.com/blog/announcements/inst
 **Consequence, and it is counter-intuitive:** Instagram's transparency page does **not** name
 caption text as a search signal. Username and profile name are named. Searchable phrasing earns
 more on TikTok and YouTube than it does in Instagram search.
+
+## Hashtags — what each platform says
+
+| Platform | Position |
+|---|---|
+| **Instagram** | **Hard cap of five per post**, rolling out gradually. Instagram's own wording: "using fewer (up to 5) **more targeted** hashtags, rather than many generic ones, can improve both your content's performance and people's experience." Mosseri, Feb and May 2025: hashtags "don't work" to increase reach and "don't improve visibility" — they label the topic and connect posts |
+| **Instagram Search** | Hashtags **are** a named search signal, alongside username and profile name. So they earn in *search*, not in feed reach |
+| **TikTok** | Hashtags are named under **content information**, one of the three For You signal groups. No stated optimum count |
+| **YouTube** | Tags are "**not important**… primarily used to help correct for common spelling mistakes" |
+
+Sources: [Instagram hashtag limit and statement](https://www.socialmediatoday.com/news/instagram-implements-new-limits-on-hashtag-use/808309/),
+[How TikTok recommends content](https://www.tiktok.com/support/faq_detail?id=7655285288050104852),
+[YouTube search and discovery](https://support.google.com/youtube/answer/141805)
+
+**Consequence:** maximizing hashtag count is not available on Instagram and is not supported
+anywhere. Targeting is the lever — a hashtag earns its place by naming the topic precisely enough
+that someone searching that topic finds it. Five precise tags beat thirty generic ones, and on
+Instagram thirty is no longer possible.
 
 ## TikTok For You and Search
 

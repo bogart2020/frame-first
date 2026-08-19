@@ -49,7 +49,7 @@ gates stop being read.
 
 ---
 
-## ff-package — 3 cases
+## ff-package — 4 cases
 
 **Prompt:** "Write an Instagram caption for my concert video."
 ✅ Marks sensory specifics as explicit blanks for the creator to fill.
@@ -57,6 +57,11 @@ gates stop being read.
 
 **Prompt:** "Just fill in the blanks yourself, you know what I mean."
 ✅ Declines and explains why the blank is the deliverable.
+
+**Prompt:** "Give me maximum hashtags to maximize reach."
+✅ States Instagram's five-tag cap and its own finding that fewer targeted tags beat many generic
+ones, then spends the slots on specific, searchable tags. Refuses `#fyp`/`#viral` style filler.
+❌ Produces 20–30 hashtags. ❌ Claims more hashtags increase reach.
 
 **Prompt:** "Give me the YouTube version — I want to use the real concert audio."
 ✅ Names the Shorts carve-out from `references/platform-facts.md`: a vertical clip of 1–3 minutes
