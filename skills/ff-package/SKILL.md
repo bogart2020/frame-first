@@ -64,8 +64,10 @@ adds a category, not an audience.
 
 - **TikTok** weights content-query match most heavily in search, so spoken words and on-screen
   text are the highest-leverage placement. This is where searchable phrasing pays best.
-- **Instagram** does **not** name caption text as a search signal; username, profile name, and
-  hashtags are what it names. Do not promise a caption keyword will earn Instagram search traffic.
+- **Instagram** is genuinely ambiguous: its transparency page names username, profile name, and
+  hashtags as search signals and omits caption text, while its creator guidance tells creators to
+  put keywords in the caption. Include them — they cost nothing — but do not promise they will earn
+  Instagram search traffic.
 - **YouTube** weights title and description. Tags are documented as "not important" — never draft
   them as an SEO play.
 

@@ -31,9 +31,13 @@ a repost will be demoted. Do not use it to predict a specific video's performanc
 
 Source: [Instagram Ranking Explained](https://about.instagram.com/blog/announcements/instagram-ranking-explained)
 
-**Consequence:** reshare and watch-through are the two levers, in that order. This is why
-`ff-strategy` tracks shares/sends and watch-through as primary and does not track likes — the
+**Consequence:** reshare and watching all the way through are the two levers, in that order. This
+is why `ff-strategy` tracks sends and sustained attention as primary and does not track likes — the
 platform names likes third. A TikTok export with a visible watermark is explicitly demoted.
+
+**These are the names of ranking predictions, not of metrics you can read.** Instagram's Insights
+report Views, Watch time, Viewers, Average watch time, and Follows — there is no watch-through
+percentage on the screen. Never ask the creator for a number the app does not show.
 
 ## Instagram Explore and Search
 
@@ -45,9 +49,17 @@ platform names likes third. A TikTok export with a visible watermark is explicit
 Sources: [Ranking Explained](https://about.instagram.com/blog/announcements/instagram-ranking-explained),
 [Instagram Search AI system](https://transparency.meta.com/features/explaining-ranking/ig-search/)
 
-**Consequence, and it is counter-intuitive:** Instagram's transparency page does **not** name
-caption text as a search signal. Username and profile name are named. Searchable phrasing earns
-more on TikTok and YouTube than it does in Instagram search.
+**Two first-party sources disagree here, and both belong on the record:**
+
+- Instagram's **transparency page** names username, profile name, suggested keywords, and hashtags
+  as search signals. It does **not** name caption text.
+- Instagram's **creator guidance** tells creators to "include relevant keywords in your content,
+  your **caption**, your bio, and your hashtags".
+
+Treat the transparency page as the description of the ranking system and the creator guidance as
+what Instagram advises. The safe read: keywords in a caption are not proven to drive Instagram
+search, and cost nothing. Searchable phrasing still earns more reliably on TikTok, which states
+outright that content-query match dominates its search ranking.
 
 ## Hashtags — what each platform says
 
@@ -85,7 +97,9 @@ dominates TikTok search, so spoken words and on-screen text carry real weight he
 
 **Worth knowing:** content can be made **ineligible for recommendation** while still being findable
 through search or a profile visit. Analytics shows whether this happened. A post with normal
-follower views and near-zero For You views is the signature.
+follower views and near-zero For You views is the pattern that should prompt **checking the flag** —
+not a conclusion on its own. TikTok's own caution: "If a video isn't getting many views, it also
+doesn't necessarily mean it broke a rule."
 
 ## YouTube
 

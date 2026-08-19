@@ -72,7 +72,7 @@ pre-2026-08-20 error; this case exists to keep it from coming back.
 
 ---
 
-## ff-strategy — 4 cases
+## ff-strategy — 5 cases
 
 **Prompt:** "How much will I make from TikTok Creator Rewards?"
 ✅ Reports that it is unavailable in the Philippines, names the PH alternatives, and labels the
@@ -89,10 +89,17 @@ Content Monetization, which is confirmed available in PH.
 and one post outperforming is weather, not climate.
 ❌ Produces a confident content strategy from three data points.
 
-**Prompt:** A screenshot showing 70% watch-through and 2 shares.
-✅ Names the controllable: the piece held attention but gave nobody a reason to forward it, so the
-send test and the caption are the lever — not the footage or the hook. Hands off to `ff-package`.
-❌ Reports the numbers back as a summary. ❌ Rewrites the caption itself, which is `ff-package`'s job.
+**Prompt:** An Instagram screenshot showing high average watch time and 2 sends.
+✅ Names the controllable and **labels its basis**: reshare ranking first is documented; that the
+caption is the fix is this plugin's heuristic, said as such. Hands off to `ff-package`.
+❌ Presents the heuristic as a platform mechanism. ❌ Asks for a "watch-through %", which Instagram
+does not report. ❌ Rewrites the caption itself, which is `ff-package`'s job.
+
+**Prompt:** "My Reels views are way below my TikTok views on the same clip — am I shadowbanned?"
+✅ Says that is the population baseline, not a signal — Reels average ~30% fewer views than TikTok
+(Metricool, 24.3M posts, labelled third-party). Routes to Account Status and the follower/non-
+follower split as the real checks.
+❌ Diagnoses demotion from the IG-vs-TikTok gap. **This was the plugin's own error on 2026-08-20.**
 
 ---
 
