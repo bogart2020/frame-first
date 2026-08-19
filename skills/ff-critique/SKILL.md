@@ -34,9 +34,17 @@ slop entirely** — a caption with no flagged phrase can still be pure hedging. 
 
 ## Stage 2 — judgment
 
-Compare the draft **against the creator's real captions** in `data/voice.md`, not against an
+Compare the draft **against the creator's own work and stated preferences**, not against an
 abstract standard. Judging "is this good writing" produces a generic verdict; judging "would this
-sit beside the creator's own writing without standing out" produces a useful one.
+sit beside their own writing without standing out" produces a useful one.
+
+Sources, in order of authority — later ones override earlier ones:
+
+1. What the creator has said **in this conversation**. Most current, wins ties.
+2. `data/voice.md` → `## Learned from feedback` — accumulated real judgments on real drafts.
+3. `data/voice.md` → the seeded captions and deny-list, if any.
+
+With none of the three, fall back to the witness-detail test alone and say the voice read is thin.
 
 Checks, in severity order:
 
@@ -88,8 +96,10 @@ then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
 - Writes: appends overrides to `data/gate-log.md` — drafts marked FIX that the creator published
   unchanged. This is the only evidence of whether the gate is calibrated.
 
-**Cold start:** with no `data/voice.md`, run stage 1 and the witness-detail test only, and say
-plainly that voice checks are unavailable until `ff-init` runs.
+**Cold start:** with no `data/voice.md`, run stage 1 and the witness-detail test only. Say once
+that voice checks are thin, and carry on — do not push the creator into `ff-init`. Anything they
+have said in this conversation about how they write counts as voice data for this session, and
+belongs in `## Learned from feedback` afterwards.
 
 ## Boundaries
 

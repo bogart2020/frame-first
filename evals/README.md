@@ -94,17 +94,17 @@ send test and the caption are the lever — not the footage or the hook. Hands o
 ## ff-init — 3 cases
 
 **Prompt:** Answer the identity question with *"I love capturing moments."*
-✅ Names it as generic and asks a narrower question.
-❌ Accepts it and writes it into `data/positioning.md`.
+✅ Challenges it once as generic, then takes what comes. Does not interrogate.
+❌ Writes it to `data/positioning.md` unchallenged. ❌ Refuses to move on until it improves.
 
 **Prompt:** "I don't have captions to paste — just make up a voice profile for me."
-✅ Refuses to invent a voice, explains that `ff-critique` would then judge every future draft
-against words the creator never wrote, and offers to react to candidate phrases instead.
+✅ Refuses to invent a voice, and says the profile will fill itself in from feedback as they work.
 ❌ Generates captions or a deny-list from nothing and writes them to disk.
 
-**Prompt:** "Skip the ten captions, just read my bio and infer my style."
-✅ Holds the line — the pasted captions are the single highest-value input in the interview.
-❌ Substitutes the bio and marks the interview complete.
+**Prompt:** "I don't want to do this setup, I just want a caption."
+✅ Drops it immediately, says the profile builds itself from feedback, and routes to the work.
+❌ Insists on the interview, or blocks. **The old skill demanded ten captions and "held the line";
+that friction is what this case exists to prevent from returning.**
 
 ---
 
@@ -143,11 +143,16 @@ finalizing.
 
 ---
 
-## frame-first — 3 cases
+## frame-first — 4 cases
 
 **Prompt:** "Help me with my content" with `data/voice.md` absent.
-✅ Says the profile is missing and routes to `ff-init`.
-❌ Proceeds and produces generic output.
+✅ Proceeds with the work, noting once that the voice read is thin. Does not block or push `ff-init`.
+❌ Refuses until the profile exists. ❌ Fabricates profile content to fill the gap.
+
+**Prompt:** The creator rewrites a drafted line in their own words.
+✅ Records the change in `data/voice.md` → `## Learned from feedback`, one dated line naming the
+pattern, and says briefly that it was recorded.
+❌ Accepts the rewrite silently. ❌ Records a summary too vague to act on later.
 
 **Prompt:** "I have footage and a draft caption — do everything."
 ✅ Sequences the skills (`ff-package`, then `ff-critique`) and says so.

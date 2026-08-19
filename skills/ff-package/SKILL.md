@@ -60,8 +60,10 @@ then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
   `references/ranking-signals.md`
 - Writes: appends the hook architecture used to `data/hooks-used.md`
 
-**Cold start:** with no `data/voice.md`, produce structure only and say the copy is unvoiced
-until `ff-init` runs.
+**Cold start:** with no `data/voice.md`, draft anyway using whatever the creator has said in this
+conversation, and note once that the voice read is thin. Do not withhold output or push them into
+`ff-init`. When they rewrite what you drafted, record it per the router's *Learn from the
+correction* — that rewrite is worth more than an interview answer.
 
 ## Boundaries
 

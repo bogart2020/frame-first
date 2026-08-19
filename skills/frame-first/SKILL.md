@@ -32,11 +32,40 @@ can live outside the repo. Everything below writes `data/…` as shorthand for `
 
 Read `$FF_DATA/voice.md` and `$FF_DATA/positioning.md`. Every downstream skill depends on them.
 
-**When either file is missing or empty:** say so and run `ff-init` first. Everything produced
-without a profile is generic — that is the failure this plugin exists to prevent.
+**When either file is missing or thin: proceed anyway.** Do not block, and do not push the creator
+into `ff-init` — that friction is why the old interview went unused. Work with what is there, and
+let the profile fill itself in from feedback (below). Mention `ff-init` only if they ask to seed or
+reset the profile deliberately.
 
-**Cold start** — a creator with no captions, no analytics, no shot history. This is normal on
-day one. `ff-init` handles it. Do not fabricate profile content to fill the gap.
+**Read the conversation as profile data too.** Anything the creator has already said in this
+session about how they write, what they are making, or what they dislike outranks a stale file.
+The file is the memory across sessions; the conversation is the current truth.
+
+**Cold start** — no captions, no analytics, no history. Normal, and not a blocker. Do not
+fabricate profile content to fill the gap.
+
+## Learn from the correction
+
+This is what replaces the interview. Every skill follows it.
+
+When the creator rejects, rewrites, or overrides something, that is the highest-quality voice
+signal available — better than anything an interview produces, because it is a real judgment about
+real work. Capture it:
+
+| What happened | Append to |
+|---|---|
+| They rewrote a line you drafted | `data/voice.md` → `## Learned from feedback`, both versions, one line on what changed |
+| They said "I'd never say that" | `data/voice.md` → the deny-list, as a phrase `slop-check.sh` can match |
+| They published something the gate marked FIX | `data/gate-log.md` — the gate may be miscalibrated |
+| They corrected what they are making or for whom | `data/positioning.md` |
+
+Rules that keep this from becoming noise:
+
+- **Record the specific, not the summary.** "Prefers 'ruined' over 'ruin'" is useless; "tightens
+  grammar between draft and publish while keeping the lowercase confession tone" is a pattern.
+- **One line per entry, dated.** This section is read on every run; it cannot become an essay.
+- **Do not record your own guesses** — only things the creator actually said or did.
+- **Say when you have recorded something**, briefly. Silent profile edits are unsettling.
 
 ## Step 2 — route
 

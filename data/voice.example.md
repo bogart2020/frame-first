@@ -16,3 +16,9 @@ Short sentences. I start with the thing, not the setup.
 
 ## What I will not do on camera
 - Dancing, pointing at floating text
+
+## Learned from feedback
+Appended automatically as the creator accepts, rejects, and rewrites. One dated line each.
+This section outranks the seeded sections above when they disagree.
+
+- 2026-08-01 — rewrote "the crowd went wild" to name the specific song; prefers the moment over the reaction
