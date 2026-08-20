@@ -8,9 +8,9 @@ description: Turns footage or a blank slate into specific, shootable content pre
 ## Step 0 — ground it before proposing
 
 Read `references/platform-facts.md` before offering any premise that depends on a platform behaving
-a certain way. A premise that cannot be published as described is worse than none — a concert idea
-built around real audio runs straight into the YouTube Shorts carve-out and Instagram's demotion
-list.
+a certain way. A premise that cannot be published as described is worse than none — any idea
+built around copyrighted music runs straight into the YouTube Shorts carve-out and Instagram's
+demotion list.
 
 Any claim about what a platform rewards traces to `references/ranking-signals.md`, or it is
 labelled a judgment call. No live research: what is unretrievable is listed as unretrievable there.

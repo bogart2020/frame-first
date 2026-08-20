@@ -55,8 +55,8 @@ Read `references/platform-facts.md` for the audio and monetization constraints t
 
 ## SEO
 
-Every package includes a phrase someone would type. "Best phone for filming concerts in low
-light" earns search traffic; "worth it?" earns none.
+Every package includes a phrase someone would type. A specific phrase — "best phone for filming
+in low light", "how to fix flat colour grading" — earns search traffic; "worth it?" earns none.
 
 ## Hashtags
 
@@ -67,13 +67,17 @@ names hashtags as content information; YouTube calls tags "not important".
 **Fill every slot you get, and make each one earn its place.** Instagram's five is a budget to
 spend well, not a limit to avoid. Build the set in this order, stopping at the platform's cap:
 
-1. **The specific subject** — the artist, song, tour, or venue. Highest intent; someone searching
-   this wants exactly this. `#kodaline`, `#lovewillsetyoufree`, `#farewelltour`
-2. **The niche** — what kind of creator work this is. `#concertcinematography`, `#iphonefilmmaking`
-3. **The discovery term** — what a stranger who doesn't know the artist would search.
-   `#lowlightvideo`, `#concertfootage`
-4. **Region, only when targeting one.** `#concertph` narrows to the Philippines — omit it when the
-   goal is reach outside PH, since it signals a local audience for a global-English post.
+1. **The specific subject** — the most precise name for what is in the video. Highest intent;
+   someone searching this wants exactly this. For a concert that is the artist, song, and tour; for
+   a recipe it is the dish; for a place it is the place.
+2. **The niche** — what kind of creator work this is. `#iphonefilmmaking`, `#foodphotography`
+3. **The discovery term** — what a stranger who does not know the specific subject would search.
+   `#lowlightvideo`, `#slowshutter`
+4. **Region, only when targeting one.** A city or country tag narrows to a local audience — omit it
+   when the goal is reach elsewhere.
+
+Ask what the video is before writing any of these. The ladder is the same for every subject; the
+tags are not.
 
 **Rules:** no tag that could sit under any video (`#viral`, `#fyp`, `#instagood`) — those are the
 "many generic ones" Instagram names as worse. No tag describing a thing not in the video. On

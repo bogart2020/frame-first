@@ -24,7 +24,7 @@ Facebook, YouTube.
 | 8 | Repo | `frame-first`, public, local install until proven |
 | 9 | Commands | Skills everywhere + Claude-only slash commands |
 | 10 | Gate strength | **Blocking**, names specific failures, may KILL an idea |
-| 11 | Strategy | **Concert = proof/hook. Craft = product. Money from affiliate, LUTs, client work** |
+| 11 | Strategy | **Footage = proof/hook. Craft = product. Money from affiliate, LUTs, client work.** *Amended 2026-08-20: originally concert-specific; de-scoped to any subject at the creator's request. Principle unchanged* |
 | 12 | Naming | `ff-*`; dir name == frontmatter name == symlink name |
 | 13 | Voice capture | `ff-init` interview + paste 10 real captions |
 | 14 | Doctrine | Split into 4 reference files, rewritten as instructions not prose |
@@ -154,6 +154,26 @@ Both hold, because they describe different mechanisms. A behavioral steer in pro
 elephant problem; a phrase deny-list is a **lookup**. So the deny-list moved into
 `scripts/slop-check.sh` where `grep` enforces it mechanically, and the prose switched to positive
 targets. Neither technique is compromised.
+
+## De-scoping round — 2026-08-20
+
+The creator asked that the plugin stop assuming concerts and handle any subject thrown at it.
+This overturns decision 11 and one HANDOFF constraint; both are amended in place rather than
+silently rewritten.
+
+| Changed | To |
+|---|---|
+| `ff-shotlist` assumed venue, crowd, set length | Asks what is being shot; constraints are elicited, not assumed |
+| `platform-facts.md` led with "concert footage and copyrighted music — the constraint that shapes the whole strategy" | "Copyrighted music in footage", applying to any source of recorded music, with concert as the strictest worked example |
+| `ff-package` hashtag ladder used concert tags | Subject-agnostic ladder; the rungs are fixed, the tags are not |
+| Descriptions on `ff-shotlist` and `ff-trends` named concerts and phone cinematography | Subject-neutral |
+| `ff-trends` weighted audio low because "nobody discovers a concert video through its sound" | Same weighting, but conditioned — audio matters for dance, comedy, lip-sync, music-led formats |
+
+**Deliberately unchanged:** the anti-slop machinery. Witness detail, the send test, SHIP/FIX/KILL,
+blanks stay blank, and the deny-list are all subject-independent and were never concert-coupled.
+
+**Still concert-flavoured on purpose:** worked examples throughout. An abstract instruction is
+harder to follow than a concrete one; the rule is that examples illustrate and never gate.
 
 ## Evidence quality
 

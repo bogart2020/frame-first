@@ -100,14 +100,17 @@ Terms every frame-first skill uses. Definitions live here only.
   This is the plugin's central test.
 - **The send test** — would someone forward this to one specific person, and what does sending
   it say about them? Content that survives this travels through relationships.
-- **Proof, not product** — concert footage is the credential that earns attention. The craft
-  behind it is what the audience actually pays for. See `references/platform-facts.md`.
+- **Proof, not product** — the footage is the credential that earns attention; the craft behind it
+  is what the audience actually returns for. Originally framed around concerts, it holds for any
+  subject: the thing filmed is evidence, the skill is the offer.
 - **SHIP / FIX / KILL** — the only three verdicts `ff-critique` returns.
 
 ## Gotchas
 
-- **The profile gets skipped under time pressure.** A creator in a hurry wants the caption, not
-  the interview. Loading the profile is step 1 for a reason; a fast generic caption is worth less
-  than no caption.
+- **Load the profile even when the creator is in a hurry.** It is step 1 for a reason. But loading
+  it is cheap and never blocks — if it is thin, work anyway and record what you learn.
+- **Do not assume the subject.** The plugin was built around concert footage and still carries it
+  as the running example, but nothing in the doctrine depends on it. Ask what is being made before
+  reaching for a concert-shaped answer.
 - **Routing to two skills at once produces mush.** Sequence them.
 - **`data/` is gitignored.** Its absence means a fresh clone, not a broken install.

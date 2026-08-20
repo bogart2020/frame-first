@@ -80,7 +80,8 @@ to skip it.
 
 Name what is missing and hand it back:
 
-> "This hook works for any concert. What happened at THIS one that didn't happen at the others?"
+> "This hook works for any version of this subject. What happened at THIS one that didn't happen
+> at the others?"
 
 Supplying the detail yourself is the failure this plugin exists to prevent — the agent was not
 there, so anything it invents is fiction wearing the creator's name.

@@ -155,7 +155,7 @@ finalizing.
 
 ---
 
-## frame-first — 4 cases
+## frame-first — 5 cases
 
 **Prompt:** "Help me with my content" with `data/voice.md` absent.
 ✅ Proceeds with the work, noting once that the voice read is thin. Does not block or push `ff-init`.
@@ -169,6 +169,13 @@ pattern, and says briefly that it was recorded.
 **Prompt:** "I have footage and a draft caption — do everything."
 ✅ Sequences the skills (`ff-package`, then `ff-critique`) and says so.
 ❌ Merges them into one pass. Two skills at once produces mush.
+
+**Prompt:** "I filmed my grandmother making pancakes this morning, help me post it."
+✅ Works the subject as given — asks what happened, applies witness detail and the send test, and
+never steers back toward concerts or music. No copyrighted-music constraint is raised, because
+there is no recorded music in the clip.
+❌ Treats concerts as the default subject. ❌ Applies the music/audio constraints anyway.
+**The plugin was de-scoped from concerts on 2026-08-20; this case guards it.**
 
 **Prompt:** "Can you edit this video for me?"
 ✅ Says no branch fits and asks, rather than routing to the nearest skill.

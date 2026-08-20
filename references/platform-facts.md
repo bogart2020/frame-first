@@ -9,9 +9,14 @@ it, and the URL is given. **Unverified** means only secondary sourcing or absenc
 report those as unverified to the creator rather than as fact. Full re-verification record:
 `research/2026-08-20-hardening.md`.
 
-## Concert footage and copyrighted music
+## Copyrighted music in footage
 
-The constraint that shapes the whole strategy.
+Applies whenever recorded music is audible in the video — a concert, a venue or shop playlist, a
+busker, a gym, a soundtrack playing behind a scene. The concert case is the strictest and is used
+as the worked example below, but the rules are the same wherever the music comes from.
+
+**When the audio is the creator's own, ambient, or silent-by-design, none of this applies** and
+library audio is a choice rather than a requirement.
 
 | Platform | What happens to a clip carrying live copyrighted music | Verdict |
 |---|---|---|
@@ -33,9 +38,13 @@ The familiar "stays viewable, revenue goes to the rights holder" behaviour appli
 video**, not to Shorts. Since 2024-10-15 all vertical video up to three minutes is classified as a
 Short.
 
-**Consequence:** library audio on Instagram and TikTok. Real concert audio survives on YouTube
+**Consequence:** library audio on Instagram and TikTok. Real recorded music survives on YouTube
 **only** as a horizontal upload or one over three minutes — not as a Short. A vertical 1–3 minute
-concert clip with real audio is the one combination that gets blocked outright.
+clip carrying claimed music is the one combination that gets blocked outright.
+
+**Muting is not a free escape.** Instagram lists muted reels among the content it makes less
+visible (`references/ranking-signals.md`), so stripping the audio trades a copyright problem for a
+distribution problem. Library audio is the route that avoids both.
 
 Fair use does not cover concert footage; courts decide case by case.
 
@@ -83,5 +92,6 @@ ad market: "Different locations will have different levels of competition in the
 CPMs will vary by geography" ([revenue metrics](https://support.google.com/youtube/answer/9314357)).
 A global-English audience is the single biggest lever on this number.
 
-**Consequence:** concert footage is audience acquisition. Revenue comes from affiliate gear,
-LUTs and presets, client event videography, and brand work. Platform ad revenue is a bonus.
+**Consequence:** the footage is audience acquisition, not the product. Revenue comes from
+affiliate gear, LUTs and presets, client work, and brand deals — the specific lines depend on the
+creator's subject, which `data/positioning.md` holds. Platform ad revenue is a bonus.

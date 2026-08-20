@@ -1,6 +1,6 @@
 ---
 name: ff-trends
-description: Researches what formats and topics are working now in short-form video, then angles them to phone cinematography. Use when the creator asks what is trending, whether a format is worth trying, or what to post this week.
+description: Researches what formats and topics are working now in short-form video, then angles them to the creator's own subject. Use when the creator asks what is trending, whether a format is worth trying, or what to post this week.
 ---
 
 # ff-trends
@@ -63,9 +63,10 @@ as unreachable.
 
 ## Weighting
 
-**Format trends over audio trends.** Nobody discovers a concert-cinematography video through its
-sound. Hook architectures, micro-story structures, and searchable topic phrases carry more weight
-here than trending audio, which is a minor input.
+**Format trends over audio trends.** For most craft and documentary subjects, nobody discovers the
+video through its sound. Hook architectures, micro-story structures, and searchable topic phrases
+carry more weight than trending audio, which is a minor input. Weight audio higher only when the
+creator's subject genuinely travels on sound — dance, comedy, lip-sync, music-led formats.
 
 ## Reaching outside the Philippines
 

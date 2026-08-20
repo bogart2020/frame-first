@@ -40,7 +40,7 @@ mechanism.
 | Retention fine but the clip **trails off** or the cut is padded | Percentage metrics get harder as the clip lengthens | Cut to the strongest section. Instagram will not recommend a reel over 3 minutes at all | **Mixed** — the 3-minute cap and "relative watch time matters more for short videos" are documented; "cut rather than pad" is this plugin's call, and TikTok's own advice leans the other way |
 | **Held attention, few sends** | It held attention but said nothing about the viewer. Reshare is Instagram's top-ranked prediction | The send test: who forwards this, and what does sending it say about them? | **Documented** that reshare ranks first. **Heuristic** that the caption is the fix — no platform says so |
 | **Views far below the creator's own baseline** | Could be nothing. TikTok: "if a video isn't getting many views, it also doesn't necessarily mean it broke a rule" | Check the flag before changing anything: TikTok analytics reports posts made **ineligible for recommendation**; Instagram **Account Status** reports whether content can be recommended | **Documented** — TikTok FYF standards; Instagram recommendation-eligibility help |
-| **Instagram distribution suppressed on a clip that is fine elsewhere** | Demotion, not performance | Instagram makes less visible: watermarked, low-resolution, **muted**, bordered, majority-text, and already-posted reels. Export clean per platform — a muted concert clip is demoted for its own reason | **Documented** as a mechanism. **Not** diagnosable by comparing IG views to TikTok views — Reels average ~30% fewer views than TikTok as a baseline (Metricool, 24.3M posts). Use Account Status or the follower/non-follower split |
+| **Instagram distribution suppressed on a clip that is fine elsewhere** | Demotion, not performance | Instagram makes less visible: watermarked, low-resolution, **muted**, bordered, majority-text, and already-posted reels. Export clean per platform — a clip muted to dodge a music claim is demoted for its own reason | **Documented** as a mechanism. **Not** diagnosable by comparing IG views to TikTok views — Reels average ~30% fewer views than TikTok as a baseline (Metricool, 24.3M posts). Use Account Status or the follower/non-follower split |
 | **Views high, follows near zero** | Nothing gave a reason to come back | Positioning, not packaging | **Heuristic.** The metric is documented on both platforms; nothing documents this cause. TikTok warns follower swings after a spike are normal — needs several posts, not one |
 | **Saves high, sends low** | Useful but not identity-bearing | Fine for craft work. Do not "fix" it into engagement bait — Meta names clickbait and engagement bait as demoted | **Documented** that saves rank on Instagram Explore and that bait is demoted. **Note:** TikTok does not name or report saves. "Fine for craft content" is this plugin's judgment |
 
@@ -65,9 +65,10 @@ says it plainly — "Fluctuations are normal!" Say so rather than constructing a
 secondary sources, flag the ones marked unverified, and point the creator at their own dashboard
 before any of it drives a decision.
 
-The strategy those facts produce: concert footage is audience acquisition. Revenue comes from
-affiliate gear, LUTs and presets, client event videography, and brand work. Platform ad revenue
-is a bonus.
+The strategy those facts produce: the footage is audience acquisition, not the product. Revenue
+comes from affiliate gear, LUTs and presets, client work, and brand deals. Platform ad revenue is
+a bonus. The specific revenue lines depend on the subject — read `data/positioning.md` rather than
+assuming event videography.
 
 ## Reads / Writes
 

@@ -70,7 +70,10 @@ Raise it if one seems wrong; do not silently overturn it.
   scales collapse into a 5–7 middle band.
 - **`ff-package` leaves sensory blanks blank.** The agent was not there.
 - **`ff-trends` never invents trend data.** `references/platform-facts.md` says what is reachable.
-- **Concert footage is proof, not product.**
+- **The footage is proof, not product.** *(Amended 2026-08-20 at the creator's request: was
+  "concert footage is proof, not product". The plugin is no longer concert-scoped — it must handle
+  any subject the creator brings. Concert remains the running example, never an assumption. The
+  proof-not-product principle itself is unchanged.)*
 - **Dated claims live only in `references/platform-facts.md`.** Restating them elsewhere recreates
   the seven-file drift this round removed.
 - **Positive framing.** Prohibitions dropped from 18 to 7 and the remainder are hard guardrails.
