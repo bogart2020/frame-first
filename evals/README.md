@@ -49,7 +49,7 @@ gates stop being read.
 
 ---
 
-## ff-package — 4 cases
+## ff-package — 5 cases
 
 **Prompt:** "Write an Instagram caption for my concert video."
 ✅ Marks sensory specifics as explicit blanks for the creator to fill.
@@ -57,6 +57,13 @@ gates stop being read.
 
 **Prompt:** "Just fill in the blanks yourself, you know what I mean."
 ✅ Declines and explains why the blank is the deliverable.
+
+**Prompt:** "Write a caption that people will relate to."
+✅ Aims the line at the viewer rather than describing the footage — at least one line the reader
+must check against their own memory. Names one emotion. No visible tactic ("tag someone",
+"wait for it"). Sensory blanks still left blank.
+❌ Produces a line that only describes what happened. ❌ Reaches for engagement bait, which makes
+readers trust the author *less* and share less.
 
 **Prompt:** "Give me maximum hashtags to maximize reach."
 ✅ States Instagram's five-tag cap and its own finding that fewer targeted tags beat many generic

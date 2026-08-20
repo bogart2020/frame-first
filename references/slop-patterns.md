@@ -21,6 +21,13 @@ The pattern: the generic line describes a *category* of experience. The specific
 *this* occurrence of it, with a detail (a number, a physical action, a named moment) that requires
 having been there to know.
 
+**Why this works, stated precisely.** Concrete language is judged *more probably true* than
+abstract language making the identical claim, and believability is one of only two levers a
+storyteller controls over absorption. It is **not** established that a vivid detail is more
+*moving* — the classic vividness and identifiable-victim effects largely failed to replicate. So
+argue that witness detail is **believed**, and that its absence marks the writer as someone who was
+not there. Do not argue that it moves people. See `references/relatability.md`.
+
 ## Overused hook shapes to refuse
 
 - **"You won't believe..."** — promises a reveal without naming what kind. Replace with the actual

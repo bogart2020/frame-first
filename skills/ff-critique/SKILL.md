@@ -55,6 +55,12 @@ Checks, in severity order:
 
 **Gaps** — two or more together warrant a FIX:
 4. **The send test** — who forwards this, and what does forwarding it say about them?
+   Self-relevance and social relevance are what predict a share (`references/relatability.md`).
+4b. **Self-reference** — does any line require the reader to retrieve their own memory to parse it,
+   or does it only describe? A caption the viewer watches is weaker than one they recognize.
+4c. **Visible tactic** — anything a reader could name as a move ("tag someone", "wait for it").
+   Inferred manipulation makes readers judge the *author* less trustworthy and share less, so this
+   costs more than it returns.
 5. **Satisfaction** — would someone who watched to the end feel it was worth their time?
 6. **Voice drift** — rhythm, sentence length, and punctuation against the real samples.
 7. **Hook repetition** — check `data/hooks-used.md` for recently used architectures.
@@ -93,7 +99,7 @@ there, so anything it invents is fiction wearing the creator's name.
 then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
 
 - Reads: `data/voice.md`, `data/positioning.md`, `data/hooks-used.md`,
-  `references/slop-patterns.md`, `references/arrrsr.md`
+  `references/slop-patterns.md`, `references/arrrsr.md`, `references/relatability.md`
 - Writes: appends overrides to `data/gate-log.md` — drafts marked FIX that the creator published
   unchanged. This is the only evidence of whether the gate is calibrated.
 

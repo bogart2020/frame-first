@@ -57,8 +57,10 @@ type — it is the absence of one.
 specific person they send it to. A share is a stronger signal than a like because it costs
 something — it stakes a small claim about the sender's taste or knowledge.
 
-**Emotional payload taxonomy** — discrete emotions predict sharing; positivity alone does not.
-Name one dominant driver per piece:
+**Emotional payload taxonomy** — discrete emotions predict sharing; **valence does not, and
+neither does arousal** — the arousal theory failed to replicate, and a head-to-head test on 4,000+
+annotated posts found the discrete-emotion model won (`references/relatability.md` carries the
+evidence grade for each emotion below). Name one dominant driver per piece:
 
 - Amusement
 - Recognition ("this is exactly my experience")
@@ -68,7 +70,8 @@ Name one dominant driver per piece:
 - Nostalgia
 - Anger / injustice
 - Hope
-- Sadness
+- Sadness — **do not avoid it.** The often-cited finding that sadness suppresses sharing comes
+  from 2008 newspaper email; two larger later studies, one randomized, found the opposite
 
 **Checkable condition — the send test:** who forwards this, to whom specifically, and what does
 sending it say about the sender? "Someone might like this" is not an answer. "A friend who just

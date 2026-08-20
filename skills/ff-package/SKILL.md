@@ -17,6 +17,8 @@ already verified and local:
 - `references/platform-facts.md` — audio and format constraints, including the ones that decide
   whether the post is publishable at all
 - `references/hooks.md` — the architecture, checked against `data/hooks-used.md` for repetition
+- `references/relatability.md` — why a line makes a viewer feel seen, and what earns a send.
+  Its six-item checklist is the last thing to run before handing off
 
 **State which constraint drove each platform's copy.** "Five hashtags because Instagram caps
 there" is a checkable claim; "here are some hashtags" is not. Anything asserted about platform
@@ -105,7 +107,7 @@ and one searchable phrase appears in spoken or on-screen text.
 then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
 
 - Reads: `data/voice.md`, `data/ideas.md`, `references/hooks.md`, `references/platform-facts.md`,
-  `references/ranking-signals.md`
+  `references/ranking-signals.md`, `references/relatability.md`
 - Writes: appends the hook architecture used to `data/hooks-used.md`
 
 **Cold start:** with no `data/voice.md`, draft anyway using whatever the creator has said in this
