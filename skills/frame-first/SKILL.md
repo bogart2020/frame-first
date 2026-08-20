@@ -52,9 +52,17 @@ files or the conversation in context mode. Every workflow depends on them.
 `ff-init` — that friction is why the old interview went unused. Work with what is there, and let
 the profile fill itself in from feedback.
 
-**Read the conversation as profile data too.** Anything the creator has already said in this
-session about how they write, what they are making, or what they dislike outranks a stale file.
-The file is the memory across sessions; the conversation is the current truth.
+**There are three sources, and they rank by recency.** When they disagree, later wins:
+
+1. **The conversation.** Anything the creator has said this session about how they write, what
+   they are making, or what they dislike. Current truth.
+2. **Memory**, where the harness keeps it. It picks up corrections as they happen, so it is newer
+   than the file by construction.
+3. **`profile/voice.md` and `profile/positioning.md`.** The durable copy, and the only one that
+   travels between Claude Code and the apps.
+
+Do not reconcile them out loud or ask the creator which is right — apply the order and move on.
+Refreshing the file from accumulated updates raises the floor; it is not a merge ceremony.
 
 **Cold start** — no captions, no analytics, no history. Normal, and not a blocker. Do not
 fabricate profile content to fill the gap.
@@ -83,6 +91,10 @@ real work. Capture it:
   voice.md`, containing exactly the lines to append. The creator pastes it into their Project
   file. Emit it only when there is something real to record; an empty block every turn is noise.
 
+Where the harness keeps its own memory, let it record the correction as well. Memory makes the
+capture automatic; the file makes it portable. Both, not either — and the paste block is still
+emitted, because memory does not travel to Claude Code.
+
 Rules that keep this from becoming noise:
 
 - **Record the specific, not the summary.** "Prefers 'ruined' over 'ruin'" is useless; "tightens
@@ -110,6 +122,69 @@ Two workflows can apply in sequence — `ff-ideas` then `ff-package`, or `ff-pac
 
 State which workflow you are running and why in one line, then read that file and follow it
 exactly.
+
+## Grill before generating
+
+`ff-ideas`, `ff-package`, and `ff-shotlist` invent something from a premise, and a premise built on
+a misread costs a post or a shoot. Those three interrogate the input before producing anything.
+`ff-critique`, `ff-strategy`, `ff-trends`, and `ff-init` do not — they judge what exists, report
+what they found, or already ask by nature.
+
+### What has to be present
+
+Each has an input contract. Grill for what is missing from it, and for nothing else.
+
+| Workflow | The input is complete when you know |
+|---|---|
+| `ff-ideas` | what was actually shot or planned, at least one witness detail, the subject, and who it is for |
+| `ff-package` | the subject, at least one witness detail, what the footage shows, and which platforms |
+| `ff-shotlist` | the subject, where the creator can physically be, the light and time available, and whether the moment repeats |
+
+Anything already in the conversation, in `profile/positioning.md`, or in memory **counts as
+present**. Do not ask for what you have been told.
+
+**A complete input gets no questions at all.** Going straight to the work when the creator has
+already done the thinking matters as much as grilling when they have not. A grill that always runs
+is a toll, and a toll gets routed around.
+
+### How to grill
+
+Work it as a frontier. Ask one question, wait for the answer, and let that answer reshape what is
+still open. A question whose answer depends on one you have not heard yet belongs later, not now.
+
+- **One question per message.** Never a numbered list. Where the harness offers a question UI, use
+  it; where it does not, ask in prose — the rule is the same, the delivery differs.
+- **Highest-value gap first** — the one whose answer changes the most about what gets made.
+- **Keep going until you could produce the work and defend every choice in it.** There is no
+  question count. The creator's most interesting detail usually arrives third; stopping at one is
+  how generic drafts happen.
+- **Do not ask what you can find.** Read positioning, memory, and the conversation first. Asking
+  for something already on record reads as not listening, and spends the creator's patience on
+  nothing.
+- **Never ask for a witness detail you would then invent anyway.** If they cannot supply it, it
+  stays a blank.
+
+### The escape hatch
+
+"Just draft it", "I'm in a hurry", or any equivalent ends the grilling immediately. No pushback,
+no second attempt, no asking again later in the same session.
+
+Then, in that same reply, **name the gaps you would have closed** and leave each one as an explicit
+blank in the output rather than filling it. `[the specific thing you noticed in the third song]` is
+the deliverable; an invented third song is fiction under the creator's name.
+
+Do not hold the line here. `ff-critique` holds its verdict when asked to approve, because that gate
+protects the creator from a bad post. This one only shapes an input, and the creator is allowed to
+decide it is good enough.
+
+### Before generating
+
+When the frontier is empty, restate what you are about to make — premise, witness detail, angle,
+platform — in a few lines, and wait for a yes.
+
+**That restatement is the point of the exercise.** The questions gather; the restatement is where a
+misread surfaces, while it still costs one line instead of a finished draft. A "no" reopens the
+frontier rather than starting over.
 
 ## Working without tools
 

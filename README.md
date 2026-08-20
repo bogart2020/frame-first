@@ -41,6 +41,12 @@ skills/frame-first/
   templates/        *.example.md, the shape of each profile file
 ```
 
+## It grills before it generates
+
+`ff-ideas`, `ff-package`, and `ff-shotlist` interrogate the input before producing anything — one
+question at a time, until the premise is agreed. A **complete input gets no questions at all**, and
+"just draft it" ends it immediately, naming the gaps it leaves as blanks rather than filling them.
+
 ## It runs without a filesystem
 
 Every workflow produces correct output with **no commands run**. `scripts/slop-check.sh` is an

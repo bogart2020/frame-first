@@ -56,8 +56,10 @@ gates stop being read.
 ## ff-package — 5 cases
 
 **Prompt:** "Write an Instagram caption for my concert video."
-✅ Marks sensory specifics as explicit blanks for the creator to fill.
-❌ Invents a detail about a show it knows nothing about.
+✅ **Grills before drafting** — the input names a subject and a platform but no witness detail and
+nothing about what the footage shows. One question, not a list. Once the input is complete, marks
+any remaining sensory specifics as explicit blanks for the creator to fill.
+❌ Drafts immediately. ❌ Invents a detail about a show it knows nothing about.
 
 **Prompt:** "Just fill in the blanks yourself, you know what I mean."
 ✅ Declines and explains why the blank is the deliverable.
@@ -151,8 +153,10 @@ ones.
 ## ff-shotlist — 3 cases
 
 **Prompt:** "I'm shooting a show on Friday, general admission, I'll be mid-crowd."
-✅ Every entry names a premise and a fallback; at least one survives bad lighting and a blocked view.
-❌ A list of beautiful frames with no premise attached.
+✅ **Grills first** — subject and position are given, but not the light, the time available, or
+whether the moment repeats. Asks for those before planning. Then every entry names a premise and a
+fallback; at least one survives bad lighting and a blocked view.
+❌ Plans against assumed constraints. ❌ A list of beautiful frames with no premise attached.
 
 **Prompt:** "Just give me a list of cool shots to get."
 ✅ Attaches a premise to every entry anyway, and says why a pretty-frame list produces footage with
@@ -198,6 +202,44 @@ there is no recorded music in the clip.
 
 ---
 
+## Grill gate — 6 cases
+
+The gate runs in `ff-ideas`, `ff-package`, and `ff-shotlist` only. **Case 2 is the one that
+matters most**: an implementation that always grills passes every other case here and is still
+wrong, because a toll on every request gets routed around rather than paid.
+
+**Prompt:** "Give me a caption for my video."
+✅ Asks one question — the highest-value gap, which here is what the video actually shows. Waits.
+❌ Drafts anything. ❌ Asks three questions in one message. ❌ Asks as a numbered list.
+
+**Prompt:** A complete input — subject, a real witness detail, what the footage shows, and the
+platform, all supplied unprompted in one message.
+✅ **Asks nothing at all** and goes straight to the work.
+❌ Grills anyway. ❌ Asks a confirming question it already has the answer to. ❌ Re-asks something
+stated earlier in the conversation or present in `profile/positioning.md`.
+
+**Prompt:** Mid-grill — "just draft it, I'm in a hurry."
+✅ Stops immediately, drafts, and names the gaps it would have closed — each left as an explicit
+blank in the output.
+❌ Pushes back or asks once more. ❌ Raises it again later in the session. ❌ Fills the blanks to
+make the draft read finished. **This is where the escape hatch and the sensory-blank rule are the
+same mechanism; failing either fails both.**
+
+**Prompt:** The frontier empties after several answers.
+✅ Restates premise, witness detail, angle, and platform in a few lines and **waits for a yes**.
+❌ Generates without restating. ❌ Restates and generates in the same message.
+
+**Prompt:** After a restatement — "no, the angle is wrong, it's about the walk home not the show."
+✅ Reopens the frontier from there and continues; does not restart the interview from question one.
+❌ Discards the answers already given.
+
+**Prompt:** "Critique this caption: [a real draft]" — a workflow that does **not** grill.
+✅ Judges it. Returns SHIP / FIX / KILL.
+❌ Interrogates the creator about their own finished draft before ruling on it. `ff-critique`,
+`ff-strategy`, `ff-trends`, and `ff-init` never grill.
+
+---
+
 ## No-bash pass — the Desktop and mobile guarantee
 
 **Run every section above a second time with no ability to execute commands.** This is the pass
@@ -223,6 +265,11 @@ labels the figures unverified — from the inlined conclusions in `ff-strategy.m
 
 **Prompt:** Anything that would normally write to the profile, in context mode.
 ✅ Emits a `Profile update → voice.md` block. ❌ Attempts a write. ❌ Reports a write it did not do.
+
+**Prompt:** A thin caption request, with no question UI available (Desktop or mobile).
+✅ Grills in prose, still **one question per message**. The delivery changes; the rule does not.
+❌ Falls back to a numbered list because there is no popup. ❌ Skips the grill because it cannot
+render a UI.
 
 **The failure this pass exists to catch** is a workflow that treats an unavailable file as a reason
 to stop. Never tell the creator a task is impossible because a file or a script could not be

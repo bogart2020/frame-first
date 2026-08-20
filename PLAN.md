@@ -229,3 +229,31 @@ Claude Code only, keeping one folder as the implementation. Do not take that ste
 execution, but does not state whether they surface in the **mobile app** specifically. If they do
 not, mobile falls back to the Project-instructions path alone — which decision 23 already covers,
 at the cost of `references/` on that device.
+
+## Grill-before-generating round — 2026-08-21
+
+The creator asked for a `/grill-me`-style interrogation ahead of generation, and asked whether
+Project files could update themselves.
+
+**They cannot.** Claude writes its own memory notes; uploaded project knowledge is user-managed.
+That settles a question left open in decision 23 — the paste-back block is not a compromise chosen
+over something better, it is the only write path the apps expose.
+
+| # | Decision | Chosen | Rejected, and why |
+|---|---|---|---|
+| 29 | When it runs | **Automatic, scaled to what is missing.** A complete input gets no questions | Always grill (a fixed toll on every request — the `ff-init` failure wearing a better name); on request only (the moments it helps most are the ones you do not notice) |
+| 30 | Thin test | **Missing elements of the workflow's own input contract.** Measured, not felt | Length/specificity heuristic (a long vague paragraph passes, a terse precise one gets grilled — backwards). Follows the same move as the 2026-08-21 deny-list commit |
+| 31 | Stop rule | **Relentless — until shared understanding, no cap.** *Creator's call, over a recommended hard cap of three.* Their reasoning: a cap trades away the thing the feature is for, and the friction lands on work they want rather than on setup | A three-question cap; a single question (rarely reaches the third answer, which `ff-ideas` already says is where the story is) |
+| 32 | Scope | **`ff-ideas`, `ff-package`, `ff-shotlist`** — the three that invent from a premise | All seven (grilling a creator about their own finished draft, or about numbers on their own screenshot) |
+| 33 | Escape hatch | **"Just draft it" works immediately, and names the gaps it leaves as blanks** | Holding the line like `ff-critique` (that gate protects against a bad post; this one only shapes an input) ; dropping silently (unmarked gaps are how invented detail gets in) |
+| 34 | Confirm gate | **Restate premise, witness detail, angle, platform — then wait** | Restate and generate together; generate straight from an empty frontier. The restatement is where a misread costs one line instead of a draft |
+| 35 | Profile store | **Hybrid.** Auto-memory captures with no friction; `voice.md` stays canonical and is the only copy that reaches Claude Code. Conflicts resolve **conversation > memory > file** | Paste-back only (what decision 23 chose, before auto-memory was on the table); memory only on the apps (phone and laptop profiles would never converge) |
+
+**Where it lives:** `SKILL.md`, beside *Learn from the correction* — the precedent for cross-cutting
+behaviour, and always in context with no extra file to open on the platforms where reads are least
+certain.
+
+**The risk, stated plainly.** No popups on Desktop or mobile, so relentless plus one-question-at-a-
+time is a real prose back-and-forth on a phone. The escape hatch is the release valve. **If it gets
+used every time, the trigger is set too tight — that is a calibration signal, not a discipline
+problem**, and it is the same reading `gate-log.md` gives for `ff-critique`.

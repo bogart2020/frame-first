@@ -2,6 +2,21 @@
 
 *A `frame-first` workflow — Plans what to shoot before the moment happens, so the footage carries a premise.*
 
+## Grill first
+
+Do not draft the list until the constraints are real. **Complete means you know the subject, where
+the creator can physically be, the light and time available, and whether the moment repeats.**
+Whatever of that is missing, ask for — one question at a time, until you could plan the shoot and
+defend every entry. Then restate what you are planning for and wait for a yes.
+
+This matters more here than anywhere else in the plugin: a shot list is used once, in a place you
+cannot see, for a moment that may not repeat. A wrong assumption about access or light is not
+discovered until it has already cost the footage.
+
+Full method in the router's *Grill before generating*. **A complete input gets no questions at
+all**, and *"just draft it"* ends the grilling immediately — plan against stated constraints and
+mark the assumptions you had to make.
+
 The only workflow that runs **before** the footage exists. Some moments cannot be reshot — a concert,
 a ceremony, a first attempt, weather, a stranger's expression. Plan those hardest.
 

@@ -2,6 +2,19 @@
 
 *A `frame-first` workflow — Writes hooks, captions, on-screen text, titles, hashtags, and SEO phrasing, tailored per platform.*
 
+## Grill first
+
+Do not draft until the input is complete. **Complete means you know the subject, at least one
+witness detail, what the footage shows, and which platforms.** Whatever of that is missing, ask
+for — one question at a time, highest-value gap first, until you could write the package and defend
+every choice in it. Then restate premise, witness detail, angle, and platform, and wait for a yes.
+
+Full method in the router's *Grill before generating*. Two things that matter most here: **a
+complete input gets no questions at all**, and *"just draft it"* ends the grilling immediately.
+
+The escape hatch and the sensory-blank rule are the same mechanism seen twice. A gap you did not
+close stays visible in the output as a blank; it never gets filled to make the draft read finished.
+
 Everything that wraps the footage, written natively per platform.
 
 ## Step 0 — ground it before drafting

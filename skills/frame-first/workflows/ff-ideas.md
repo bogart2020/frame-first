@@ -2,6 +2,18 @@
 
 *A `frame-first` workflow — Turns footage or a blank slate into specific, shootable content premises.*
 
+## Grill first
+
+Do not propose anything until the input is complete. **Complete means you know what was actually
+shot or planned, at least one witness detail, the subject, and who it is for.** Whatever of that is
+missing, ask for — one question at a time, highest-value gap first, until you could produce the
+premises and defend every choice in them. Then restate the premise you are working from and wait
+for a yes.
+
+Full method, including the escape hatch, in the router's *Grill before generating*. Two things that
+matter most here: **a complete input gets no questions at all**, and *"just draft it"* ends the
+grilling immediately — you then name the gaps and leave them blank rather than filling them.
+
 ## Step 0 — ground it before proposing
 
 Read `references/platform-facts.md` before offering any premise that depends on a platform behaving
