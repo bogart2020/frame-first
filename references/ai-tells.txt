@@ -1,55 +1,90 @@
 # Universal AI-writing tells. One fixed string per line, matched case-insensitively.
-# These are SOFT signals: presence is a prompt to look, not proof of slop.
+# SOFT signals: presence is a prompt to look, not proof of slop.
 # The creator's own deny-list in data/voice.md is what hard-blocks.
-# Keep entries distinctive. A word common in ordinary speech causes false positives,
-# and a gate with false positives stops being trusted.
+#
+# EVIDENCE BASIS — reviewed 2026-08-21, review again 2027-02 (models retrain; this list drifts).
+#   [M] Measured over-representation in a named corpus study. See research/2026-08-21-ai-slop.md §1.
+#   [D] Named by expert human detectors as a cue (Russell et al., ACL 2025).
+#   [A] Assistant artifact - not a corpus finding, but diagnostic of chat output pasted into a caption.
+#   [U] Unmeasured collocation. Kept on genre grounds. Weakest tier; drop first if FPs appear.
+# Entries measured as NOT elevated were removed on 2026-08-21: breathtaking (0.85x), stunning
+# (0.94x), speechless (0.81x), magic (0.96x), dive/deep (1.27x/1.11x), truly (0.93x). See §2.
+
+# --- [M] measured, highest confidence ---
 delve
+delves
+delving
+underscore
+underscores
+intricate
+meticulous
+commendable
 tapestry
-testament to
-a beacon
-cornerstone
-in the realm of
-navigate the landscape
-ever-evolving
-fast-paced world
-game changer
-game-changer
+showcasing
+showcases
+boasts
+boasting
+realm of
+captivating
+groundbreaking
+transformative
+multifaceted
+seamless
+seamlessly
+notable
+noteworthy
+nuanced
+pivotal
+formidable
+discernible
+heightened
+exceptional
+unparalleled
+invaluable
+uncharted
+adept
+leveraging
+fostering
+garnered
+surpassing
+encompassing
+necessitating
+revolutionize
+advancements
+endeavors
 elevate your
 unlock the
+unlocking
 harness the power
-seamless
-robust
-multifaceted
-holistic
-transformative
-groundbreaking
-cutting-edge
-dive deep
-let's dive
-buckle up
-in conclusion
+harnessing
 ultimately, the
-at the end of the day
-it's not just
-not only that
-that being said
+
+# --- [D] named by expert human detectors ---
+vibrant
+testament to
+crucial
+not only
+but also
+
+# --- [A] assistant artifacts ---
 hope this helps
+let me know if
+i hope this
+let's dive
+here's a
+feel free to
+
+# --- [U] unmeasured collocations, genre-grounds only ---
+in today's fast-paced
+ever-evolving
+navigate the landscape
+it's not just
+in the realm of
+
+# --- engagement bait. NOT an AI tell - a separate failure. See references/slop-patterns.md. ---
 let me know below
 what are your thoughts
 drop a comment
 stay tuned
-level up your
-the secret to
-here's the thing
-truly remarkable
-absolutely stunning
-breathtaking
-mesmerizing
-captivating
-unforgettable experience
-leaves you speechless
-words cannot describe
-pure magic
-chef's kiss
-hits different
-rent free
+tag someone who
+double tap if

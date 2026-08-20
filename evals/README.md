@@ -197,6 +197,19 @@ there is no recorded music in the clip.
 ./scripts/slop-check.sh evals/fixtures/good.md   # expect exit 0
 ```
 
+**The false-positive test matters more than the true-positive one.** Paste the creator's own real
+captions from `data/voice.md` into a file and run it: **expect exit 0 and zero soft hits.** A gate
+that flags authentic writing gets ignored, and an ignored gate is worth less than no gate. Two
+regressions of exactly this kind were found on 2026-08-21 — `hits different` flagged the creator's
+best-performing caption, and their em-dash rule silently never fired at all.
+
+Also confirm a deny-list entry written as a label still fires:
+
+```bash
+printf 'the lights went down — and then it started\n' > /tmp/t.md
+./scripts/slop-check.sh /tmp/t.md   # expect exit 1: "em dash (—)" matched as —
+```
+
 ## Schema validation
 
 ```bash

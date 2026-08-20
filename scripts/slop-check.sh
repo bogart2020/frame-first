@@ -32,7 +32,17 @@ if [[ -f "$VOICE" ]]; then
   if [[ -n "$denylist" ]]; then
     while IFS= read -r phrase; do
       [[ -z "$phrase" ]] && continue
-      if grep -qiF -- "$phrase" "$DRAFT"; then
+      # An entry may label a literal rather than be one: `em dash (—)`, `"chills" / "goosebumps"`.
+      # Match on the parenthetical's contents when present, so the rule actually fires.
+      # Deliberately parameter expansion, not [[ =~ ]] — that captures empty on entries without
+      # parentheses, and `grep -F ""` matches everything, turning the gate into a total blocker.
+      lit="$phrase"
+      case "$phrase" in
+        *\(*\)) inner="${phrase##*\(}"; inner="${inner%\)}"
+                [[ -n "$inner" ]] && lit="$inner" ;;
+      esac
+      [[ -z "$lit" ]] && continue
+      if grep -qiF -- "$lit" "$DRAFT"; then
         echo "HARD  your deny-list: \"$phrase\""; hard=$((hard+1))
       fi
     done <<< "$denylist"
@@ -52,8 +62,30 @@ if [[ -f "$TELLS" ]]; then
 fi
 
 # ---- SOFT: structural patterns ----
-if grep -qiE "it'?s not [a-z' ]{2,40}, it'?s" "$DRAFT"; then
-  echo "SOFT  structure: the \"it's not X, it's Y\" pivot"; soft=$((soft+1))
+# Each was measured against the creator's real captions for false positives before adoption.
+# See research/2026-08-21-ai-slop.md §4. Burstiness, perplexity and hedging density were
+# REJECTED: this creator's lowercase register omits terminal punctuation, so sentence
+# segmentation fails before the statistic is even computed.
+
+# Antithesis pivot, extended — the old regex missed "wasn't just X. It was Y".
+if grep -qiE "(it|this|that) ?(is|was|'s)? ?(not|n'?t) (just |only |merely |about )?[a-z' ]{2,40}[.,] +(it'?s|it was|that'?s|it is)" "$DRAFT" \
+   || grep -qiE "not (only|merely|just) [a-z' ]{2,40}(,| ) ?but( also)? " "$DRAFT"; then
+  echo "SOFT  structure: antithesis pivot (\"not X, it's Y\" / \"not only X but also Y\")"; soft=$((soft+1))
+fi
+# Tricolon closing a sentence.
+if grep -qE '[A-Za-z]{3,}, +[A-Za-z]{3,}, +[A-Za-z]{3,}[.!?]' "$DRAFT"; then
+  echo "SOFT  structure: three-item run closing a sentence (tricolon)"; soft=$((soft+1))
+fi
+# Sentence-initial discourse markers, count-based.
+markers=$(grep -oiE '(^|[.!?][[:space:]]+)(moreover|furthermore|additionally|however|ultimately|overall|in conclusion|in essence|notably|importantly|that said)' "$DRAFT" | wc -l | tr -d ' ')
+if (( markers >= 2 )); then
+  echo "SOFT  structure: $markers sentence-initial discourse markers"; soft=$((soft+1))
+fi
+# Anaphora — repeated sentence openers.
+anaph=$(awk '{n=split(tolower($0),s,/[.!?]+ */); for(i=1;i<=n;i++){split(s[i],w," "); if(w[1]!="")c[w[1]]++}}
+ END{max=0; for(k in c) if(c[k]>max) max=c[k]; print max+0}' "$DRAFT")
+if (( anaph >= 3 )); then
+  echo "SOFT  structure: $anaph sentences opening with the same word"; soft=$((soft+1))
 fi
 dashes=$(grep -o '—' "$DRAFT" | wc -l | tr -d ' ')
 if (( dashes > 3 )); then

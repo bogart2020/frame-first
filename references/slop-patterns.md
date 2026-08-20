@@ -4,6 +4,15 @@ The primary test, before any checklist: **could someone who was not there have w
 If yes, it is generic regardless of how polished it reads. Everything below is a way of applying
 that one test.
 
+## Contents
+
+- [Generic vs. specific pairs](#generic-vs-specific-pairs)
+- [Tells of AI prose — what is measured, and what is taste](#tells-of-ai-prose--what-is-measured-and-what-is-taste)
+- [Overused hook shapes to refuse](#overused-hook-shapes-to-refuse)
+- [Trend misuse](#trend-misuse)
+- [Fake engagement bait](#fake-engagement-bait)
+- [Polish serves the idea, not the person](#polish-serves-the-idea-not-the-person)
+
 ## Generic vs. specific pairs
 
 The left column could sit under any creator's footage. The right column could only sit under
@@ -28,6 +37,67 @@ storyteller controls over absorption. It is **not** established that a vivid det
 argue that witness detail is **believed**, and that its absence marks the writer as someone who was
 not there. Do not argue that it moves people. See `references/relatability.md`.
 
+## Tells of AI prose — what is measured, and what is taste
+
+Two different problems, and this file keeps them apart. **Detectability** is what a machine scores.
+**The feeling** — a reader thinking "a bot wrote this" — is the only one that matters here.
+
+### Measured over-representation
+
+From a study of >15M PubMed abstracts comparing pre- and post-2022 word frequency
+(`research/2026-08-21-ai-slop.md` §1). These are elevated in LLM output as a matter of counted fact:
+
+`delve` (47.8×), `underscores` (13.8×), `showcasing` (13.8×), `intricate` (7.4×), `captivating`
+(5.09×) — plus `meticulous`, `commendable`, `tapestry`, `realm of`, `boasts`, `garnered`.
+
+`scripts/slop-check.sh` greps these from `references/ai-tells.txt`, which is graded by evidence
+tier and dated. Re-review it when models retrain; the list drifts.
+
+### Measured as NOT elevated — do not flag these
+
+`breathtaking` (0.85×, *declining*), `absolutely stunning` (0.94×), `speechless` (0.81×),
+`pure magic` (0.96×), `dive deep` (1.1–1.3×), `truly` (0.93×). These read as AI to people who have
+read listicles about AI writing; the counts say otherwise. Flagging them costs trust in the gate
+and catches nothing.
+
+**The em-dash claim is real** — measured, not folklore — but frequency is the signal, not presence.
+One em-dash is punctuation; four in a short caption is a pattern.
+
+### Structural shapes
+
+- **Antithesis pivot** — "it's not X, it's Y", "not only X but also Y". Checked mechanically.
+- **Tricolon** — three items closing a sentence. "Bold, cinematic, unforgettable."
+- **Sentence-initial discourse markers** — *Moreover, Furthermore, Additionally, Ultimately.* Two
+  or more in a short caption is the tell.
+- **Anaphora** — three or more sentences opening with the same word.
+- **Conclusions that restate the opening** — if the last line could replace the first with no loss,
+  nothing was said in between.
+
+**Not implementable, and deliberately not attempted:** burstiness, perplexity, and hedging density.
+A lowercase register that omits terminal punctuation breaks sentence segmentation before any
+statistic can be computed. A check that cannot run on the creator's real writing is not a check.
+
+### What human readers actually notice
+
+- **Ordinary readers detect AI text at chance** (PNAS 2023, 6 experiments, N≈4,600), and the cues
+  they *report* using — first-person pronouns, contractions, personal references — are exactly the
+  ones AI text can imitate.
+- **Frequent LLM users detect it near-perfectly** (ACL 2025; majority vote misread 1 of 300).
+  **Vocabulary is 53.1% of what they cite** — which is why the word list is worth maintaining
+  rather than abandoning.
+- Two of their cues matter most here: models default to a **hopeful, positive tone**, and they
+  **avoid darker material**. For a creator whose strongest work is in a melancholy register, the
+  darkness *is* the human signal. A polish pass that softens it does the exact damage this gate
+  exists to prevent.
+
+### Do not write for the detector
+
+Commercial detectors misclassify **over 50% of non-native-English essays as AI-written** (*Patterns*
+2023, 7 detectors), because they penalise constrained lexical variety. Optimising a caption to
+survive a detector pushes a second-language writer toward standardised, native-sounding prose —
+away from their own voice, which is the thing worth protecting. **This plugin never treats detector
+output as a target.**
+
 ## Overused hook shapes to refuse
 
 - **"You won't believe..."** — promises a reveal without naming what kind. Replace with the actual
@@ -40,22 +110,7 @@ not there. Do not argue that it moves people. See `references/relatability.md`.
 These aren't banned outright — a numbered list with five genuinely specific, hard-won items is
 fine. The failure is using the shape to imply substance that isn't in the sentences under it.
 
-## Tells of AI prose
 
-- **Even sentence lengths.** Human writing varies rhythm; a run of same-length sentences reads
-  machine-generated even when every individual sentence is fine.
-- **Tidy tricolons.** "Bold, beautiful, unforgettable." Three adjectives in ascending intensity is
-  a pattern a model reaches for by default, not a pattern anyone talks in.
-- **Hedged universal statements.** "Many photographers find that..." — attributes an opinion to an
-  undefined crowd to avoid owning it.
-- **Conclusions that restate the opening.** If the last line could replace the first line with no
-  loss, nothing was actually said in between.
-- **An absence of anything that could only be known by being there.** The structural version of
-  the primary test — check the whole draft for at least one detail that requires presence.
-
-`scripts/slop-check.sh` catches a fixed list of these mechanically (see
-`references/ai-tells.txt`). It is a floor, not a ceiling — a draft with zero flagged phrases can
-still fail every check above.
 
 ## Trend misuse
 
