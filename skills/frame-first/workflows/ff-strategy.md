@@ -84,16 +84,17 @@ professional account, shown to non-followers only, ranked independently, insight
 secondary sources, flag the ones marked unverified, and point the creator at their own dashboard
 before any of it drives a decision.
 
-**If that file is unavailable, these are the conclusions it drives** — state them, and say they are
-uncited and dated 2026-08-20:
+**If that file is unavailable, these are the conclusions it drives.** State them as conclusions,
+say they are uncited, and point at `references/platform-facts.md` for the source and the date —
+that file owns both, and repeating them here is how the two drift apart:
 
-- **TikTok Creator Rewards is not available in the Philippines.** PH paths are LIVE gifts and
-  TikTok Shop affiliate.
+- **Do not tell the creator TikTok Creator Rewards is open to them.** It is not available in the
+  Philippines. Their TikTok paths are LIVE gifts and TikTok Shop affiliate.
 - **Instagram Gifts and Subscriptions are not available in PH** either.
-- **Facebook Content Monetization is available in PH.** But **in-stream ads for Live ended
-  2026-06-15** — any plan routing LIVE to Facebook for ad revenue is dead.
-- **No per-view rate is confirmed by any platform.** The commonly quoted Facebook figure has no
-  primary source. Do not give the creator a number to plan against.
+- **Facebook Content Monetization is available in PH**, but **in-stream ads for Live have ended** —
+  any plan routing LIVE to Facebook for ad revenue is dead.
+- **Never give the creator a per-view rate to plan against.** No platform confirms one, and the
+  commonly quoted Facebook figure has no primary source.
 - **YouTube RPM follows the viewer's location, not the creator's** — a global-English audience is
   the single biggest lever on it.
 
