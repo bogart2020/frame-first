@@ -7,6 +7,26 @@ description: Writes hooks, captions, on-screen text, titles, hashtags, and SEO p
 
 Everything that wraps the footage, written natively per platform.
 
+## Step 0 — ground it before drafting
+
+**Read the references before writing a word.** Not optional, and not a web search — the facts are
+already verified and local:
+
+- `references/ranking-signals.md` — what the target platform documents that it rewards, the
+  hashtag caps, and where searchable phrasing actually earns
+- `references/platform-facts.md` — audio and format constraints, including the ones that decide
+  whether the post is publishable at all
+- `references/hooks.md` — the architecture, checked against `data/hooks-used.md` for repetition
+
+**State which constraint drove each platform's copy.** "Five hashtags because Instagram caps
+there" is a checkable claim; "here are some hashtags" is not. Anything asserted about platform
+behaviour must trace to one of those files — if it does not, say it is a judgment call.
+
+**Live research is not part of this.** Ranking mechanisms change on the order of months and are
+already captured. What is genuinely unretrievable — current trending audio, competitor stats — is
+listed as unretrievable in `references/platform-facts.md` and does not become available by trying
+harder.
+
 ## Output contract
 
 **Captions and scripts — brief with gaps.** Draft the structure, the hook options, and the beats.

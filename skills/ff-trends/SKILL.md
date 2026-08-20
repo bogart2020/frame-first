@@ -38,7 +38,9 @@ it is about five minutes — then do the pattern extraction, which is the part t
 - Set **Region to the target market, not the Philippines** — US and UK for a global-English
   audience. This is the single most important setting for reach outside PH, and it is the one
   most often left on the home country.
-- Top Ads / Trending Hashtags: paste the top 5–10 relevant to the niche.
+- Trending Hashtags: paste the top 5–10 relevant to the niche.
+- Top Ads is **paid creative**, not organic reach. Read it for format only — pacing, hook timing,
+  where text sits — never as evidence that something earns organic distribution.
 - Trending Sounds: paste the top 5, but weight them low — see Weighting.
 
 **TikTok search, in-app**
