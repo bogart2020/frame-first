@@ -59,6 +59,28 @@ if the premise itself is the problem. Diagnosing is this skill's job; writing th
 caption word mattered, or why one post beat another when both sit inside normal variance. TikTok
 says it plainly — "Fluctuations are normal!" Say so rather than constructing a story.
 
+## Instagram reach is near zero — run this first
+
+Before diagnosing anything from metrics, rule out the binary causes. All free, ~2 minutes, and they
+override every other reading. Sources in `references/ranking-signals.md`.
+
+1. **Is the account eligible to be recommended?** Professional accounts only:
+   Settings → Account Status → **Recommendations Guidelines**. It shows a sample of the offending
+   content and an appeal button. Instagram: "If your account is not eligible to be recommended,
+   **none of your content will be recommended**… your content can still show up for your followers."
+   With no ad spend this is the whole reach mechanism — check it before touching a caption.
+   A **personal** account cannot see this panel at all; switching to professional is step zero.
+2. **Is the reel muted, bordered, or majority text?** All three are named on the demotion list in
+   one sentence. Visible in five seconds: is there an audio pill, are there black bars, does text
+   cover more than roughly a third of the frame?
+3. **Watermark?** A TikTok-export workflow carries one. Named on the same list.
+4. **Resolution.** Minimum 720px / 30 FPS, and the in-app toggle Menu → Your app and media →
+   **Media quality → Upload at highest quality** is off by default.
+5. **Already posted?** Duplicate reels are made less visible.
+
+**Trial reels** are the cheapest non-follower reach test available: 200 followers for a
+professional account, shown to non-followers only, ranked independently, insights in 24 hours.
+
 ## Monetization
 
 `references/platform-facts.md` holds the current picture. Report those figures as coming from

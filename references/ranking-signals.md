@@ -27,7 +27,9 @@ a repost will be demoted. Do not use it to predict a specific video's performanc
 |---|---|
 | Top predictions | "how likely you are to **reshare** a reel, **watch a reel all the way through**, like it, and go to the audio page" — in that order |
 | Signal order | Your activity → history with the poster → information about the reel (audio, visuals, popularity) → information about the poster |
-| Made **less** visible | Reels "that have already been posted on Instagram"; reels with **watermarks** or **low resolution** |
+| Made **less** visible | Verbatim: "low-resolution or watermarked reels, reels that are **muted** or contain **borders**, reels that are **majority text**, or reels that have already been posted on Instagram" |
+| Minimum spec | **720 pixels, 30 FPS.** In-app: Menu → Your app and media → Media quality → **Upload at highest quality** |
+| Popularity | Instagram names "popularity signals such as **number of followers**" for Reels |
 
 Source: [Instagram Ranking Explained](https://about.instagram.com/blog/announcements/instagram-ranking-explained)
 
@@ -136,4 +138,6 @@ named as demoted.
   `references/platform-facts.md`.
 - **No weights are published.** Order of listing is the only ranking information given; treat it
   as ordinal, never as a formula.
-- **Follower count is not a named distribution signal on any of these pages.**
+- **Follower count IS named for Instagram Reels** ("popularity signals such as number of
+  followers"), correcting an earlier claim in this file that it was named nowhere. TikTok and
+  YouTube do not name it.

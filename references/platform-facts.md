@@ -21,7 +21,7 @@ library audio is a choice rather than a requirement.
 | Platform | What happens to a clip carrying live copyrighted music | Verdict |
 |---|---|---|
 | TikTok | Removal is documented **on rightsholder report**. Automatic muting is widely reported but TikTok documents no auto-detection behaviour | **Unverified** — do not tell the creator muting is near-certain |
-| Instagram | May **block, mute, remove, or limit**. Higher music density makes limitation more likely; recorded audio must not be the primary purpose | **Confirmed** ([Meta Music Guidelines](https://www.facebook.com/legal/music_guidelines)). The specific "reach to followers only" mechanism is **not** stated by Meta |
+| Instagram | May **block, mute, remove, or limit**. Meta defines "limited" by example — "blocked, muted or ineligible for Music Revenue Share" — so it is **not** reduced distribution. A copyright-muted reel can still be viewed | **Confirmed** ([Meta Music Guidelines](https://www.facebook.com/legal/music_guidelines)). Filming live performance is **explicitly permitted**: "traditional live music performances (e.g., filming an artist or band performing live) are permitted" |
 | YouTube | Content ID **claim**, which is not a strike. What happens next depends on length — see the carve-out below | **Confirmed** ([Content ID claims](https://support.google.com/youtube/answer/6013276)) |
 | Facebook | Same Meta Music Guidelines as Instagram — block/mute/remove, live video included, plus ineligibility for Music Revenue Share | **Confirmed** policy; the revenue **split** is undocumented |
 
@@ -42,9 +42,14 @@ Short.
 **only** as a horizontal upload or one over three minutes — not as a Short. A vertical 1–3 minute
 clip carrying claimed music is the one combination that gets blocked outright.
 
-**Muting is not a free escape.** Instagram lists muted reels among the content it makes less
-visible (`references/ranking-signals.md`), so stripping the audio trades a copyright problem for a
-distribution problem. Library audio is the route that avoids both.
+**Muting is the worst of the options, and the two mechanisms stack.** Meta's copyright "limit"
+does not itself reduce distribution — but Instagram's ranking page names **muted** reels as made
+less visible regardless of *why* they are silent. So a clip muted to dodge a claim takes a demotion
+it did not have to take.
+
+Library audio avoids both, and earns something extra: detected licensed audio adds the reel to that
+song's **audio page**, and "go to the audio page" is one of Instagram's four named top Reels
+predictions (`references/ranking-signals.md`). Muting forfeits that entirely.
 
 Fair use does not cover concert footage; courts decide case by case.
 
