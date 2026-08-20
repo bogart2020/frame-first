@@ -1,13 +1,10 @@
----
-name: ff-init
-description: Optional quick seed for the creator's voice profile, or a reset when the voice has drifted. Use when the creator wants to set up frame-first deliberately, asks to reset their profile, or says their content no longer sounds like them.
----
-
 # ff-init
 
-**Optional, and short.** Two or three questions, not an interview. Every skill works without this
+*A `frame-first` workflow — Optional quick seed for the creator's voice profile, or a reset when the voice has drifted.*
+
+**Optional, and short.** Two or three questions, not an interview. Every workflow works without this
 — the profile fills itself in from feedback as the creator works (see the router's *Learn from the
-correction*). This skill exists for two cases only:
+correction*). It exists for two cases only:
 
 1. The creator wants to seed something deliberately rather than wait for it to accumulate.
 2. The voice has drifted and they want to reset it.
@@ -29,20 +26,21 @@ arrive here arrives later through feedback, which is cheaper and more accurate a
 
 Skip any question the creator has already answered in conversation. Write what you have.
 
-✅ **Done when** `data/voice.md` and `data/positioning.md` exist with whatever was actually
+✅ **Done when** `profile/voice.md` and `profile/positioning.md` exist with whatever was actually
 supplied. Thin is expected and fine — the file is a starting point, not a specification.
 
 ## Writes
 
-**Paths:** everything below is relative to the plugin root, not the open project. Resolve first:
-`FF="${CLAUDE_PLUGIN_ROOT:-$(dirname "$(dirname "$(readlink "$HOME/.claude/skills/ff-init")")")}"; eval "$("$FF/scripts/ff-paths.sh")"`
-then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
+**Paths:** `references/`, `scripts/`, and `templates/` are siblings of `SKILL.md` in this skill
+folder — read them by relative path. `profile/…` means the creator's own files, which live in the
+profile directory in local mode and arrive as Project files or in the conversation in context mode.
+Check the router's Step 0 before writing to any of them.
 
-- `data/voice.md` — rhythm, deny-list, any real captions, and the `## Learned from feedback`
+- `profile/voice.md` — rhythm, deny-list, any real captions, and the `## Learned from feedback`
   section that later sessions append to
-- `data/positioning.md` — what they make and for whom
+- `profile/positioning.md` — what they make and for whom
 
-Use `data/voice.example.md` and `data/positioning.example.md` for structure. Keep the deny-list
+Use `templates/voice.example.md` and `templates/positioning.example.md` for structure. Keep the deny-list
 heading exactly as written — `scripts/slop-check.sh` parses it.
 
 **Re-running this replaces the seeded sections and leaves `## Learned from feedback` intact.**
@@ -55,8 +53,8 @@ Seeds or resets the profile. Does not generate ideas, write captions, or researc
 ## Gotchas
 
 - **A section with invented content is worse than an empty one.** An imagined voice trait gets
-  enforced by every later skill. Leave it blank and say what is missing.
-- **Do not push for volume.** The old version of this skill demanded ten captions and held the
+  enforced by every later workflow. Leave it blank and say what is missing.
+- **Do not push for volume.** The old version of this demanded ten captions and held the
   line on it. That friction is why it went unused. Take what is offered.
 - **Their stated voice and their actual voice differ.** When the pasted captions contradict the
   self-description, record both and note the gap.

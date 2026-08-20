@@ -1,4 +1,4 @@
-# Hooks used (example - real file is data/hooks-used.md, gitignored)
+# Hooks used (example - the real file is hooks-used.md in the creator's profile)
 
 Prevents reusing the same shape. ff-package appends here; ff-ideas and ff-critique read it.
 

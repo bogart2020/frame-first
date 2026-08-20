@@ -1,7 +1,7 @@
 ---
-description: Set up frame-first: interview me and build my voice profile
+description: Seed or reset my frame-first voice profile
 ---
 
-Invoke the `ff-init` skill and follow it exactly.
+Invoke the `frame-first` skill, then run its `workflows/ff-init.md` workflow and follow it exactly.
 
 Arguments (optional): $ARGUMENTS

@@ -1,7 +1,7 @@
 # Hook architectures
 
 Each architecture below is a shape, not a script. Use one per piece — mixing two in a 15-second
-open dilutes both. Check `data/hooks-used.md` before choosing; repeating the same shape four posts
+open dilutes both. Check `profile/hooks-used.md` before choosing; repeating the same shape four posts
 running trains the audience to scroll before the hook lands.
 
 ## Tension between two truths

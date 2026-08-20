@@ -1,4 +1,4 @@
-# Positioning (example - real file is data/positioning.md, gitignored)
+# Positioning (example - the real file is positioning.md in the creator's profile)
 
 ## Creative identity (one sentence, stays true across subjects)
 The person who gets cinematic footage where everyone else gets shaky phone video.

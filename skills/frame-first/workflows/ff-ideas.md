@@ -1,16 +1,17 @@
----
-name: ff-ideas
-description: Turns footage or a blank slate into specific, shootable content premises. Use when the creator has footage and no angle, needs post ideas, is stuck on what to make next, or wants angles on a planned shoot.
----
-
 # ff-ideas
+
+*A `frame-first` workflow — Turns footage or a blank slate into specific, shootable content premises.*
 
 ## Step 0 — ground it before proposing
 
 Read `references/platform-facts.md` before offering any premise that depends on a platform behaving
-a certain way. A premise that cannot be published as described is worse than none — any idea
-built around copyrighted music runs straight into the YouTube Shorts carve-out and Instagram's
-demotion list.
+a certain way. A premise that cannot be published as described is worse than none.
+
+**If that file is unavailable, the two conclusions that kill premises are these:** a vertical clip
+of one to three minutes carrying claimed music is a YouTube Short and gets blocked outright, so no
+premise may promise real recorded music on a Short; and Instagram makes muted, watermarked,
+bordered, low-resolution, majority-text, and already-posted reels less visible, so no premise may
+depend on any of those. Say the claim is uncited.
 
 Any claim about what a platform rewards traces to `references/ranking-signals.md`, or it is
 labelled a judgment call. No live research: what is unretrievable is listed as unretrievable there.
@@ -30,7 +31,9 @@ An idea missing any of these goes back for another pass:
 - **Premise** — one sentence: what is this about
 - **Tension** — the unresolved thing that holds attention (see `references/hooks.md`)
 - **Teachable core** — what the viewer learns. Craft is the product; the footage is the proof
-- **Emotional payload** — one dominant driver, named (see `references/arrrsr.md`)
+- **Emotional payload** — one dominant driver, named (see `references/arrrsr.md`, which walks the
+  six stages: Attention → Relevance → Retention → Reward → Sharing → Relationship, each a gate
+  rather than a score to average)
 - **Send test** — who forwards this to one specific person, and why
 - **Searchable phrase** — words someone would actually type
 
@@ -43,13 +46,14 @@ Five specific premises beat twenty generic ones. Generate fewer and interrogate 
 
 ## Reads / Writes
 
-**Paths:** everything below is relative to the plugin root, not the open project. Resolve first:
-`FF="${CLAUDE_PLUGIN_ROOT:-$(dirname "$(dirname "$(readlink "$HOME/.claude/skills/ff-init")")")}"; eval "$("$FF/scripts/ff-paths.sh")"`
-then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
+**Paths:** `references/`, `scripts/`, and `templates/` are siblings of `SKILL.md` in this skill
+folder — read them by relative path. `profile/…` means the creator's own files, which live in the
+profile directory in local mode and arrive as Project files or in the conversation in context mode.
+Check the router's Step 0 before writing to any of them.
 
-- Reads: `data/voice.md`, `data/positioning.md`, `data/hooks-used.md`, `data/performance.md`,
+- Reads: `profile/voice.md`, `profile/positioning.md`, `profile/hooks-used.md`, `profile/performance.md`,
   `references/platform-facts.md`
-- Writes: appends to `data/ideas.md` with status `unshot`
+- Writes: appends to `profile/ideas.md` with status `unshot`
 
 **Cold start:** with no performance history, generate from positioning alone and say the
 suggestions are unvalidated by real audience response.
@@ -67,5 +71,5 @@ approve its own output (`ff-critique`).
   headline, the second is context, the third is the actual story. Keep asking.
 - **Ideas drift toward the creator as subject.** The strongest premises let the viewer learn or
   recognize themselves. Check every idea for who it is really about.
-- **Check `data/hooks-used.md` before proposing.** Four posts opening the same way trains the
+- **Check `profile/hooks-used.md` before proposing.** Four posts opening the same way trains the
   audience to scroll.

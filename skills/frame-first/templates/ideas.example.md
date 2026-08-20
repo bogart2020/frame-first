@@ -1,4 +1,4 @@
-# Idea bank (example - real file is data/ideas.md, gitignored)
+# Idea bank (example - the real file is ideas.md in the creator's profile)
 
 ## Unshot
 

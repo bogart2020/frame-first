@@ -1,4 +1,4 @@
-# Voice profile (example - real file is data/voice.md, gitignored)
+# Voice profile (example - the real file is voice.md in the creator's profile)
 
 ## How I actually write
 Short sentences. I start with the thing, not the setup.

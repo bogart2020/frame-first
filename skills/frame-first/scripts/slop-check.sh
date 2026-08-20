@@ -3,25 +3,25 @@
 #
 #   ./scripts/slop-check.sh <draft-file>
 #
-# HARD hits  = phrases from the creator's own deny-list in data/voice.md. The creator chose
+# HARD hits  = phrases from the creator's own deny-list in the profile voice.md. The creator chose
 #              these, so a hit is decisive.
-# SOFT hits  = universal AI tells from references/ai-tells.txt, plus structural patterns.
-#              One soft hit is a prompt to look. Two or more warrants a FIX.
+# SOFT hits  = universal AI tells from the skill's references/ai-tells.txt, plus structural
+#              patterns. One soft hit is a prompt to look. Two or more warrants a FIX.
 #
 # Exit: 0 clean | 1 hard hit | 2 two or more soft hits
 # This stage catches obvious surface patterns only. Semantic slop passes it cleanly,
 # which is why ff-critique always runs its judgment pass afterward.
 set -uo pipefail
 
-REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+SKILL="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 DRAFT="${1:-}"
 
 if [[ -z "$DRAFT" || ! -f "$DRAFT" ]]; then
   echo "usage: slop-check.sh <draft-file>" >&2; exit 64
 fi
 
-VOICE="${FRAME_FIRST_DATA:-$REPO/data}/voice.md"
-TELLS="$REPO/references/ai-tells.txt"
+VOICE="${FRAME_FIRST_DATA:-$HOME/.frame-first}/voice.md"
+TELLS="$SKILL/references/ai-tells.txt"
 hard=0; soft=0
 
 echo "== slop-check: $(basename "$DRAFT") =="
@@ -48,7 +48,7 @@ if [[ -f "$VOICE" ]]; then
     done <<< "$denylist"
   fi
 else
-  echo "note  data/voice.md absent - deny-list not checked. Run ff-init."
+  echo "note  voice.md not found at $VOICE - deny-list not checked."
 fi
 
 # ---- SOFT: universal tells ----

@@ -1,11 +1,8 @@
----
-name: ff-strategy
-description: Reads Insights screenshots to diagnose what to change, logs performance, and plans platform and monetization decisions. Use when sharing post metrics or analytics, reviewing results, planning a cycle, or working out how the content earns.
----
-
 # ff-strategy
 
-The loop that makes every other skill improve: record what happened, read it back, decide next.
+*A `frame-first` workflow — Reads Insights screenshots to diagnose what to change, logs performance, plans platform and monetization decisions.*
+
+The loop that makes every other workflow improve: record what happened, read it back, decide next.
 
 ## Performance logging
 
@@ -20,7 +17,7 @@ Watch time, Viewers, Average watch time, Follows — and no watch-through percen
 retention rate and watch time. Logging "watch-through" for an Instagram post means inventing a
 number the creator cannot see.
 
-Write to `data/performance.md` with the post, its hook architecture, and one line on what it
+Write to `profile/performance.md` with the post, its hook architecture, and one line on what it
 suggests. `ff-ideas` and `ff-critique` read this back.
 
 ✅ **Done when** the entry names the hook architecture used and one specific inference, rather
@@ -53,7 +50,7 @@ reach. Ask for what the screen actually shows.
 watch time is weighted more heavily than engagement. Do not apply one global ordering to both.
 
 **Then hand off.** Name the controllable and route to `ff-package` for the rewrite, or `ff-ideas`
-if the premise itself is the problem. Diagnosing is this skill's job; writing the replacement is not.
+if the premise itself is the problem. Diagnosing is this workflow's job; writing the replacement is not.
 
 **What a screenshot cannot tell you:** where views came from geographically, whether a specific
 caption word mattered, or why one post beat another when both sit inside normal variance. TikTok
@@ -87,20 +84,34 @@ professional account, shown to non-followers only, ranked independently, insight
 secondary sources, flag the ones marked unverified, and point the creator at their own dashboard
 before any of it drives a decision.
 
+**If that file is unavailable, these are the conclusions it drives** — state them, and say they are
+uncited and dated 2026-08-20:
+
+- **TikTok Creator Rewards is not available in the Philippines.** PH paths are LIVE gifts and
+  TikTok Shop affiliate.
+- **Instagram Gifts and Subscriptions are not available in PH** either.
+- **Facebook Content Monetization is available in PH.** But **in-stream ads for Live ended
+  2026-06-15** — any plan routing LIVE to Facebook for ad revenue is dead.
+- **No per-view rate is confirmed by any platform.** The commonly quoted Facebook figure has no
+  primary source. Do not give the creator a number to plan against.
+- **YouTube RPM follows the viewer's location, not the creator's** — a global-English audience is
+  the single biggest lever on it.
+
 The strategy those facts produce: the footage is audience acquisition, not the product. Revenue
 comes from affiliate gear, LUTs and presets, client work, and brand deals. Platform ad revenue is
-a bonus. The specific revenue lines depend on the subject — read `data/positioning.md` rather than
+a bonus. The specific revenue lines depend on the subject — read `profile/positioning.md` rather than
 assuming event videography.
 
 ## Reads / Writes
 
-**Paths:** everything below is relative to the plugin root, not the open project. Resolve first:
-`FF="${CLAUDE_PLUGIN_ROOT:-$(dirname "$(dirname "$(readlink "$HOME/.claude/skills/ff-init")")")}"; eval "$("$FF/scripts/ff-paths.sh")"`
-then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
+**Paths:** `references/`, `scripts/`, and `templates/` are siblings of `SKILL.md` in this skill
+folder — read them by relative path. `profile/…` means the creator's own files, which live in the
+profile directory in local mode and arrive as Project files or in the conversation in context mode.
+Check the router's Step 0 before writing to any of them.
 
-- Reads: `data/performance.md`, `data/positioning.md`, `data/gate-log.md`,
+- Reads: `profile/performance.md`, `profile/positioning.md`, `profile/gate-log.md`,
   `references/platform-facts.md`, `references/ranking-signals.md`
-- Writes: `data/performance.md`
+- Writes: `profile/performance.md`
 
 **Cold start:** with fewer than roughly ten logged posts, treat every pattern as provisional and
 say so. Three posts is noise.
@@ -116,6 +127,6 @@ Decides where and whether to post, and how the work earns. Does not make content
   thirty weak ones; no platform mandates a frequency.
 - **Monetization figures age fast and were secondary-sourced.** Say "unverified" rather than
   guessing, every time.
-- **Read `data/gate-log.md` during reviews.** Repeated overrides on one rule mean `ff-critique`
+- **Read `profile/gate-log.md` during reviews.** Repeated overrides on one rule mean `ff-critique`
   is miscalibrated, not that the creator is undisciplined.
 - **A viral post can be a bad post.** It can attract an audience that never returns.

@@ -1,9 +1,6 @@
----
-name: ff-package
-description: Writes hooks, captions, on-screen text, titles, hashtags, and SEO phrasing tailored per platform. Use when footage is ready and the post needs words, or when adapting one piece of content across Instagram, TikTok, YouTube, and Facebook.
----
-
 # ff-package
+
+*A `frame-first` workflow — Writes hooks, captions, on-screen text, titles, hashtags, and SEO phrasing, tailored per platform.*
 
 Everything that wraps the footage, written natively per platform.
 
@@ -16,7 +13,7 @@ already verified and local:
   hashtag caps, and where searchable phrasing actually earns
 - `references/platform-facts.md` — audio and format constraints, including the ones that decide
   whether the post is publishable at all
-- `references/hooks.md` — the architecture, checked against `data/hooks-used.md` for repetition
+- `references/hooks.md` — the architecture, checked against `profile/hooks-used.md` for repetition
 - `references/relatability.md` — why a line makes a viewer feel seen, and what earns a send.
   Its six-item checklist is the last thing to run before handing off
 
@@ -102,15 +99,16 @@ and one searchable phrase appears in spoken or on-screen text.
 
 ## Reads / Writes
 
-**Paths:** everything below is relative to the plugin root, not the open project. Resolve first:
-`FF="${CLAUDE_PLUGIN_ROOT:-$(dirname "$(dirname "$(readlink "$HOME/.claude/skills/ff-init")")")}"; eval "$("$FF/scripts/ff-paths.sh")"`
-then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
+**Paths:** `references/`, `scripts/`, and `templates/` are siblings of `SKILL.md` in this skill
+folder — read them by relative path. `profile/…` means the creator's own files, which live in the
+profile directory in local mode and arrive as Project files or in the conversation in context mode.
+Check the router's Step 0 before writing to any of them.
 
-- Reads: `data/voice.md`, `data/ideas.md`, `references/hooks.md`, `references/platform-facts.md`,
+- Reads: `profile/voice.md`, `profile/ideas.md`, `references/hooks.md`, `references/platform-facts.md`,
   `references/ranking-signals.md`, `references/relatability.md`
-- Writes: appends the hook architecture used to `data/hooks-used.md`
+- Writes: appends the hook architecture used to `profile/hooks-used.md`
 
-**Cold start:** with no `data/voice.md`, draft anyway using whatever the creator has said in this
+**Cold start:** with no `profile/voice.md`, draft anyway using whatever the creator has said in this
 conversation, and note once that the voice read is thin. Do not withhold output or push them into
 `ff-init`. When they rewrite what you drafted, record it per the router's *Learn from the
 correction* — that rewrite is worth more than an interview answer.
@@ -124,8 +122,8 @@ Writes the words around finished footage. Does not approve its own output — ev
 
 - **One caption pasted to four platforms wastes three of them.** Each has a different reading
   posture. Write natively or admit the cross-post is a compromise.
-- **Filling a sensory blank is the failure mode this skill is designed around.** The temptation is
+- **Filling a sensory blank is the failure mode this workflow is designed around.** The temptation is
   strongest when the draft reads incomplete — that incompleteness is the point.
 - **Hashtags are a targeting and search mechanism, not a reach mechanism.** Instagram caps them at
   five and says fewer targeted ones beat many generic ones. Spend the slots — see Hashtags below.
-- **Hook variety matters more than hook quality in aggregate.** Check `data/hooks-used.md`.
+- **Hook variety matters more than hook quality in aggregate.** Check `profile/hooks-used.md`.

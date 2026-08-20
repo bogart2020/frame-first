@@ -146,7 +146,7 @@ are **cued by the environment or publicly visible** get both — right away and 
 A recognizable recurring format is a cue. This is the evidence behind the **Relationship** stage
 in `arrrsr.md`, and the reason `ff-package` logs hook architectures — a format the audience can
 recognize is an asset; the same shape four posts running is a liability
-(`data/hooks-used.md`).
+(`profile/hooks-used.md`).
 
 ## Checklist before a caption ships
 

@@ -1,4 +1,4 @@
-# Performance log (example - real file is data/performance.md, gitignored)
+# Performance log (example - the real file is performance.md in the creator's profile)
 
 Primary: sends/shares, sustained attention. Secondary: saves (Instagram only), follows-from-post, views.
 Likes are not tracked.

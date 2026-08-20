@@ -1,6 +1,6 @@
 {
   "name": "frame-first",
-  "description": "Content-creation skills for a phone-cinematography creator posting concerts and cinematic scenes.",
+  "description": "Content-creation skill for a photography and video creator. Self-contained: runs in Claude Code, Claude Desktop, and Claude mobile.",
   "owner": {
     "name": "Jerick Madrileno",
     "email": "madrilenojerick@gmail.com"
@@ -9,7 +9,7 @@
     {
       "name": "frame-first",
       "source": "./",
-      "description": "Content-creation skills for a phone-cinematography creator: idea generation, trend research, anti-slop critique, platform packaging, and monetization strategy."
+      "description": "Content-creation skill for a photography and video creator: idea generation, shot lists, trend research, anti-slop critique, platform packaging, and monetization strategy. Built around Attention -> Relevance -> Retention -> Reward -> Sharing -> Relationship. Runs in Claude Code, Claude Desktop, and Claude mobile."
     }
   ]
 }

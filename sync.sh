@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Link frame-first skills into Claude, Codex, and Cline.
+# Link the frame-first skill into Claude, Codex, and Cline.
 # Usage: ./sync.sh [--check]
 #   (no args)  create/refresh symlinks
 #   --check    report broken or missing links, change nothing
@@ -18,6 +18,18 @@ for dir in "${TARGETS[@]}"; do
     echo "skip  $dir (harness not installed)"
     continue
   fi
+  # Prune links left by the old eight-skill layout, or by any skill since removed.
+  for link in "$dir"/*; do
+    [[ -L "$link" ]] || continue
+    target="$(readlink "$link")"
+    [[ "$target" == "$REPO"/* ]] || continue
+    [[ -e "$target" ]] && continue
+    if (( check_only )); then
+      echo "STALE    $link -> $target"; fail=1
+    else
+      rm -f "$link"; echo "pruned   $link (target gone)"
+    fi
+  done
   for skill in "$SRC"/*; do
     [[ -d "$skill" ]] || continue
     name="$(basename "$skill")"

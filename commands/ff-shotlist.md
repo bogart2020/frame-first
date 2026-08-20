@@ -1,7 +1,7 @@
 ---
-description: Plan what to shoot before a concert or scene
+description: Plan what to shoot before a shoot or event
 ---
 
-Invoke the `ff-shotlist` skill and follow it exactly.
+Invoke the `frame-first` skill, then run its `workflows/ff-shotlist.md` workflow and follow it exactly.
 
 Arguments (optional): $ARGUMENTS

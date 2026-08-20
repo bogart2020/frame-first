@@ -1,5 +1,5 @@
 ---
-description: Start any content task - routes to the right frame-first skill
+description: Start any content task - routes to the right frame-first workflow
 ---
 
 Invoke the `frame-first` skill and follow it exactly.

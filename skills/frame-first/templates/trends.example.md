@@ -1,4 +1,4 @@
-# Trend log (example - real file is data/trends.md, gitignored)
+# Trend log (example - the real file is trends.md in the creator's profile)
 
 Every entry carries a source and a date. Entries older than 7 days are stale.
 

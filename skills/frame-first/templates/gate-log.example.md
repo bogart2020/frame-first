@@ -1,4 +1,4 @@
-# Gate log (example - real file is data/gate-log.md, gitignored)
+# Gate log (example - the real file is gate-log.md in the creator's profile)
 
 Drafts ff-critique marked FIX that were published unchanged. This is the only evidence of
 whether the gate is calibrated. Repeated overrides on one rule mean the rule is wrong.

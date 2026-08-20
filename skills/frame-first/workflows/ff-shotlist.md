@@ -1,11 +1,8 @@
----
-name: ff-shotlist
-description: Plans what to shoot before the moment happens, so the footage carries a premise. Use when preparing for any shoot or event, packing gear, or working out what a planned post needs on camera.
----
-
 # ff-shotlist
 
-The only skill that runs **before** the footage exists. Some moments cannot be reshot — a concert,
+*A `frame-first` workflow — Plans what to shoot before the moment happens, so the footage carries a premise.*
+
+The only workflow that runs **before** the footage exists. Some moments cannot be reshot — a concert,
 a ceremony, a first attempt, weather, a stranger's expression. Plan those hardest.
 
 ## What it produces
@@ -34,18 +31,26 @@ Each entry carries:
    audio is the creator's own or ambient, this constraint does not apply and library audio is a
    choice rather than a requirement.
 
+   **If that file is unavailable, the conclusion it drives is this:** a vertical clip of one to
+   three minutes carrying claimed music is a YouTube Short and gets **blocked outright**. Real
+   recorded music survives on YouTube only as a horizontal upload or one over three minutes. So
+   when the shoot will capture copyrighted music and the creator wants the real audio anywhere,
+   **plan a horizontal take as well as the vertical one** — that decision has to be made at the
+   shoot, not in the edit. Say the claim is uncited.
+
 ✅ **Done when** every entry names a premise and a fallback, and at least one entry survives bad
 lighting and a blocked view.
 
 ## Reads / Writes
 
-**Paths:** everything below is relative to the plugin root, not the open project. Resolve first:
-`FF="${CLAUDE_PLUGIN_ROOT:-$(dirname "$(dirname "$(readlink "$HOME/.claude/skills/ff-init")")")}"; eval "$("$FF/scripts/ff-paths.sh")"`
-then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
+**Paths:** `references/`, `scripts/`, and `templates/` are siblings of `SKILL.md` in this skill
+folder — read them by relative path. `profile/…` means the creator's own files, which live in the
+profile directory in local mode and arrive as Project files or in the conversation in context mode.
+Check the router's Step 0 before writing to any of them.
 
-- Reads: `data/positioning.md`, `data/ideas.md` (unshot ideas that need footage),
+- Reads: `profile/positioning.md`, `profile/ideas.md` (unshot ideas that need footage),
   `references/platform-facts.md`
-- Writes: `data/shotlists/<date>-<subject>.md`
+- Writes: `profile/shotlists/<date>-<subject>.md`
 
 ## Boundaries
 
@@ -62,6 +67,6 @@ Plans footage. Does not write captions (`ff-package`), generate post premises fr
 - **The obvious subject is rarely the best shot.** At a concert it is faces and hands rather than
   the stage; the same rule holds anywhere — the periphery carries witness detail the main event
   does not, and usually no licensing problem either.
-- **Do not assume the subject.** This skill gets used for concerts, but also for travel, street,
+- **Do not assume the subject.** This gets used for concerts, but also for travel, street,
   events, food, products, and things nobody has tried yet. Ask what is being shot before
   planning it.

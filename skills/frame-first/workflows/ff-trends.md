@@ -1,9 +1,6 @@
----
-name: ff-trends
-description: Researches what formats and topics are working now in short-form video, then angles them to the creator's own subject. Use when the creator asks what is trending, whether a format is worth trying, or what to post this week.
----
-
 # ff-trends
+
+*A `frame-first` workflow — Researches what formats and topics are working now, then angles them to the creator's own subject.*
 
 Find what is moving, then do the part that matters: discard what does not fit phone
 cinematography and angle what does.
@@ -53,7 +50,7 @@ it is about five minutes — then do the pattern extraction, which is the part t
   `references/ranking-signals.md`, reshare and watch-through are Instagram's own top two
   predictions, so this is the only ranking-relevant self-comparison available.
 
-**What to extract** — the creator supplies observations; this skill supplies the pattern:
+**What to extract** — the creator supplies observations; this workflow supplies the pattern:
 structure repeated across the top results, the hook shape, where text sits in the frame, length
 clustering, and what the top posts have in common that the creator's do not. Name the pattern;
 never hand back "do what they did".
@@ -89,12 +86,13 @@ regional reach. The creator's own analytics is the only source for that.
 
 ## Reads / Writes
 
-**Paths:** everything below is relative to the plugin root, not the open project. Resolve first:
-`FF="${CLAUDE_PLUGIN_ROOT:-$(dirname "$(dirname "$(readlink "$HOME/.claude/skills/ff-init")")")}"; eval "$("$FF/scripts/ff-paths.sh")"`
-then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
+**Paths:** `references/`, `scripts/`, and `templates/` are siblings of `SKILL.md` in this skill
+folder — read them by relative path. `profile/…` means the creator's own files, which live in the
+profile directory in local mode and arrive as Project files or in the conversation in context mode.
+Check the router's Step 0 before writing to any of them.
 
-- Reads: `data/positioning.md`, `references/platform-facts.md`, `references/ranking-signals.md`
-- Writes: dated entries in `data/trends.md`; promising angles to `data/ideas.md`
+- Reads: `profile/positioning.md`, `references/platform-facts.md`, `references/ranking-signals.md`
+- Writes: dated entries in `profile/trends.md`; promising angles to `profile/ideas.md`
 
 ## Boundaries
 

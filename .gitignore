@@ -1,7 +1,6 @@
-# Personal creator state stays local. Templates are committed; real data is not.
-data/*
-!data/*.example.md
-!data/.gitkeep
+# The creator's profile lives outside the repo, at $FRAME_FIRST_DATA or ~/.frame-first/.
+# data/ is the pre-2026-08-21 location; ignored so a leftover profile can never be committed.
+data/
 
 .DS_Store
 .env

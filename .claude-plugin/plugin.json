@@ -1,6 +1,9 @@
 {
   "name": "frame-first",
-  "version": "0.1.0",
-  "description": "Content-creation skills for a phone-cinematography creator: idea generation, trend research, anti-slop critique, platform packaging, and monetization strategy. Built around Attention -> Relevance -> Retention -> Reward -> Sharing -> Relationship.",
-  "author": { "name": "Jerick Madrileno", "email": "madrilenojerick@gmail.com" }
+  "version": "0.2.0",
+  "description": "Content-creation skill for a photography and video creator: idea generation, shot lists, trend research, anti-slop critique, platform packaging, and monetization strategy. Built around Attention -> Relevance -> Retention -> Reward -> Sharing -> Relationship. Runs in Claude Code, Claude Desktop, and Claude mobile.",
+  "author": {
+    "name": "Jerick Madrileno",
+    "email": "madrilenojerick@gmail.com"
+  }
 }

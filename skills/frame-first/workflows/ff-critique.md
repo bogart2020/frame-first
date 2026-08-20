@@ -1,10 +1,6 @@
----
-name: ff-critique
-description: Blocking quality gate for draft captions, hooks, and scripts. Use before posting, when a caption reads generic or AI-written, or when deciding whether an idea is worth making at all.
-allowed-tools: Bash(${CLAUDE_PLUGIN_ROOT}/scripts/slop-check.sh:*)
----
-
 # ff-critique
+
+*A `frame-first` workflow — Blocking quality gate for draft captions, hooks, and scripts. Runs before anything is posted.*
 
 The gate. Returns one of three verdicts and withholds approval until the work earns it.
 
@@ -18,19 +14,24 @@ ships anyway. A ternary verdict forces a commitment that can be defended.
 **KILL** is available and is meant to be used: some premises do not earn a post. Say what would
 have to change.
 
-## Stage 1 — deterministic
+## Stage 1 — deterministic, and optional
+
+Where you can run commands, write the draft to a file and run:
 
 ```bash
-FF="${CLAUDE_PLUGIN_ROOT:-$(dirname "$(dirname "$(readlink "$HOME/.claude/skills/ff-init")")")}"; eval "$("$FF/scripts/ff-paths.sh")"
-"$FF_SCRIPTS/slop-check.sh" <draft-file>
+scripts/slop-check.sh <draft-file>
 ```
 
-The resolver line makes this work from any open project — see **Paths** under Reads / Writes.
-
 Exit 0 = surface clean · 1 = hard hit on the creator's own deny-list · 2 = two or more soft hits.
+Report what it found.
 
-Report what it found. This stage catches surface patterns in milliseconds and **misses semantic
-slop entirely** — a caption with no flagged phrase can still be pure hedging. Stage 2 always runs.
+**Where you cannot run commands, skip this stage silently and go to Stage 2.** Do not mention the
+script, do not ask the creator to run it, and do not treat its absence as a reason to soften the
+verdict. Stage 1 only ever proves that no listed phrase appeared; every verdict this gate returns
+is earned in Stage 2. A skipped Stage 1 changes nothing about the standard.
+
+This stage catches surface patterns in milliseconds and **misses semantic slop entirely** — a
+caption with no flagged phrase can still be pure hedging. Stage 2 always runs.
 
 ## Stage 2 — judgment
 
@@ -41,8 +42,8 @@ sit beside their own writing without standing out" produces a useful one.
 Sources, in order of authority — later ones override earlier ones:
 
 1. What the creator has said **in this conversation**. Most current, wins ties.
-2. `data/voice.md` → `## Learned from feedback` — accumulated real judgments on real drafts.
-3. `data/voice.md` → the seeded captions and deny-list, if any.
+2. `profile/voice.md` → `## Learned from feedback` — accumulated real judgments on real drafts.
+3. `profile/voice.md` → the seeded captions and deny-list, if any.
 
 With none of the three, fall back to the witness-detail test alone and say the voice read is thin.
 
@@ -63,7 +64,7 @@ Checks, in severity order:
    costs more than it returns.
 5. **Satisfaction** — would someone who watched to the end feel it was worth their time?
 6. **Voice drift** — rhythm, sentence length, and punctuation against the real samples.
-7. **Hook repetition** — check `data/hooks-used.md` for recently used architectures.
+7. **Hook repetition** — check `profile/hooks-used.md` for recently used architectures.
 8. **Learn or relate** — the viewer gets something, rather than only watching the creator.
 
 **Nice-to-haves** — mention, do not block on: searchable phrasing, hashtag choice, emoji.
@@ -94,16 +95,17 @@ there, so anything it invents is fiction wearing the creator's name.
 
 ## Reads / Writes
 
-**Paths:** everything below is relative to the plugin root, not the open project. Resolve first:
-`FF="${CLAUDE_PLUGIN_ROOT:-$(dirname "$(dirname "$(readlink "$HOME/.claude/skills/ff-init")")")}"; eval "$("$FF/scripts/ff-paths.sh")"`
-then read and write via `$FF_DATA`, `$FF_REFS`, `$FF_SCRIPTS`.
+**Paths:** `references/`, `scripts/`, and `templates/` are siblings of `SKILL.md` in this skill
+folder — read them by relative path. `profile/…` means the creator's own files, which live in the
+profile directory in local mode and arrive as Project files or in the conversation in context mode.
+Check the router's Step 0 before writing to any of them.
 
-- Reads: `data/voice.md`, `data/positioning.md`, `data/hooks-used.md`,
+- Reads: `profile/voice.md`, `profile/positioning.md`, `profile/hooks-used.md`,
   `references/slop-patterns.md`, `references/arrrsr.md`, `references/relatability.md`
-- Writes: appends overrides to `data/gate-log.md` — drafts marked FIX that the creator published
+- Writes: appends overrides to `profile/gate-log.md` — drafts marked FIX that the creator published
   unchanged. This is the only evidence of whether the gate is calibrated.
 
-**Cold start:** with no `data/voice.md`, run stage 1 and the witness-detail test only. Say once
+**Cold start:** with no `profile/voice.md`, run stage 1 and the witness-detail test only. Say once
 that voice checks are thin, and carry on — do not push the creator into `ff-init`. Anything they
 have said in this conversation about how they write counts as voice data for this session, and
 belongs in `## Learned from feedback` afterwards.
@@ -119,7 +121,7 @@ performance.
 - **The gate rubber-stamps under fatigue.** Approving becomes the default, especially late.
   The verdict is worth the same at 1am as at noon.
 - **An over-tuned deny-list eats authentic voice.** Earnest, plain, or unfashionable writing is
-  not slop. When `data/gate-log.md` shows repeated overrides on the same rule, the rule is wrong.
+  not slop. When `profile/gate-log.md` shows repeated overrides on the same rule, the rule is wrong.
 - **Stage 1 passing means nothing on its own.** It only proves no listed phrase appeared.
 - **Agreeing with the creator is not the job.** They asked for a gate precisely because they will
   want to skip it.

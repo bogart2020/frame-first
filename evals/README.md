@@ -1,14 +1,18 @@
 # Evals
 
-Run these by hand after changing a skill. Each is a real failure this plugin has been designed
+Run these by hand after changing the skill. Each is a real failure this plugin has been designed
 around — if one regresses, the skill stopped doing its job.
 
-Run them on **Haiku as well as Sonnet/Opus**. Skills degrade silently on weaker models: an
-instruction strong enough to hold on Opus can be ignored entirely on Haiku, and the plugin is
-symlinked into three harnesses whose model you do not control.
+Prompts are given to the `frame-first` skill. Section headings name the **workflow** the router
+should reach for; a case that lands in the wrong workflow is itself a failure, since one router
+description now does the routing that eight skill descriptions used to do.
 
-**At least three cases per skill** — Anthropic's skill-authoring checklist. Current counts are in
-the heading of each section; keep them at three or more when adding a skill.
+Run them on **Haiku as well as Sonnet/Opus**. Skills degrade silently on weaker models: an
+instruction strong enough to hold on Opus can be ignored entirely on Haiku, and the plugin runs in
+five places whose model you do not control.
+
+**At least three cases per workflow** — Anthropic's skill-authoring checklist. Current counts are
+in the heading of each section; keep them at three or more when adding a workflow.
 
 Format: prompt → what must happen → what failure looks like.
 
@@ -114,7 +118,7 @@ follower split as the real checks.
 
 **Prompt:** Answer the identity question with *"I love capturing moments."*
 ✅ Challenges it once as generic, then takes what comes. Does not interrogate.
-❌ Writes it to `data/positioning.md` unchallenged. ❌ Refuses to move on until it improves.
+❌ Writes it to `positioning.md` unchallenged. ❌ Refuses to move on until it improves.
 
 **Prompt:** "I don't have captions to paste — just make up a voice profile for me."
 ✅ Refuses to invent a voice, and says the profile will fill itself in from feedback as they work.
@@ -164,14 +168,16 @@ finalizing.
 
 ## frame-first — 5 cases
 
-**Prompt:** "Help me with my content" with `data/voice.md` absent.
+**Prompt:** "Help me with my content" with no profile reachable at all.
 ✅ Proceeds with the work, noting once that the voice read is thin. Does not block or push `ff-init`.
 ❌ Refuses until the profile exists. ❌ Fabricates profile content to fill the gap.
 
 **Prompt:** The creator rewrites a drafted line in their own words.
-✅ Records the change in `data/voice.md` → `## Learned from feedback`, one dated line naming the
-pattern, and says briefly that it was recorded.
-❌ Accepts the rewrite silently. ❌ Records a summary too vague to act on later.
+✅ In local mode: appends to `profile/voice.md` → `## Learned from feedback`, one dated line naming
+the pattern, and says briefly that it was recorded. In context mode: ends the reply with a
+`Profile update → voice.md` block containing exactly those lines, and writes nothing.
+❌ Accepts the rewrite silently. ❌ Records a summary too vague to act on later. ❌ Attempts a write
+in context mode.
 
 **Prompt:** "I have footage and a draft caption — do everything."
 ✅ Sequences the skills (`ff-package`, then `ff-critique`) and says so.
@@ -190,15 +196,47 @@ there is no recorded music in the clip.
 
 ---
 
+---
+
+## No-bash pass — the Desktop and mobile guarantee
+
+**Run every section above a second time with no ability to execute commands.** This is the pass
+that proves the apps work; without it the portability is a design claim, not a tested one.
+
+The rule: nothing in the output may get worse except a citation. Specifically —
+
+**Prompt:** Critique *"The concert was unforgettable. What a night ✨"*, with no shell available.
+✅ Still returns FIX or KILL with a named failure. Stage 1 is skipped **silently**.
+❌ Mentions `slop-check.sh`. ❌ Asks the creator to run it. ❌ Softens the verdict because the
+deterministic stage did not run. ❌ Reports that it cannot fully check the draft.
+
+**Prompt:** "Give me maximum hashtags", with `references/ranking-signals.md` unreadable.
+✅ Still states Instagram's five-tag cap and that fewer targeted tags beat many generic ones, and
+still refuses `#fyp`. Says the claim is uncited.
+❌ Drops the cap. ❌ Produces 20 tags because the reference was missing. ❌ Invents a different cap.
+
+**Prompt:** "How much will I make from TikTok Creator Rewards?", with `references/platform-facts.md`
+unreadable.
+✅ Still reports it as unavailable in the Philippines, still names the PH alternatives, still
+labels the figures unverified — from the inlined conclusions in `ff-strategy.md`. Says uncited.
+❌ Says it cannot answer without the reference file. ❌ Quotes an RPM.
+
+**Prompt:** Anything that would normally write to the profile, in context mode.
+✅ Emits a `Profile update → voice.md` block. ❌ Attempts a write. ❌ Reports a write it did not do.
+
+**The failure this pass exists to catch** is a workflow that treats an unavailable file as a reason
+to stop. Never tell the creator a task is impossible because a file or a script could not be
+opened — say what could not be opened, and give them the answer anyway.
+
 ## Deterministic stage
 
 ```bash
-./scripts/slop-check.sh evals/fixtures/slop.md   # expect exit 2, many soft hits
-./scripts/slop-check.sh evals/fixtures/good.md   # expect exit 0
+./skills/frame-first/scripts/slop-check.sh evals/fixtures/slop.md   # expect exit 2, many soft hits
+./skills/frame-first/scripts/slop-check.sh evals/fixtures/good.md   # expect exit 0
 ```
 
 **The false-positive test matters more than the true-positive one.** Paste the creator's own real
-captions from `data/voice.md` into a file and run it: **expect exit 0 and zero soft hits.** A gate
+captions from the profile's `voice.md` into a file and run it: **expect exit 0 and zero soft hits.** A gate
 that flags authentic writing gets ignored, and an ignored gate is worth less than no gate. Two
 regressions of exactly this kind were found on 2026-08-21 — `hits different` flagged the creator's
 best-performing caption, and their em-dash rule silently never fired at all.
@@ -207,13 +245,24 @@ Also confirm a deny-list entry written as a label still fires:
 
 ```bash
 printf 'the lights went down — and then it started\n' > /tmp/t.md
-./scripts/slop-check.sh /tmp/t.md   # expect exit 1: "em dash (—)" matched as —
+./skills/frame-first/scripts/slop-check.sh /tmp/t.md   # expect exit 1: "em dash (—)" matched as —
 ```
 
 ## Schema validation
 
 ```bash
-claude plugin validate ./skills --strict    # the only call that checks the skills
+claude plugin validate ./skills --strict    # the only call that checks the skill
 claude plugin validate ./commands --strict
-claude plugin validate .                    # marketplace.json ONLY — not the skills
+claude plugin validate .                    # marketplace.json ONLY — not the skill
+./sync.sh --check                           # links healthy, nothing stale
 ```
+
+Then confirm the skill is genuinely self-contained — this is the whole portability claim, and it
+is one command:
+
+```bash
+grep -rn 'CLAUDE_PLUGIN_ROOT\|ff-paths\|readlink\|\.\./\|~/\.claude' skills/frame-first/
+```
+
+Anything it returns is a path reaching outside the skill folder, and will break on Desktop and
+mobile. Expected: nothing.

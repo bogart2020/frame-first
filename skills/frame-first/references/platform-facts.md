@@ -99,4 +99,4 @@ A global-English audience is the single biggest lever on this number.
 
 **Consequence:** the footage is audience acquisition, not the product. Revenue comes from
 affiliate gear, LUTs and presets, client work, and brand deals — the specific lines depend on the
-creator's subject, which `data/positioning.md` holds. Platform ad revenue is a bonus.
+creator's subject, which `profile/positioning.md` holds. Platform ad revenue is a bonus.

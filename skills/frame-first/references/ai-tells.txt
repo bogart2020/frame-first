@@ -1,6 +1,6 @@
 # Universal AI-writing tells. One fixed string per line, matched case-insensitively.
 # SOFT signals: presence is a prompt to look, not proof of slop.
-# The creator's own deny-list in data/voice.md is what hard-blocks.
+# The creator's own deny-list in profile/voice.md is what hard-blocks.
 #
 # EVIDENCE BASIS — reviewed 2026-08-21, review again 2027-02 (models retrain; this list drifts).
 #   [M] Measured over-representation in a named corpus study. See research/2026-08-21-ai-slop.md §1.

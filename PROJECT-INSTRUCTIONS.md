@@ -1,28 +1,74 @@
-# frame-first — project instructions
+# frame-first on Claude Desktop and Claude mobile
 
-Paste into a Claude project's custom instructions (or save as `CLAUDE.md` in the project root).
+This is the canonical setup for the Claude apps. It is what makes the skill sound like you rather
+than like a generic content assistant — on a phone there is no filesystem, so your profile has to
+arrive some other way. A Claude Project is that way.
+
+## 1. Install the skill
+
+```bash
+cd skills && zip -r frame-first.zip frame-first
+```
+
+Upload `frame-first.zip` at **Settings → Capabilities → Skills**. Skills require code execution to
+be enabled on your account. One zip, one skill — there is nothing else to upload and nothing to
+keep in sync.
+
+## 2. Create a Project and add your profile
+
+Create a Claude Project (name it whatever you like) and add these as **project files**:
+
+- `voice.md` — from `~/.frame-first/voice.md`
+- `positioning.md` — from `~/.frame-first/positioning.md`
+
+Add the others only once they have content worth carrying: `hooks-used.md`, `gate-log.md`,
+`performance.md`, `ideas.md`. An empty file is worse than a missing one — the skill treats a thin
+profile as a cold start, which is a supported state, but treats a file that exists as authoritative.
+
+If you have no profile yet, skip this step and ask for `ff-init` in the Project. Two or three
+questions, and you can refuse it and still get work done.
+
+## 3. Paste this into the Project's custom instructions
 
 ---
 
-I create concert videos with on-screen captions for TikTok and Instagram.
-The `frame-first` skills are installed. Route my requests to them:
+I create photo and video content and post it to Instagram, TikTok, YouTube, and Facebook.
+The `frame-first` skill is installed. Use it for anything to do with my content.
 
-- **ff-package** — I have footage and need caption, hook, on-screen text, title, or hashtags
-- **ff-ideas** — I have footage but no angle, or need post ideas
-- **ff-critique** — I wrote a draft caption and want it checked before posting
-- **ff-shotlist** — I'm shooting a show soon and need a plan
-- **ff-trends** — I'm asking what formats are working now
-- **ff-strategy** — I'm reviewing performance, platforms, or monetization
-- **ff-init** — my voice profile needs rebuilding
-- **frame-first** — unclear which applies; route me
+My voice profile and positioning are in this Project's files. Read them before drafting anything —
+they are `profile/voice.md` and `profile/positioning.md` as far as the skill is concerned.
 
-Rules that hold across all of them:
+Rules that hold across every workflow:
 
-1. Run **ff-critique** before I post anything, even if I don't ask.
-2. Never invent details about a show you weren't at. Mark sensory blanks as
-   blanks — I fill those in.
-3. Read my voice profile first. Skills resolve it with:
-   `eval "$("$(dirname "$(dirname "$(readlink -f ~/.claude/skills/ff-init)")")/scripts/ff-paths.sh")"`
-   then read `$FF_DATA/voice.md` and `$FF_DATA/positioning.md`.
-4. Match my captions' register — lowercase and second-person for raw emotional
-   songs, punctuated and observational for narrative ones. Don't average them.
+1. Run `ff-critique` before I post anything, even if I don't ask for it.
+2. Never invent details about something you weren't at. Mark sensory blanks as blanks — I fill
+   those in. A caption with a hole in it is the deliverable; a caption with invented detail is
+   fiction under my name.
+3. You are in **context mode**: there is no profile directory here, so never try to write to one.
+   When you learn something about my voice, end your reply with a short `Profile update →
+   voice.md` block containing exactly the lines to append, and I will paste it into the Project
+   file. Only when there's something real to record.
+4. Match my captions' register — lowercase and second-person for raw emotional pieces, punctuated
+   and observational for narrative ones. Don't average them.
+
+---
+
+## 4. Keep the profile fed
+
+The skill learns from your corrections, not from interviews. When you rewrite a line it drafted,
+it will hand you a `Profile update` block. Paste those into `voice.md` in the Project as they come.
+That is the whole maintenance loop.
+
+If you also use Claude Code, keep `~/.frame-first/voice.md` and the Project's copy in step by
+pasting into both. They are the same file living in two places, and nothing syncs them for you.
+
+## What differs from Claude Code
+
+Only two things:
+
+- **Writes.** Claude Code appends to `~/.frame-first/` directly. Here you paste.
+- **`scripts/slop-check.sh`.** It runs where bash is available and is skipped silently where it is
+  not. It never changes a verdict on its own — the gate's real work is the judgment pass.
+
+Everything else — the workflows, the references, the standards, the SHIP/FIX/KILL thresholds — is
+identical, because it is the same folder.

@@ -14,18 +14,18 @@ Facebook, YouTube.
 
 | # | Decision | Chosen |
 |---|---|---|
-| 1 | Architecture | Router + 6 specialist skills; doctrine in `references/`, never inlined |
+| 1 | Architecture | Router + 6 specialist skills; doctrine in `references/`, never inlined *(Amended 2026-08-21: one skill with 7 workflow files. Doctrine still in `references/`, but each workflow now inlines the conclusion it depends on — see the portability round)* |
 | 2 | Distribution | Symlinks + `sync.sh` (with `--check`); public GitHub repo; plugin-shaped |
 | 3 | Creator state | Full set — voice, positioning, ideas, performance, hooks-used, trends |
 | 4 | Audience | English only, maximize reach outside the Philippines |
 | 5 | Output shape | Captions/scripts = brief with gaps; titles/hooks/hashtags = drafted then critiqued |
-| 6 | Privacy | Plugin public, `data/` gitignored, `*.example.md` templates committed |
+| 6 | Privacy | Plugin public, `data/` gitignored, `*.example.md` templates committed *(Amended 2026-08-21: profile moved to `~/.frame-first/`, outside the repo and outside the installed plugin; templates moved to `skills/frame-first/templates/`)* |
 | 7 | Trend sourcing | Human-in-the-loop paste + legit auto-fetch; weighted to **format** over audio |
 | 8 | Repo | `frame-first`, public, local install until proven |
 | 9 | Commands | Skills everywhere + Claude-only slash commands |
 | 10 | Gate strength | **Blocking**, names specific failures, may KILL an idea |
 | 11 | Strategy | **Footage = proof/hook. Craft = product. Money from affiliate, LUTs, client work.** *Amended 2026-08-20: originally concert-specific; de-scoped to any subject at the creator's request. Principle unchanged* |
-| 12 | Naming | `ff-*`; dir name == frontmatter name == symlink name |
+| 12 | Naming | `ff-*`; dir name == frontmatter name == symlink name *(Amended 2026-08-21: only `frame-first` has frontmatter now; `ff-*` are workflow filenames)* |
 | 13 | Voice capture | `ff-init` interview + paste 10 real captions |
 | 14 | Doctrine | Split into 4 reference files, rewritten as instructions not prose |
 | 15 | Metrics | Screenshot input; **shares + watch-through primary**; likes untracked |
@@ -183,3 +183,49 @@ harder to follow than a concrete one; the rule is that examples illustrate and n
   but individual repos were **not verified to exist**. Patterns adopted; specific repo claims not.
 - **Percentages** ("68% of skills fail on descriptions", "85% human agreement") — single community
   posts and unverified arXiv IDs. Directional only; no threshold was set from them.
+
+## Portability round — 2026-08-21
+
+The creator reported the plugin failing on Claude Desktop and Claude mobile: it kept reaching for
+files that were not mounted there. Decided by grilling; every decision below was put to them.
+
+**The diagnosis was not "it uses files."** claude.ai skills ship bundled files perfectly well —
+`/diagnosing-bugs` has `scripts/` and `agents/` and works. The fault was that `references/`,
+`data/`, and `scripts/` lived at the **repo root**, and all eight skills reached them through
+`${CLAUDE_PLUGIN_ROOT}` with a `readlink ~/.claude/skills/ff-init` fallback. Neither exists on
+claude.ai. And claude.ai takes one skill folder per zip, so the eight skills were eight uploads to
+keep in sync by hand.
+
+| # | Decision | Chosen | Rejected, and why |
+|---|---|---|---|
+| 21 | Hard floor | **Correct output with zero commands run.** Scripts accelerate, never gate | "Assume code execution is on" — smallest fix, but the plugin dies wherever the capability is off |
+| 22 | Shape | **One `skills/frame-first/` folder**; the 7 skills become `workflows/ff-*.md` | Eight self-contained skills (duplicates doctrine — the exact drift the hardening round removed); a build step generating zips (two artifacts that silently diverge) |
+| 23 | Profile store | **Project files on the apps, `~/.frame-first/` on Claude Code.** Every workflow *emits* the update; local mode appends it, context mode shows it | Claude's built-in memory (uncontrollable, does not reach Claude Code); no persistence (correction loop never compounds) |
+| 24 | References | **Kept as files, read for depth — plus each workflow inlines the conclusion it depends on** | Files only (a failed read leaves a hole in the workflow); inline everything (recreates seven-file drift, and `platform-facts.md` stops owning the dated claims) |
+| 25 | `slop-check.sh` | **Optional accelerator**, skipped silently where bash is absent | Delete it (loses a free catch); a separate prose gate for the apps (two calibrations means the FIX/KILL threshold drifts between laptop and phone — the worst failure available to a blocking gate) |
+| 26 | Discovery | **One description carrying all seven triggers**, allowed to exceed 250 chars | The 250-char ceiling protected against *sibling skills competing*. With one skill there are no siblings: truncation is cosmetic, a missed trigger is functional |
+| 27 | Commands | **All 8 kept**, retargeted to `frame-first` + a workflow file | Claude Code-only affordance, costs 7 lines each, and matters more now that auto-invocation runs through a single description |
+| 28 | Multi-harness | **Kept.** `sync.sh` links one folder instead of eight, and prunes stale links | — |
+
+### What this bought, mechanically
+
+- `scripts/ff-paths.sh` **deleted.** With everything inside the skill folder there is no root to
+  compute. Nothing in `skills/frame-first/` now references `CLAUDE_PLUGIN_ROOT`, `readlink`, `../`,
+  or `~/.claude` — that grep is the portability test, and it is in `evals/README.md`.
+- `allowed-tools` **dropped.** It was on `ff-critique` alone, scoped to one script. On a router
+  that must read files and drive every workflow it would restrict rather than permit.
+- **21 stale symlinks pruned** across `~/.claude`, `~/.codex`, and `~/.cline`.
+- `data/` at the repo root is **gone from git**; `.gitignore` still ignores the whole directory so
+  a leftover profile can never be committed.
+
+### The known risk
+
+Collapsing eight descriptions into one is the only change here that could make things *worse*.
+Eight narrow triggers catch more than one broad one, and a miss is silent — the skill simply does
+not fire. If routing degrades in practice, the escape hatch is thin stub skills for discovery on
+Claude Code only, keeping one folder as the implementation. Do not take that step pre-emptively.
+
+**Unverified:** Anthropic documents custom skills on claude.ai and states they require code
+execution, but does not state whether they surface in the **mobile app** specifically. If they do
+not, mobile falls back to the Project-instructions path alone — which decision 23 already covers,
+at the cost of `references/` on that device.
