@@ -53,6 +53,47 @@ predictions (`references/ranking-signals.md`). Muting forfeits that entirely.
 
 Fair use does not cover concert footage; courts decide case by case.
 
+### Lyrics in text
+
+**Verified 2026-08-25.** This is about *words*, not audio — a lyric typed into a caption or burned
+into on-screen text. The music rules above do not cover it, and platform copyright tools are not
+the exposure here; the rightsholder is.
+
+| Claim | Verdict |
+|---|---|
+| The composition and the recording are **two separate copyrights**, and the composition is the one that carries the words: **"A Musical Composition consists of music, including any accompanying words"**, and **"Copyright in a sound recording is not the same as, or a substitute for, copyright in the underlying musical composition"** | **Confirmed**, verbatim ([U.S. Copyright Office — Musical Compositions and Sound Recordings](https://www.copyright.gov/register/pa-sr.html)) |
+| There is **no safe length**: **"There are no legal rules permitting the use of a specific number of words, a certain number of musical notes, or percentage of a work"** | **Confirmed**, verbatim ([U.S. Copyright Office — Fair Use FAQ](https://www.copyright.gov/help/faq/faq-fairuse.html)) |
+
+**Consequence.** Licensing the recording — using library audio, or filming a performance where the
+platform permits it — does nothing for the words. Quoting or paraphrasing a lyric in a caption or
+in on-screen text is reproducing the composition, and no word count makes it safe. **Name the song
+and the artist instead.** A title and a credit are attribution, not reproduction, and they carry
+the searchable phrasing anyway.
+
+This is not legal advice and no agent can give it. It is the reason `ff-package` refuses to draft
+the line and `ff-critique` treats it as a Showstopper.
+
+## Caption length and the fold
+
+**Verified 2026-08-25.** Two caps and one fold. The caps are documented; the fold is not.
+
+| Claim | Verdict |
+|---|---|
+| Instagram caption: **"Maximum 2200 characters, 30 hashtags, and 20 @ tags"** | **Confirmed**, verbatim ([Meta — IG User Media reference](https://developers.facebook.com/docs/instagram-platform/instagram-graph-api/reference/ig-user/media)) |
+| TikTok **Content Posting API** `title`: **"The maximum length is 2200 in UTF-16 runes"** | **Confirmed**, verbatim ([TikTok — Direct Post reference](https://developers.tiktok.com/doc/content-posting-api-reference-direct-post/)) |
+| TikTok **native app** cap of **4,000 characters** | **Unverified.** Widely reported, including on TikTok-hosted creator videos, but no TikTok-owned documentation page states it. `support.tiktok.com` and `newsroom.tiktok.com` searched 2026-08-25, nothing found |
+| **Where the fold falls** — Instagram feed and Reels commonly cited at ~125 characters, TikTok at roughly the first line, before "…more" | **Unverified.** No Meta or TikTok page documents a truncation point. `help.instagram.com`, `about.instagram.com`, `creators.instagram.com` and `developers.facebook.com` searched 2026-08-25, nothing found |
+
+**Consequence — the cap.** 2,200 is the binding limit wherever a scheduling tool sits in the path,
+even on TikTok where the app itself allows more: the API refuses the rest. Writing to the app's
+larger cap and scheduling through a tool is how a caption gets silently truncated at post time.
+
+**Consequence — the fold.** It is real, but its position is undocumented and varies by device and
+by app version. So the rule is not a character count: **the first line carries the hook and reads
+complete on its own, and nothing after it is assumed read.** Say that is a judgment call resting on
+an unverified truncation point — never quote a creator a character number as if the platform
+published one.
+
 ## Trend data that can and cannot be retrieved
 
 **Retrievable:** YouTube Data API v3 (`chart=mostPopular`, `regionCode`). The free quota allocates

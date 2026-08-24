@@ -7,6 +7,7 @@ that one test.
 ## Contents
 
 - [Generic vs. specific pairs](#generic-vs-specific-pairs)
+- [Abstractions as subjects](#abstractions-as-subjects)
 - [Tells of AI prose — what is measured, and what is taste](#tells-of-ai-prose--what-is-measured-and-what-is-taste)
 - [Overused hook shapes to refuse](#overused-hook-shapes-to-refuse)
 - [Trend misuse](#trend-misuse)
@@ -36,6 +37,36 @@ storyteller controls over absorption. It is **not** established that a vivid det
 *moving* — the classic vividness and identifiable-victim effects largely failed to replicate. So
 argue that witness detail is **believed**, and that its absence marks the writer as someone who was
 not there. Do not argue that it moves people. See `references/relatability.md`.
+
+## Abstractions as subjects
+
+**The test, run sentence by sentence:** is the grammatical subject a physical thing, a person, or
+an action — or is it a concept? *Silence, memory, the moment, the feeling, time, energy, the
+atmosphere, emotion* as the thing doing the verb is the single most reliable marker of writing
+produced by someone who was not there. A concept cannot be witnessed, so a sentence built on one
+carries no evidence of presence.
+
+**This is a rewrite rule, not a licence to invent.** Every pair below moves the concrete subject
+that was *already in the sentence* into the subject position. Nothing is added. If no concrete
+subject is present — if the line contains no person, object, or action to promote — then the detail
+does not exist yet, and the fix is to ask the creator for it, not to supply one. That is the same
+rule as the sensory blank in `ff-package.md`.
+
+| Abstract subject | Rewritten on what was already there |
+|---|---|
+| "The silence in the room was heavy." | "Nobody in the room said anything." |
+| "The moment carried a weight nobody expected." | "Nobody expected it to land that hard." |
+| "Memory has a way of returning to that night." | "I keep going back to that night." |
+| "The energy between the band and the crowd was electric." | "The band and the crowd fed off each other." |
+| "Time seemed to stop during the last chorus." | "The last chorus went on longer than it should have." |
+
+The right column is not more vivid; it is not meant to be. It is the same claim with a subject that
+could have been observed, which is what makes it checkable — and what makes its absence visible.
+
+**Deliberately not implemented in `scripts/slop-check.sh`.** Finding a grammatical subject needs
+parsing, and a regex approximation false-positives on this creator's lowercase register for the
+same reason burstiness and perplexity were rejected below. It is judged in `ff-critique` Stage 2,
+where it is a Showstopper.
 
 ## Tells of AI prose — what is measured, and what is taste
 

@@ -2,7 +2,8 @@
 
 **Last verified: 2026-08-20.** What each platform *itself documents* about how it ranks and
 surfaces content. Every row is first-party — a page owned by the platform, linked. Nothing here
-comes from an SEO blog.
+comes from an SEO blog, with **one labelled exception**: the TikTok hashtag-placement note, which
+is marked as secondary in place and says what it does not establish.
 
 This file answers "what does the platform say it rewards", which is stable on the order of months.
 It is **not** a trend feed — see `references/platform-facts.md` for what trend data is reachable
@@ -71,8 +72,11 @@ outright that content-query match dominates its search ranking.
 | **Instagram Search** | Hashtags **are** a named search signal, alongside username and profile name. So they earn in *search*, not in feed reach |
 | **TikTok** | Hashtags are named under **content information**, one of the three For You signal groups. No stated optimum count |
 | **YouTube** | Tags are "**not important**… primarily used to help correct for common spelling mistakes" |
+| **Placement — Instagram** | Verbatim: "**For a post to be found in Search, put keywords and hashtags in the caption, not the comments.**" Hashtags in a comment still add the post to the hashtag page; they do not feed Search |
+| **Placement — TikTok** | **No official statement found** (checked 2026-08-25). Secondary sources only — see the note below, which is the one place in this file that is not first-party |
 
-Sources: [Instagram hashtag limit and statement](https://www.socialmediatoday.com/news/instagram-implements-new-limits-on-hashtag-use/808309/),
+Sources: [Breaking down how Instagram Search works](https://about.instagram.com/blog/announcements/break-down-how-instagram-search-works),
+[Instagram hashtag limit and statement](https://www.socialmediatoday.com/news/instagram-implements-new-limits-on-hashtag-use/808309/),
 [How TikTok recommends content](https://www.tiktok.com/support/faq_detail?id=7655285288050104852),
 [YouTube search and discovery](https://support.google.com/youtube/answer/141805)
 
@@ -80,6 +84,29 @@ Sources: [Instagram hashtag limit and statement](https://www.socialmediatoday.co
 anywhere. Targeting is the lever — a hashtag earns its place by naming the topic precisely enough
 that someone searching that topic finds it. Five precise tags beat thirty generic ones, and on
 Instagram thirty is no longer possible.
+
+**On caption vs. first comment.** The common practice of parking tags in the first comment to keep
+the caption clean is answered directly on Instagram: tags in a comment do not feed Search. Since
+hashtags earn in search rather than in feed reach — the row above — moving them to a comment
+removes the one thing they do. **Put them in the caption.** The first comment is therefore not a
+place to hide a tag whose audience cost you did not want to pay: if a tag is not worth a caption
+slot, it is not worth using.
+
+**On TikTok this is a judgment call, not doctrine.** No TikTok page states a position either way.
+Searched 2026-08-25: `support.tiktok.com`, `newsroom.tiktok.com`, and TikTok's own in-app Discover
+pages, which return creator videos rather than documentation.
+
+**The secondary evidence, named as secondary** — this is the only claim in this file not sourced to
+a platform-owned page, and it is here because the alternative is a silent gap:
+
+- Marketing publishers state that TikTok's search weights the video description above the comment
+  section, so tags in a comment are less effective — e.g. [Sprout Social — TikTok
+  hashtags](https://sproutsocial.com/insights/tiktok-hashtags/). **No measurement is offered** by
+  any of them: no sample, no method, no comparison. They agree with each other and with Instagram's
+  documented position, which is weak evidence of the same kind repeated.
+- **What the plugin does with that:** put tags in the caption on TikTok too, and call it a
+  convergent judgment call rather than a documented mechanism. Do not tell the creator TikTok
+  penalises comment hashtags — no source establishes it.
 
 ## TikTok For You and Search
 

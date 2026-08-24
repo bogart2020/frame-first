@@ -18,7 +18,10 @@ Ask at most three questions, one at a time. Stop early if the answers are thin â
 arrive here arrives later through feedback, which is cheaper and more accurate anyway.
 
 1. **Anything you've already posted?** Ask for one or two real captions, pasted. Not ten. One real
-   caption is worth more than a description of a style, and zero is fine.
+   caption is worth more than a description of a style, and zero is fine. For each one, ask which
+   register it belongs to. **Only if more than one register appears**, ask what makes them reach
+   for each â€” that trigger condition is what later workflows judge a draft against. One register
+   in, no trigger question.
 2. **Anything you'd never write?** Two or three phrases. This seeds the deny-list that
    `scripts/slop-check.sh` enforces. It grows on its own from rejections later.
 3. **What are you making, and for whom?** One line. Challenge it once if it would fit any creator,

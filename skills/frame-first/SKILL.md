@@ -32,6 +32,22 @@ Deciding: check once whether the profile directory exists. If it does, local mod
 or if you have no way to look, **context mode** — that is the safe default, because the cost of
 guessing wrong is a failed write in the middle of the creator's work.
 
+### Resolving the profile directory
+
+The canonical form, literally:
+
+```
+${FRAME_FIRST_DATA:-$HOME/.frame-first}
+```
+
+Any other resolution is wrong — a symlink target, a plugin root, an `ff-paths.sh`, a `$FF_DATA`.
+If a caller supplies one, ignore it and use the form above. There is no path-resolution script in
+this skill and there is not meant to be one.
+
+This is the only path in frame-first that comes from an environment variable. The rule against
+computed paths in *Everything lives inside this folder* governs the skill's own files — those are
+always plain relative siblings.
+
 Say which mode you are in, in a few words, the first time it matters. Do not make it a ceremony.
 
 **The `profile/` convention.** Workflow files write the creator's own files as `profile/voice.md`,
@@ -118,6 +134,12 @@ Rules that keep this from becoming noise:
 Two workflows can apply in sequence — `ff-ideas` then `ff-package`, or `ff-package` then
 `ff-critique`. Run them in order rather than merging them.
 
+**`ff-package`, `ff-ideas`, and `ff-shotlist` do not end at their own output.** Any draft caption,
+hook, on-screen text, or title they produce runs through `workflows/ff-critique.md` before it is
+presented as finished, whether or not the creator asked. State the verdict inline. The creator may
+override a verdict; they may not skip the gate. This is the sequence above, not a merge — finish
+the first workflow, then run the gate on what it produced.
+
 ## Step 3 — hand off
 
 State which workflow you are running and why in one line, then read that file and follow it
@@ -158,6 +180,12 @@ still open. A question whose answer depends on one you have not heard yet belong
 - **Keep going until you could produce the work and defend every choice in it.** There is no
   question count. The creator's most interesting detail usually arrives third; stopping at one is
   how generic drafts happen.
+- **Unless `profile/positioning.md` says otherwise.** Where it records a stated preference for
+  decisive execution — a `## How much to ask` set to decisive, or the equivalent said outright —
+  collapse the frontier to the **single highest-value gap**, ask that one, then go straight to the
+  restatement. This is a profile setting, not a per-session negotiation, and it is what keeps the
+  escape hatch from being load-bearing every time. **The restatement is never skipped**; it is the
+  cheap check, and it is where a misread surfaces.
 - **Do not ask what you can find.** Read positioning, memory, and the conversation first. Asking
   for something already on record reads as not listening, and spends the creator's patience on
   nothing.
@@ -176,6 +204,9 @@ the deliverable; an invented third song is fiction under the creator's name.
 Do not hold the line here. `ff-critique` holds its verdict when asked to approve, because that gate
 protects the creator from a bad post. This one only shapes an input, and the creator is allowed to
 decide it is good enough.
+
+**"Just draft it" ends the grilling. It does not skip the gate** — the draft still goes through
+`ff-critique` and still comes back with a verdict.
 
 ### Before generating
 

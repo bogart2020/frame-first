@@ -28,6 +28,11 @@ depend on any of those. Say the claim is uncited.
 Any claim about what a platform rewards traces to `references/ranking-signals.md`, or it is
 labelled a judgment call. No live research: what is unretrievable is listed as unretrievable there.
 
+**When premises are built from supplied assets, confirm what each asset actually contains before
+building a premise on it.** A filename is a label, not evidence — a sequence assembled from
+filenames has produced a real error. If the assets cannot be inspected, say so and leave the
+mapping as a blank for the creator rather than assuming the file is what it is called.
+
 ## Two entry modes
 
 **Footage in hand** — the creator describes what they shot. Interrogate for the specific thing
@@ -49,8 +54,9 @@ An idea missing any of these goes back for another pass:
 - **Send test** — who forwards this to one specific person, and why
 - **Searchable phrase** — words someone would actually type
 
-✅ **Done when** each premise carries all six, and each names a witness detail the creator
-already has or knows how to get.
+✅ **Done when** each premise carries all six, each names a witness detail the creator already
+has or knows how to get, and any fully drafted line of copy in the output carries a SHIP/FIX/KILL
+verdict from `ff-critique`. Premises, tensions, and searchable phrases are not drafted copy.
 
 ## Volume
 

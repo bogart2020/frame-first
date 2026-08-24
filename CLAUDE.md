@@ -78,10 +78,13 @@ the synced commit first.
   `references/`, `scripts/`, `templates/`, `workflows/`. One command checks it:
 
   ```bash
-  grep -rn 'CLAUDE_PLUGIN_ROOT\|ff-paths\|readlink\|\.\./\|~/\.claude' skills/frame-first/
+  grep -rn 'CLAUDE_PLUGIN_ROOT\|ff-paths\|readlink\|\.\./\|~/\.claude' \
+    skills/frame-first/ | grep -v 'Any other resolution is wrong'
   ```
 
-  Expected: nothing.
+  Expected: nothing. The excluded line is the *prohibition* in `SKILL.md` Step 0, which names
+  `ff-paths.sh` in order to forbid it. It is a deny-mention, not a reference — and a check that
+  always reports one known hit stops being run.
 - **The creator's profile is the one permitted exception, and it lives outside the plugin** — at
   `$FRAME_FIRST_DATA`, else `~/.frame-first/` (`voice.md`, `positioning.md`, and the rest). It has
   to: the cache directory above is rewritten on every plugin update, so a profile stored inside

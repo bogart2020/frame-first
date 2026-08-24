@@ -53,8 +53,9 @@ Each entry carries:
    **plan a horizontal take as well as the vertical one** — that decision has to be made at the
    shoot, not in the edit. Say the claim is uncited.
 
-✅ **Done when** every entry names a premise and a fallback, and at least one entry survives bad
-lighting and a blocked view.
+✅ **Done when** every entry names a premise and a fallback, at least one entry survives bad
+lighting and a blocked view, and any fully drafted line of copy — on-screen text, a spoken hook —
+carries a SHIP/FIX/KILL verdict from `ff-critique`. Shot entries themselves are exempt.
 
 ## Reads / Writes
 
