@@ -29,7 +29,7 @@ a repost will be demoted. Do not use it to predict a specific video's performanc
 | Top predictions | "how likely you are to **reshare** a reel, **watch a reel all the way through**, like it, and go to the audio page" — in that order |
 | Signal order | Your activity → history with the poster → information about the reel (audio, visuals, popularity) → information about the poster |
 | Made **less** visible | Verbatim: "low-resolution or watermarked reels, reels that are **muted** or contain **borders**, reels that are **majority text**, or reels that have already been posted on Instagram" |
-| Minimum spec | **720 pixels, 30 FPS.** In-app: Menu → Your app and media → Media quality → **Upload at highest quality** |
+| Minimum spec | Verbatim: "Reels should have a **minimum frame rate of 30 FPS** (frames per second) and **minimum resolution of 720 pixels**." In-app: Menu → Your app and media → Media quality → **Upload at highest quality**. **This row is not on the Ranking Explained page** — it is [Instagram reels requirements](https://help.instagram.com/1038071743007909), which carries both the spec and the menu path |
 | Popularity | Instagram names "popularity signals such as **number of followers**" for Reels |
 
 Source: [Instagram Ranking Explained](https://about.instagram.com/blog/announcements/instagram-ranking-explained)
@@ -157,6 +157,13 @@ Source: [Reducing distribution of problematic content](https://transparency.meta
 `references/slop-patterns.md`. Engagement bait ("tag someone who…", "which would you pick?") is
 named as demoted, not merely ineffective. Reposting someone else's clip with your caption on it is
 named as demoted.
+
+**Do not over-claim the clickbait half.** The guidelines this page links are Facebook News Feed
+posts — one on reducing clickbait *headlines*, one on fighting engagement bait *on Facebook*. So
+the documented mechanism is about luring a click on a link, scoped to Facebook. **A sensationalist
+video hook with no link is not covered by it.** Refusing that hook is this plugin's judgment
+(`references/slop-patterns.md` owns it) and must be given as judgment, not as a platform rule. The
+repurposed-content row above carries no such caveat — it is stated plainly and applies as written.
 
 ## What this file does not tell you
 
