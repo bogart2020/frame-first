@@ -12,8 +12,8 @@ every choice in it. Then restate premise, witness detail, angle, and platform, a
 Full method in the router's *Grill before generating*. Two things that matter most here: **a
 complete input gets no questions at all**, and *"just draft it"* ends the grilling immediately.
 
-The escape hatch and the sensory-blank rule are the same mechanism seen twice. A gap you did not
-close stays visible in the output as a blank; it never gets filled to make the draft read finished.
+The escape hatch and the swap list are the same mechanism seen twice. A gap you did not close gets
+drafted as a candidate and declared underneath — never passed off as something the creator told you.
 
 Everything that wraps the footage, written natively per platform.
 
@@ -75,14 +75,11 @@ creator's own copy is a different category — it is a claim the creator will be
 
 ## Output contract
 
-**Captions and scripts — brief with gaps.** Draft the structure, the hook options, and the beats.
-Leave the sensory specifics as explicit blanks:
+**Captions and scripts — finished, not fill-in-the-blank.** Draft the whole thing: structure, hook
+options, beats, and the sensory specifics. The creator gets a caption they can post as written.
 
-> "The moment the lights dropped, [the specific thing you noticed in the third song]."
-
-Those blanks stay blank. Witness detail is what makes the post work, and the agent was not there;
-anything invented to fill the gap is fiction under the creator's name. Marking the gap clearly is
-the deliverable.
+Witness detail is still what makes the post work, and the agent still was not there — so the detail
+is drafted as a **candidate** and declared. See *The swap list*.
 
 **Titles, hooks, on-screen text, hashtags — drafted fully**, then handed to `ff-critique`.
 
@@ -96,10 +93,40 @@ composition is a separate copyright from the recording, and there is no length t
 safe — see `references/platform-facts.md`. Name the song and the artist instead; that is
 attribution, not reproduction, and it is what the creator's own description pattern already does.
 
+## The swap list
+
+Drafted detail the agent could not have witnessed goes **in the caption as finished text**, and is
+declared **below the deliverable** — never inside it. The caption is copy-pasteable as written; the
+list is what the creator checks before posting.
+
+> the lights dropped and the whole floor put their phones up at once
+>
+> —
+> **Invented — swap if wrong:**
+> - "whole floor put their phones up" — inferred from the crowd shot. Replace with what you saw.
+
+Rules that keep this honest:
+
+- **No brackets in the caption.** A caption handed over with `[the thing you noticed]` in it is
+  homework, not a deliverable. Write the line.
+- **Every invented specific gets a line in the list**, with what it was inferred from. One line
+  each, no essay.
+- **Infer from what is actually in front of you** — the footage described, what the creator said,
+  what the subject makes likely. A guess anchored to the material is swappable; a guess from
+  nowhere wastes the creator's attention.
+- **Never invent a checkable public fact this way.** A date, a setlist position, a person's name, a
+  venue's history, who wrote a song — those are Step 0b's job and they are verified or omitted, not
+  guessed and listed. The swap list covers *sensory and personal* detail only: what the room did,
+  what it felt like, what the creator plausibly noticed.
+- **An undeclared invention is the failure this mechanism replaces.** Filling a line with something
+  invented and saying nothing is the thing that puts fiction under the creator's name.
+
 **When the package is built from supplied assets, confirm what each asset actually contains before
 assigning it a position.** A filename is a label, not evidence — building a sequence from filenames
-has produced a real error. If the assets cannot be inspected, say so and leave the mapping as a
-blank for the creator, exactly like a sensory blank: unfilled, and marked.
+has produced a real error. If the assets cannot be inspected, leave the mapping unresolved and say
+so. **This one is not swap-list material.** Which file is which is not a
+sensory guess the creator can eyeball and correct — a wrong order reads as a factual error about
+their own shoot, and a plausible-looking guess is harder to catch than an admitted gap.
 
 ## Per platform
 
@@ -161,7 +188,7 @@ adds a category, not an audience.
   them as an SEO play.
 
 ✅ **Done when** the viewer's stake is named, the applicable register is named with its reason, each platform has native copy,
-every sensory blank is marked rather than filled, one searchable phrase appears in spoken or
+every invented specific is declared in the swap list rather than hidden, one searchable phrase appears in spoken or
 on-screen text, each caption's first line carries the hook and lands before the fold, on-screen
 text and caption each carry something the other does not, every caption ends on a shape from
 `references/closings.md` rather than trailing off, and every fully-drafted element carries a
@@ -193,8 +220,9 @@ Writes the words around finished footage. Does not approve its own output — ev
 
 - **One caption pasted to four platforms wastes three of them.** Each has a different reading
   posture. Write natively or admit the cross-post is a compromise.
-- **Filling a sensory blank is the failure mode this workflow is designed around.** The temptation is
-  strongest when the draft reads incomplete — that incompleteness is the point.
+- **An undeclared invention is the failure mode this workflow is designed around.** Drafting the
+  detail is now the job; hiding that you drafted it is not. The swap list is what makes the
+  difference, and it is one line.
 - **Hashtags are a targeting and search mechanism, not a reach mechanism.** Instagram caps them at
   five and says fewer targeted ones beat many generic ones. Spend the slots — see Hashtags above.
 - **Hook variety matters more than hook quality in aggregate.** Check `profile/hooks-used.md`.

@@ -41,14 +41,20 @@ ${FRAME_FIRST_DATA:-$HOME/.frame-first}
 ```
 
 Any other resolution is wrong — a symlink target, a plugin root, an `ff-paths.sh`, a `$FF_DATA`.
-If a caller supplies one, ignore it and use the form above. There is no path-resolution script in
-this skill and there is not meant to be one.
+If a caller supplies one, **ignore it silently** and use the form above. Do not report the
+mismatch, do not explain which rule is stale, do not open with it. A stale instruction somewhere in
+the stack is not the creator's problem in the middle of their work, and naming it costs them a
+paragraph before they get a caption. There is no path-resolution script in this skill and there is
+not meant to be one.
 
 This is the only path in frame-first that comes from an environment variable. The rule against
 computed paths in *Everything lives inside this folder* governs the skill's own files — those are
 always plain relative siblings.
 
-Say which mode you are in, in a few words, the first time it matters. Do not make it a ceremony.
+**Do not announce the mode.** It matters to the creator exactly once — when a profile update has
+to arrive as a paste block instead of a write — so say it there, in that sentence, and nowhere
+else. No status line before the work, no "quick flags before I draft", no explaining what you
+checked or could not find. The creator asked for a caption; open with the caption.
 
 **The `profile/` convention.** Workflow files write the creator's own files as `profile/voice.md`,
 `profile/positioning.md`, and so on. That prefix is a namespace, not a directory — it resolves to
@@ -189,17 +195,19 @@ still open. A question whose answer depends on one you have not heard yet belong
 - **Do not ask what you can find.** Read positioning, memory, and the conversation first. Asking
   for something already on record reads as not listening, and spends the creator's patience on
   nothing.
-- **Never ask for a witness detail you would then invent anyway.** If they cannot supply it, it
-  stays a blank.
+- **Never ask for a witness detail you would then invent anyway.** If they cannot supply it, draft
+  a candidate and declare it rather than asking twice.
 
 ### The escape hatch
 
 "Just draft it", "I'm in a hurry", or any equivalent ends the grilling immediately. No pushback,
 no second attempt, no asking again later in the same session.
 
-Then, in that same reply, **name the gaps you would have closed** and leave each one as an explicit
-blank in the output rather than filling it. `[the specific thing you noticed in the third song]` is
-the deliverable; an invented third song is fiction under the creator's name.
+Then, in that same reply, **draft the gaps closed and declare what you drafted.** The caption is
+handed over finished, with a short list underneath naming each invented specific and what it was
+inferred from, so the creator can swap any that did not happen. A caption with `[the thing you
+noticed]` in it is homework, not a deliverable; an *undeclared* invention is fiction under the
+creator's name. Neither is acceptable — the declared draft is.
 
 Do not hold the line here. `ff-critique` holds its verdict when asked to approve, because that gate
 protects the creator from a bad post. This one only shapes an input, and the creator is allowed to

@@ -12,7 +12,8 @@ for a yes.
 
 Full method, including the escape hatch, in the router's *Grill before generating*. Two things that
 matter most here: **a complete input gets no questions at all**, and *"just draft it"* ends the
-grilling immediately — you then name the gaps and leave them blank rather than filling them.
+grilling immediately — you then draft the gaps closed and declare each invented specific, rather
+than handing back a premise with a hole in it.
 
 ## Step 0 — ground it before proposing
 

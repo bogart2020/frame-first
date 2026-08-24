@@ -30,7 +30,8 @@ self-containment is the entire reason the skill works on Claude Desktop and Clau
 none of those exist. One command checks it:
 
 ```bash
-grep -rn 'CLAUDE_PLUGIN_ROOT\|ff-paths\|readlink\|\.\./\|~/\.claude' skills/frame-first/
+grep -rn 'CLAUDE_PLUGIN_ROOT\|ff-paths\|readlink\|\.\./\|~/\.claude' skills/frame-first/ \
+  | grep -v 'Any other resolution is wrong'   # the SKILL.md deny-mention, not a reference
 ```
 
 Expected: nothing. The single exception is the creator's profile, which must live outside the skill
@@ -61,7 +62,8 @@ Raise it if one seems wrong; do not silently overturn it.
 
 ```bash
 cd /Users/jerickmadrileno/Desktop/plugins/frame-first
-grep -rn 'CLAUDE_PLUGIN_ROOT\|ff-paths\|readlink\|\.\./\|~/\.claude' skills/frame-first/   # nothing
+grep -rn 'CLAUDE_PLUGIN_ROOT\|ff-paths\|readlink\|\.\./\|~/\.claude' skills/frame-first/ \
+  | grep -v 'Any other resolution is wrong'   # the SKILL.md deny-mention, not a reference   # nothing
 claude plugin validate ./skills --strict      # the ONLY call that checks the skill
 claude plugin validate ./commands --strict
 claude plugin validate .                      # NOTE: checks marketplace.json ONLY

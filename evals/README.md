@@ -308,7 +308,8 @@ Then confirm the skill is genuinely self-contained — this is the whole portabi
 is one command:
 
 ```bash
-grep -rn 'CLAUDE_PLUGIN_ROOT\|ff-paths\|readlink\|\.\./\|~/\.claude' skills/frame-first/
+grep -rn 'CLAUDE_PLUGIN_ROOT\|ff-paths\|readlink\|\.\./\|~/\.claude' skills/frame-first/ \
+  | grep -v 'Any other resolution is wrong'   # the SKILL.md deny-mention, not a reference
 ```
 
 Anything it returns is a path reaching outside the skill folder, and will break on Desktop and

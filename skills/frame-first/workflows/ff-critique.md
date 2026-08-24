@@ -52,7 +52,11 @@ With none of the three, fall back to the witness-detail test alone and say the v
 Checks, in severity order:
 
 **Showstoppers** — any one of these alone is a FIX:
-1. **Witness detail** — could someone who was not there have written this? The central test.
+1. **Witness detail, present and honestly sourced** — could someone who was not there have written
+   this? The central test. It is satisfied by a concrete, occasion-specific detail; it does not
+   matter whether the creator supplied it or the draft proposed it. What fails is **an invented
+   specific that is not declared in the swap list** — that is the thing that puts fiction under the
+   creator's name, and it is a FIX on its own.
 2. **Deny-list hit** — the creator's own words, so the judgment is already made.
 3. **Curiosity opened and abandoned** — a gap the draft never closes.
 4. **Abstraction as sentence subject** — is the subject of each sentence a physical thing, a
@@ -66,6 +70,8 @@ Checks, in severity order:
    A paraphrase that tracks a lyric's wording or structure is a hit; naming song and artist is not.
 7. **Unverified or contested factual claim stated as fact** — a date, a first, an origin, an
    attribution, asserted flat. Either it is sourced, or the dispute is visible, or it goes.
+   **Scope: publicly checkable claims only.** A declared sensory detail is not one — the creator
+   can see whether the room did that, and the swap list is where they say so.
 8. **Self-reference** — does any line require the reader to retrieve their own memory to parse it,
    or does it only describe? A caption the viewer watches is weaker than one they recognize. The
    test and the evidence are in `references/relatability.md`; the failure to avoid is the line so
@@ -113,13 +119,18 @@ to skip it.
 
 ## When a line lacks witness detail
 
-Name what is missing and hand it back:
+The line is generic — it would sit under any version of this subject. Two ways out, and the
+draft picks one:
 
-> "This hook works for any version of this subject. What happened at THIS one that didn't happen
-> at the others?"
+- **Ask, where asking is still cheap** — before the caption is written, and only once:
+  > "This hook works for any version of this subject. What happened at THIS one that didn't happen
+  > at the others?"
+- **Draft a candidate and declare it**, where the creator has already said to just draft it, or has
+  answered as much as they are going to. The caption ships finished; the swap list carries the
+  guess.
 
-Supplying the detail yourself is the failure this plugin exists to prevent — the agent was not
-there, so anything it invents is fiction wearing the creator's name.
+What is never acceptable is the third option: inventing the detail and saying nothing. That is the
+failure this plugin exists to prevent — not the invention itself, but the silence about it.
 
 ## Reads / Writes
 

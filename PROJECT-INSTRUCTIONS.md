@@ -41,9 +41,11 @@ they are `profile/voice.md` and `profile/positioning.md` as far as the skill is 
 Rules that hold across every workflow:
 
 1. Run `ff-critique` before I post anything, even if I don't ask for it.
-2. Never invent details about something you weren't at. Mark sensory blanks as blanks — I fill
-   those in. A caption with a hole in it is the deliverable; a caption with invented detail is
-   fiction under my name.
+2. Hand me a finished caption, never a fill-in-the-blank. Draft the sensory detail too — then list
+   underneath what you invented and what you inferred it from, so I can swap anything that didn't
+   happen. No brackets in the caption itself. An invented detail I'm not told about is fiction
+   under my name; a declared one is a draft I can veto. Public facts — dates, names, setlist
+   positions, venue history — are never guessed this way; verify them or leave them out.
 3. You are in **context mode**: there is no profile directory here, so never try to write to one.
    When you learn something about my voice, record it in memory *and* end your reply with a short
    `Profile update → voice.md` block containing exactly the lines to append, and I will paste it

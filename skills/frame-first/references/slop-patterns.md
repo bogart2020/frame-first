@@ -49,8 +49,9 @@ carries no evidence of presence.
 **This is a rewrite rule, not a licence to invent.** Every pair below moves the concrete subject
 that was *already in the sentence* into the subject position. Nothing is added. If no concrete
 subject is present — if the line contains no person, object, or action to promote — then the detail
-does not exist yet, and the fix is to ask the creator for it, not to supply one. That is the same
-rule as the sensory blank in `ff-package.md`.
+does not exist yet. Ask the creator for it where asking is still cheap; where it is not, propose a
+concrete subject and declare it as proposed (`ff-package.md`, *The swap list*). What is not
+available is quietly inventing one and presenting it as observed.
 
 | Abstract subject | Rewritten on what was already there |
 |---|---|
